@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MaskTintPolyart
+  m_Shader: {fileID: 4800000, guid: ed92ecac49b84b2184d9b64d8a9b7a04, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Mask01:
+        m_Texture: {fileID: 2800000, guid: e10c4ea7a08140fba4922487ddbefccc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask02:
+        m_Texture: {fileID: 2800000, guid: 39f83479e65d45b79c23167bab9d30a3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask03:
+        m_Texture: {fileID: 2800000, guid: d70ac1b56bc840fc8b8ec10876177cd7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PolyArtAlbedo:
+        m_Texture: {fileID: 2800000, guid: 33e4c7e53b6c4161a6010e64954e38ef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Color01Power: 4.68
+    - _Color02Power: 4.95
+    - _Color03Power: 5.05
+    - _Color04Power: 5.11
+    - _Color05Power: 4.95
+    - _Color06Power: 5.37
+    - _Color07Power: 5.32
+    - _Color08Power: 5.05
+    - _Metallic: 0.35
+    - _Smoothness: 0
+    - __dirty: 1
+    m_Colors:
+    - _Color01: {r: 1, g: 0.66279554, b: 0, a: 0}
+    - _Color02: {r: 0.45162567, g: 0.30113026, b: 0.9528302, a: 0}
+    - _Color03: {r: 0.11439507, g: 0.46226418, b: 0.054512277, a: 0}
+    - _Color04: {r: 0.43870044, g: 0.5283019, b: 0.11213957, a: 0}
+    - _Color05: {r: 0.08050018, g: 0.32681012, b: 0.6320754, a: 0}
+    - _Color06: {r: 0.32527587, g: 0.1484959, b: 0.6698113, a: 0}
+    - _Color07: {r: 0.7264151, g: 0.34928828, b: 0, a: 0}
+    - _Color08: {r: 0.36030072, g: 0.5943396, b: 0.08130119, a: 0}
+  m_BuildTextureStacks: []
