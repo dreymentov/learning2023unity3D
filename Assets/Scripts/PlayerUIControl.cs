@@ -109,6 +109,7 @@ public class PlayerUIControl : MonoBehaviour
             agent.gameObject.GetComponent<AI_Agent_Moving>().OnAwakeAgent();
         }
         yield return null;
+        StopAllCoroutines();
     }
 
     IEnumerator WaitAwakeGame()
