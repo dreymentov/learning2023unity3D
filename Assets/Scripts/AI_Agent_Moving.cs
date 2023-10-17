@@ -5,7 +5,7 @@ public class AI_Agent_Moving : MonoBehaviour
 {
     // Положение точки назначения
     public Transform goal;
-    void Start()
+    public void OnAwakeAgent()
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
 
