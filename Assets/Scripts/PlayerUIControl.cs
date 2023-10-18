@@ -76,13 +76,6 @@ public class PlayerUIControl : MonoBehaviour
                     }
                 }
             }
-
-
-        }
-
-        if (isActivacted == true)
-        {
-
         }
     }
 
