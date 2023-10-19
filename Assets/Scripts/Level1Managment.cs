@@ -20,15 +20,15 @@ public class Level1Managment : MonoBehaviour
     public float speedMove = -1f;
     public float waitTimer;
     public float waitTimerObs;
-    public float minPowerObs = -100;
-    public float maxPowerObs = 100;
+    public float minPowerObs = -64;
+    public float maxPowerObs = 64;
 
     public float powerObs;
 
     public int cubNumberCrushing = 0;
     public int minTimerObs = 3;
     public int maxTimerObs = 6;
-    public int rowObstacle = 0 % 2;
+    public int rowObstacle = 0;
 
     public bool startedStop;
     public bool isStartGame;
@@ -132,6 +132,7 @@ public class Level1Managment : MonoBehaviour
         powerObs = Random.Range(minPowerObs, maxPowerObs);
         Obstacles[rowObstacle].GetComponent<Obsctacles>().powerObstacl = powerObs;
         rowObstacle++;
+        rowObstacle = rowObstacle % 2;
         yield return new WaitForSeconds(waitTimerObs);
         StartCoroutine(randomPowerValue());
     }

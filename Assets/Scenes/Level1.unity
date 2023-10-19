@@ -1183,6 +1183,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   cubesCountOld: 0
   changeValue: 0
+  changeValueJump: 0
   jumpPower: 3
   jumpPowerForward: 3
   isGrounded: 0
@@ -1778,6 +1779,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   cubesCountOld: 0
   changeValue: 0
+  changeValueJump: 0
   jumpPower: 2
   jumpPowerForward: 5
   isGrounded: 0
@@ -3664,8 +3666,8 @@ MonoBehaviour:
   maxPowerObs: 64
   powerObs: 0
   cubNumberCrushing: 0
-  minTimerObs: 3
-  maxTimerObs: 6
+  minTimerObs: 1
+  maxTimerObs: 5
   rowObstacle: 0
   startedStop: 0
   isStartGame: 0
@@ -4926,6 +4928,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   cubesCountOld: 0
   changeValue: 0
+  changeValueJump: 0
   jumpPower: 3
   jumpPowerForward: 3
   isGrounded: 0

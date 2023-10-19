@@ -14,6 +14,7 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     public int cubesCountOld;
     public int changeValue;
+    public int changeValueJump;
 
     public float jumpPower;
     public float jumpPowerForward;
@@ -58,8 +59,8 @@ public class AI_Agent_Moving1 : MonoBehaviour
                 {
                     wasJump = false;
                     agent.enabled = true;
-                    goal = level1mg.cubes[Random.Range(0, level1mg.cubes.Count)].transform;
-                    agent.destination = goal.position;
+
+                    Invoke("GetOrChangeGoal", 0f);
                 }
                 else
                 {
@@ -70,16 +71,15 @@ public class AI_Agent_Moving1 : MonoBehaviour
             if (cubesCountOld != level1mg.cubes.Count)
             {
                 cubesCountOld = level1mg.cubes.Count;
-                goal = level1mg.cubes[Random.Range(0, level1mg.cubes.Count)].transform;
-                agent.destination = goal.position;
+
+                Invoke("GetOrChangeGoal", 0f);
             }
             else
             {
                 changeValue = Random.Range(0, 101);
                 if (changeValue > 70)
                 {
-                    goal = level1mg.cubes[Random.Range(0, level1mg.cubes.Count)].transform;
-                    agent.destination = goal.position;
+                    Invoke("GetOrChangeGoal", 0f);
                 }
             }
         }
@@ -113,6 +113,24 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     IEnumerator Jump()
     {
+        changeValueJump = Random.Range(0, 101);
+        if (changeValueJump > 85)
+        {
+            StartCoroutine(NoJumped());
+        }
+        else if (changeValueJump <= 85 && changeValueJump > 70)
+        {
+            StartCoroutine(JumpedTooLate());
+        }
+        else
+        {
+            StartCoroutine(Jumped());
+        }
+        yield break;
+    }
+
+    IEnumerator Jumped()
+    {
         if (agent.enabled == true)
         {
             agent.enabled = false;
@@ -121,13 +139,55 @@ public class AI_Agent_Moving1 : MonoBehaviour
         rb.useGravity = true;
         rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         rb.AddForce(Vector3.forward * jumpPowerForward);
-        StartCoroutine(Jumped());
-        yield break;
-    }
 
-    IEnumerator Jumped()
-    {
         yield return new WaitForSeconds(1f);
         wasJump = true;
+    }
+
+    IEnumerator JumpedTooLate()
+    {
+        if (agent.enabled == true)
+        {
+            agent.enabled = false;
+        }
+        yield return new WaitForSeconds(1.5f);
+
+        rb.isKinematic = false;
+        rb.useGravity = true;
+        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        rb.AddForce(Vector3.forward * jumpPowerForward);
+
+        yield return new WaitForSeconds(1f);
+        wasJump = true;
+    }
+
+    IEnumerator NoJumped()
+    {
+        if (agent.enabled == true)
+        {
+            agent.enabled = false;
+        }
+        yield return new WaitForSeconds(1.5f);
+
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        yield return new WaitForSeconds(1f);
+        if (agent.enabled == false)
+        {
+            agent.enabled = true;
+        }
+    }
+
+    public void GetOrChangeGoal()
+    {
+        goal = level1mg.cubes[Random.Range(0, level1mg.cubes.Count)].transform;
+
+        if (agent.enabled == true)
+        {
+            agent.destination = goal.position;
+        }
+        else
+            return;
     }
 }
