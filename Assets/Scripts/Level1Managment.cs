@@ -12,6 +12,8 @@ public class Level1Managment : MonoBehaviour
 
     public GameObject[] Obstacles;
 
+    public DeathLevel DeathLevel;
+
     public int[] cyclingLifeCubes;
 
     public float shakerDuration = 0.5f;
@@ -34,6 +36,7 @@ public class Level1Managment : MonoBehaviour
     public bool isStartGame;
     void Start()
     {
+        DeathLevel = FindObjectOfType<DeathLevel>();
         cyclingLifeCubes = new int[cubes.Count];
 
         for (int i = 0; i < cyclingLifeCubes.Length; i++)
