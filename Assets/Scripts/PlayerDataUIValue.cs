@@ -41,89 +41,6 @@ public class PlayerDataUIValue : MonoBehaviour
     [SerializeField] private int HardMoneyReward = 0;
     [SerializeField] private int ExpReward = 0;
 
-    void Start()
-    {
-        if (SceneManager.GetActiveScene().name == "Menu")
-        {
-            PlaceInLevel = 999;
-            PanelMain.gameObject.SetActive(false);
-            TextValueLevel.text = /*"Level: " */ "" + init.PlayerData.PlayerLevel;
-            TextValueExp.text = /*"Exp: " */ "" + init.PlayerData.PlayerExperience + "/ 100";
-            TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
-            TextValueHardMoney.text = "" + init.PlayerData.PlayerHardMoney;
-        }
-        else if (SceneManager.GetActiveScene().name == "Lobby")
-        {
-            PanelMain.gameObject.SetActive(true);
-
-            TextExpPanelReward.text = "";
-            TextMoneyPanelReward.text = "";
-
-            TextLevelUp.color = new Color(1f, 1f, 1f, 0f);
-
-            TextValueLevel.text = "" + init.PlayerData.PlayerLevel;
-            TextValueExp.text = "" + init.PlayerData.PlayerExperience + "/ 100";
-            TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
-            TextValueHardMoney.text = "" + init.PlayerData.PlayerHardMoney;
-
-            
-
-            Slider.maxValue = SliderMaxValue;
-            Slider.value = init.PlayerData.PlayerExperience;
-
-            if (PlaceInLevel == 5)
-            {
-                MoneyReward = 25;
-                HardMoneyReward = 2;
-                ExpReward = 10;
-            }
-            else if (PlaceInLevel == 4)
-            {
-                MoneyReward = 50;
-                HardMoneyReward = 5;
-                ExpReward = 20;
-            }
-            else if (PlaceInLevel == 3)
-            {
-                MoneyReward = 100;
-                HardMoneyReward = 10;
-                ExpReward = 30;
-            }
-            else if (PlaceInLevel == 2)
-            {
-                MoneyReward = 150;
-                HardMoneyReward = 15;
-                ExpReward = 40;
-            }
-            else if (PlaceInLevel == 1)
-            {
-                MoneyReward = 200;
-                HardMoneyReward = 20;
-                ExpReward = 50;
-            }
-            else
-            {
-                MoneyReward = 0;
-                HardMoneyReward = 0;
-                ExpReward = 0;
-            }
-
-            StartCoroutine(GetReward());
-        }
-        else if (SceneManager.GetActiveScene().name == "Level1")
-        {
-            PanelMain.gameObject.SetActive(false);
-        }
-        else if (SceneManager.GetActiveScene().name == "Level2")
-        {
-            PanelMain.gameObject.SetActive(false);
-        }
-        else
-        {
-            PanelMain.gameObject.SetActive(false);
-        }
-    }
-
     private void Update()
     {
         if (SceneManager.GetActiveScene().name == "Lobby")
@@ -172,17 +89,88 @@ public class PlayerDataUIValue : MonoBehaviour
         yield return null;
     }
 
+    public IEnumerator InvokeStartThisObject()
+    {
+        PanelMain.gameObject.SetActive(true);
+
+        TextExpPanelReward.text = "0";
+        TextMoneyPanelReward.text = "0";
+
+        for (int i = 0; i < RewardsPanelInPanelShowReward.Length; i++)
+        {
+            Color ColorImage = RewardsImageInPanelShowReward[i].color;
+            ColorImage.a = 0f;
+            RewardsImageInPanelShowReward[i].color = ColorImage;
+            RewardsPanelInPanelShowReward[i].DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.01f);
+        }
+
+        TextLevelUp.color = new Color(1f, 1f, 1f, 0f);
+
+        TextValueLevel.text = "" + init.PlayerData.PlayerLevel;
+        TextValueExp.text = "" + init.PlayerData.PlayerExperience + "/ 100";
+        TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
+        TextValueHardMoney.text = "" + init.PlayerData.PlayerHardMoney;
+
+        Slider.maxValue = SliderMaxValue;
+        Slider.value = init.PlayerData.PlayerExperience;
+
+        yield return StartCoroutine(GetReward());
+    }
+
     IEnumerator GetReward()
     {
-        for(int i = 0; i < RewardsPanelInPanelShowReward.Length; i++)
+        if (PlaceInLevel == 5)
+        {
+            MoneyReward = 25;
+            HardMoneyReward = 2;
+            ExpReward = 10;
+        }
+        else if (PlaceInLevel == 4)
+        {
+            MoneyReward = 50;
+            HardMoneyReward = 5;
+            ExpReward = 20;
+        }
+        else if (PlaceInLevel == 3)
+        {
+            MoneyReward = 100;
+            HardMoneyReward = 10;
+            ExpReward = 30;
+        }
+        else if (PlaceInLevel == 2)
+        {
+            MoneyReward = 150;
+            HardMoneyReward = 15;
+            ExpReward = 40;
+        }
+        else if (PlaceInLevel == 1)
+        {
+            MoneyReward = 200;
+            HardMoneyReward = 20;
+            ExpReward = 50;
+        }
+        else
+        {
+            MoneyReward = 0;
+            HardMoneyReward = 0;
+            ExpReward = 0;
+        }
+
+        TextExpPanelReward.text = "0";
+        TextMoneyPanelReward.text = "0";
+
+        j = 0;
+        l = 0;
+
+        for (int i = 0; i < RewardsPanelInPanelShowReward.Length; i++)
         {
             RewardsImageInPanelShowReward[i].color = Random.ColorHSV();
             RewardsPanelInPanelShowReward[i].DOScale(new Vector3(1, 1, 1), 1.5f);
 
-            for (int j = 0; j < 10; j++)
+            for (int k = 0; k < 10; k++)
             {
                 Color ColorImage = RewardsImageInPanelShowReward[i].color;
-                ColorImage.a = j * 0.1f;
+                ColorImage.a = k * 0.1f;
                 RewardsImageInPanelShowReward[i].color = ColorImage;
                 yield return new WaitForSeconds(0.05f);
             }
@@ -210,9 +198,11 @@ public class PlayerDataUIValue : MonoBehaviour
         TextMoneyPanelReward.text = "" + MoneyReward;
 
         init.PlayerData.PlayerMoney += MoneyReward;
+        init.PlayerData.PlayerHardMoney += HardMoneyReward;
+        TextValueHardMoney.text = "" + init.PlayerData.PlayerHardMoney;
         TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
 
-        for (int i = 0; i < ExpReward - 1; i++)
+        for (int i = 0; i < ExpReward; i++)
         {
             Slider.value = init.PlayerData.PlayerExperience;
             Slider.value++;
@@ -232,8 +222,6 @@ public class PlayerDataUIValue : MonoBehaviour
                 }
                 init.PlayerData.PlayerLevel++;
                 TextValueLevel.text = "" + init.PlayerData.PlayerLevel;
-                init.PlayerData.PlayerHardMoney += HardMoneyReward;
-
                 PanelLevelUp.gameObject.SetActive(true);
                 PanelLevelUpBackground.gameObject.SetActive(true);
                 isLevelUp = true;
@@ -244,7 +232,8 @@ public class PlayerDataUIValue : MonoBehaviour
             }
 
             init.PlayerData.PlayerExperience = (int)Slider.value;
-        } 
+        }
+        PlaceInLevel = 999;
         yield break;
     }
 }

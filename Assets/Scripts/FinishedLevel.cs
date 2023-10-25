@@ -35,6 +35,11 @@ public class FinishedLevel : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
+            if (PlayerDataUIValue == null)
+            {
+                PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+            }
+
             gameObjectsInList.Add(other.gameObject);
 
             for (int i = 0; i < gameObjectsInList.Count; i++)

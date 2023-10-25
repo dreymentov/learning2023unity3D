@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class Level1Managment : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Level1Managment : MonoBehaviour
     public GameObject[] Obstacles;
 
     public DeathLevel DeathLevel;
+
+    public PlayerDataUIValue PlayerDataUIValue;
 
     public int[] cyclingLifeCubes;
 
@@ -142,8 +145,11 @@ public class Level1Managment : MonoBehaviour
 
     IEnumerator StopObs()
     {
+        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        PlayerDataUIValue.PlaceInLevel = 1;
         Obstacles[0].GetComponent<Obsctacles>().powerObstacl = 0;
         Obstacles[1].GetComponent<Obsctacles>().powerObstacl = 0;
+        SceneManager.LoadScene("Lobby");
         yield break;
     }
 

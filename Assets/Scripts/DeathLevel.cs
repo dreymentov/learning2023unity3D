@@ -10,12 +10,6 @@ public class DeathLevel : MonoBehaviour
 
     public GameObject[] gameBotObjects;
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-    }
-
     void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -25,7 +19,10 @@ public class DeathLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(PlayerDataUIValue == null)
+        {
+            PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,15 +34,26 @@ public class DeathLevel : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
+            if (PlayerDataUIValue == null)
+            {
+                PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+            }
+
             gameObjectsInList.Add(other.gameObject);
-            PlayerDataUIValue.PlaceInLevel = 2 - gameObjectsInList.Count + gameBotObjects.Length;
+            if(PlayerDataUIValue != null)
+            {
+                PlayerDataUIValue.PlaceInLevel = 2 - gameObjectsInList.Count + gameBotObjects.Length;
+            }
             SceneManager.LoadScene("Lobby");
         }
     }
 
     public void WinTheLevel()
     {
-        PlayerDataUIValue.PlaceInLevel = 1;
+        if (PlayerDataUIValue != null)
+        {
+            PlayerDataUIValue.PlaceInLevel = 1;
+        }
         SceneManager.LoadScene("Lobby");
     }
 }

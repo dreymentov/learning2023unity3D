@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 using DG.Tweening;
 
 public class PlayerUIControl : MonoBehaviour
 {
-    public List<NavMeshAgent> agentsList;
-
     public Transform panel;
 
     public Image[] imagesList;
+
+    public Vector2[] PosTf;
 
     public Image imageCenterInPanel;
     public Image imageCheckerLeft;
@@ -25,12 +26,24 @@ public class PlayerUIControl : MonoBehaviour
     public float waitTimer = 2f;
 
     public bool isActivacted;
+    public bool isPressed = false;
 
-    private IEnumerator coroutine;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        PosTf = new Vector2[imagesList.Length];
+        for(int i = 0; i < imagesList.Length; i++)
+        {
+            PosTf[i] = imagesList[i].transform.position;
+        }
+        isPressed = false;
+    }
+    public void StartGameImage()
+    {
+        isPressed = true;
+
+        panel.gameObject.SetActive(true);
+
         border_X = imageCheckerLeft.transform.localPosition.x;
         border_X1 = imageCheckerRight.transform.localPosition.x;
 
@@ -43,18 +56,19 @@ public class PlayerUIControl : MonoBehaviour
 
         foreach(var imageTransformStart in imagesList)
         {
-            coroutine = ImageMoveStart(imageTransformStart);
-            StartCoroutine(coroutine);
+            StartCoroutine(ImageMoveStart(imageTransformStart));
         }
-
-        coroutine = WaitAwakeGame();
-        StartCoroutine(coroutine);
+        StartCoroutine(WaitAwakeGame());
     }
 
-    // Update is called once per frame
+    public void StartMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     void Update()
     {
-        if (isActivacted == false)
+        if ((isActivacted == false) && (isPressed == true))
         {
             foreach (var imageTransform in imagesList)
             {
@@ -62,17 +76,13 @@ public class PlayerUIControl : MonoBehaviour
                 {
                     if (ImageMoveStart(imageTransform) != null)
                     {
-                        coroutine = ImageMoveStart(imageTransform);
-                        StopCoroutine(coroutine);
-
-                        coroutine = ImageMove(imageTransform);
-                        StartCoroutine(coroutine);
+                        StopCoroutine(ImageMoveStart(imageTransform));
+                        StartCoroutine(ImageMove(imageTransform));
                     }
                     else
                     {
-                        coroutine = ImageMove(imageTransform);
-                        StopCoroutine(coroutine);
-                        StartCoroutine(coroutine);
+                        StopCoroutine(ImageMove(imageTransform));
+                        StartCoroutine(ImageMoveStart(imageTransform));
                     }
                 }
             }
@@ -97,18 +107,35 @@ public class PlayerUIControl : MonoBehaviour
     IEnumerator AwakeGame()
     {
         panel.gameObject.SetActive(false);
-        foreach (var agent in agentsList)
+        isPressed = false;
+        string Level;
+        int ii = Random.Range(0, 100);
+
+        if (ii > 50)
         {
-            agent.gameObject.GetComponent<AI_Agent_Moving>().OnAwakeAgent();
+            Level = "Level1";
         }
-        yield return null;
+        else
+        {
+            Level = "Level2";
+        }
+        isPressed = false;
         StopAllCoroutines();
+        foreach (var imageTransform in imagesList)
+        {
+            int i = 0;
+            DOTween.Kill(imageTransform.transform);
+            imageTransform.transform.position = imagesList[i].transform.position;
+            i++;
+        }
+        SceneManager.LoadScene(Level);
+        yield return null;
     }
 
     IEnumerator WaitAwakeGame()
     {
         yield return new WaitForSeconds(waitTimer);
-        coroutine = AwakeGame();
-        StartCoroutine(coroutine);
+        isPressed = false;
+        StartCoroutine(AwakeGame());
     }
 }
