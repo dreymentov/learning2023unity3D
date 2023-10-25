@@ -23,6 +23,8 @@ public class PlayerDataUIValue : MonoBehaviour
     public RectTransform PanelShowSummary;
     public RectTransform PanelLevelUp;
     public RectTransform PanelLevelUpBackground;
+    public RectTransform ButtonStart;
+    public RectTransform ButtonMainMenu;
 
     public RectTransform[] RewardsPanelInPanelShowReward;
     public Image[] RewardsImageInPanelShowReward;
@@ -46,6 +48,10 @@ public class PlayerDataUIValue : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Lobby")
         {
             PanelMain.gameObject.SetActive(true);
+            PanelShowReward.gameObject.SetActive(true);
+            PanelShowSummary.gameObject.SetActive(true);
+            ButtonStart.gameObject.SetActive(true);
+            ButtonMainMenu.gameObject.SetActive(true);
 
             if (isLevelUp == true)
             {
@@ -70,7 +76,11 @@ public class PlayerDataUIValue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Menu")
         {
-            PanelMain.gameObject.SetActive(false);
+            PanelMain.gameObject.SetActive(true);
+            PanelShowReward.gameObject.SetActive(false);
+            PanelShowSummary.gameObject.SetActive(false);
+            ButtonStart.gameObject.SetActive(false);
+            ButtonMainMenu.gameObject.SetActive(false);
         }
 
         if (SceneManager.GetActiveScene().name == "Level1")
