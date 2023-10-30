@@ -22,7 +22,7 @@ public class CheckCharactersScript : MonoBehaviour
 
     private void Start()
     {
-        goId = Random.Range(0, goCharacters.Length);
+        goId = 29;
         goCharacters[goId].SetActive(true);
     }
 

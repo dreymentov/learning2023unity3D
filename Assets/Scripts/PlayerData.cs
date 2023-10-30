@@ -10,6 +10,9 @@ public class PlayerData
     public int PlayerExperience = 1;
     public int PlayerMoney = 100;
     public int PlayerHardMoney = 10;
+    public int PlayerCharIdCheck = 29;
+
+    public bool[] PlayerCharId = new bool[30];
 }
 
 
