@@ -16,6 +16,10 @@ public class FinishedLevel : MonoBehaviour
         Finished = false;
     }
 
+    private void OnEnable()
+    {
+        gameObjectsInList.Clear();
+    }
 
     void Update()
     {

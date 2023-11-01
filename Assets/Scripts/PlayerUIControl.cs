@@ -111,13 +111,17 @@ public class PlayerUIControl : MonoBehaviour
         string Level;
         int ii = Random.Range(0, 100);
 
-        if (ii > 50)
+        if (ii > 65)
         {
             Level = "Level1";
         }
-        else
+        else if(ii > 32 && ii <= 65)
         {
             Level = "Level2";
+        }
+        else
+        {
+            Level = "Level3";
         }
         isPressed = false;
         StopAllCoroutines();

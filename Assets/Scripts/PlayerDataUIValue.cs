@@ -92,6 +92,10 @@ public class PlayerDataUIValue : MonoBehaviour
         {
             PanelMain.gameObject.SetActive(false);
         }
+        if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            PanelMain.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator ResultCount()
