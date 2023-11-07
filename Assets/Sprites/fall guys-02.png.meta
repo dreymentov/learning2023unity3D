@@ -1,0 +1,1310 @@
+fileFormatVersion: 2
+guid: d726705673c3bed46addc65479a35f8e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4197727467193079248
+    second: fall guys-02_0
+  - first:
+      213: -1218297789313050004
+    second: fall guys-02_1
+  - first:
+      213: 410642777147376566
+    second: fall guys-02_2
+  - first:
+      213: 4031568958827735625
+    second: fall guys-02_3
+  - first:
+      213: 8623899904616402605
+    second: fall guys-02_4
+  - first:
+      213: 1209721019947495297
+    second: fall guys-02_5
+  - first:
+      213: -569007184668921577
+    second: fall guys-02_6
+  - first:
+      213: -2848120307553428230
+    second: fall guys-02_7
+  - first:
+      213: 5125122331531369831
+    second: fall guys-02_8
+  - first:
+      213: 5414941634795986000
+    second: fall guys-02_9
+  - first:
+      213: -7039656329317311970
+    second: fall guys-02_10
+  - first:
+      213: -3424888437035839886
+    second: fall guys-02_11
+  - first:
+      213: -3293567997240960329
+    second: fall guys-02_12
+  - first:
+      213: 8208862961107778085
+    second: fall guys-02_13
+  - first:
+      213: 5494609312548857607
+    second: fall guys-02_14
+  - first:
+      213: 6445964202590175856
+    second: fall guys-02_15
+  - first:
+      213: -7134481915078848276
+    second: fall guys-02_16
+  - first:
+      213: 3579121896225561368
+    second: fall guys-02_17
+  - first:
+      213: 2415639095763401830
+    second: fall guys-02_18
+  - first:
+      213: -2626464244965735397
+    second: fall guys-02_19
+  - first:
+      213: 6205392517041443334
+    second: fall guys-02_20
+  - first:
+      213: -4872143290291639235
+    second: fall guys-02_21
+  - first:
+      213: 4682373948185741370
+    second: fall guys-02_22
+  - first:
+      213: -5206295248859328336
+    second: fall guys-02_23
+  - first:
+      213: 5691904201870944545
+    second: fall guys-02_24
+  - first:
+      213: 7306108389025178889
+    second: fall guys-02_25
+  - first:
+      213: -8255250739128915867
+    second: fall guys-02_26
+  - first:
+      213: 4432565879256876132
+    second: fall guys-02_27
+  - first:
+      213: -1806003744372906434
+    second: fall guys-02_28
+  - first:
+      213: -6782374186447884758
+    second: fall guys-02_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fall guys-02_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 873
+        width: 733
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d591f114e2514a30800000000000000
+      internalID: 4197727467193079248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_1
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 965
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a1a5d8d9cb71fe0800000000000000
+      internalID: -1218297789313050004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_2
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 874
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3037d1e65e2b500800000000000000
+      internalID: 410642777147376566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_3
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 890
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a2b6e9b9203f730800000000000000
+      internalID: 4031568958827735625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 738
+        width: 323
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae8f29954f3ea770800000000000000
+      internalID: 8623899904616402605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_5
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 769
+        width: 174
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f2b47bbdac9c010800000000000000
+      internalID: 1209721019947495297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_6
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 768
+        width: 131
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711f923fafa7a18f0800000000000000
+      internalID: -569007184668921577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_7
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 645
+        width: 385
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc93b69ba17978d0800000000000000
+      internalID: -2848120307553428230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_8
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 656
+        width: 262
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d59514b97102740800000000000000
+      internalID: 5125122331531369831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_9
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 520
+        width: 253
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cdc7d2abcb52b40800000000000000
+      internalID: 5414941634795986000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_10
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 547
+        width: 94
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a163ebddd1e4e90800000000000000
+      internalID: -7039656329317311970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_11
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 552
+        width: 82
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ec223cc1a5870d0800000000000000
+      internalID: -3424888437035839886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_12
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 553
+        width: 83
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba9bd84b55ea42d0800000000000000
+      internalID: -3293567997240960329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_13
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 552
+        width: 82
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ab0b6ee5dbbe170800000000000000
+      internalID: 8208862961107778085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_14
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 429
+        width: 76
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707270ede06c04c40800000000000000
+      internalID: 5494609312548857607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_15
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 427
+        width: 59
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07285424a4aa47950800000000000000
+      internalID: 6445964202590175856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_16
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 423
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0d6439f7a3dfc90800000000000000
+      internalID: -7134481915078848276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_17
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 424
+        width: 67
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bd850d6689ba130800000000000000
+      internalID: 3579121896225561368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_18
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 420
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66cf58085f2168120800000000000000
+      internalID: 2415639095763401830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_19
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 424
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b148d8f4facec8bd0800000000000000
+      internalID: -2626464244965735397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_20
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 425
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6025f1edd9bfd1650800000000000000
+      internalID: 6205392517041443334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_21
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 422
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c2d5fbd7ba26cb0800000000000000
+      internalID: -4872143290291639235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_22
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 470
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38872f2c422bf040800000000000000
+      internalID: 4682373948185741370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_23
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 458
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b09fe72e068fb7b0800000000000000
+      internalID: -5206295248859328336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_24
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 449
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1292210f6b4bdfe40800000000000000
+      internalID: 5691904201870944545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_25
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 24
+        width: 624
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905e852ded2846560800000000000000
+      internalID: 7306108389025178889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_26
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 250
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568a072e0357f6d80800000000000000
+      internalID: -8255250739128915867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_27
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 251
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4648f94be23a38d30800000000000000
+      internalID: 4432565879256876132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_28
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 66
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36a0a1c929cfe6e0800000000000000
+      internalID: -1806003744372906434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-02_29
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 67
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2eaefaac9a20e1a0800000000000000
+      internalID: -6782374186447884758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: 150, y: -129}
+      - {x: -469, y: -129}
+      - {x: -469, y: -487}
+      - {x: -463, y: -490}
+      - {x: 154, y: -490}
+      - {x: 159, y: -486}
+      - {x: 159, y: -138}
+    - - {x: -456, y: -141}
+      - {x: 139, y: -141}
+      - {x: 139, y: -469}
+      - {x: 120, y: -469}
+      - {x: 94, y: -470}
+      - {x: 93, y: -471}
+      - {x: -456, y: -471}
+    - - {x: 246, y: -317}
+      - {x: 199, y: -339}
+      - {x: 199, y: -419}
+      - {x: 235, y: -448}
+      - {x: 286, y: -448}
+      - {x: 319, y: -434}
+      - {x: 319, y: -339}
+      - {x: 284, y: -317}
+    - - {x: 394, y: -316}
+      - {x: 364, y: -342}
+      - {x: 364, y: -419}
+      - {x: 392, y: -447}
+      - {x: 452, y: -447}
+      - {x: 484, y: -431}
+      - {x: 484, y: -333}
+      - {x: 448, y: -316}
+    - - {x: 232, y: -133}
+      - {x: 200, y: -146}
+      - {x: 200, y: -247}
+      - {x: 235, y: -264}
+      - {x: 271, y: -264}
+      - {x: 320, y: -242}
+      - {x: 320, y: -162}
+      - {x: 286, y: -133}
+    - - {x: 412, y: -132}
+      - {x: 362, y: -148}
+      - {x: 362, y: -233}
+      - {x: 404, y: -263}
+      - {x: 437, y: -263}
+      - {x: 480, y: -249}
+      - {x: 482, y: -238}
+      - {x: 482, y: -150}
+      - {x: 443, y: -132}
+    - - {x: 34, y: -23}
+      - {x: 32, y: -31}
+      - {x: 32, y: -94}
+      - {x: 74, y: -94}
+      - {x: 88, y: -88}
+      - {x: 88, y: -26}
+      - {x: 79, y: -23}
+    - - {x: 405, y: -28}
+      - {x: 399, y: -29}
+      - {x: 399, y: -79}
+      - {x: 411, y: -92}
+      - {x: 442, y: -92}
+      - {x: 453, y: -63}
+      - {x: 453, y: -29}
+      - {x: 452, y: -28}
+    - - {x: -218, y: -81}
+      - {x: -209, y: -91}
+      - {x: -167, y: -91}
+      - {x: -156, y: -85}
+      - {x: -156, y: -47}
+      - {x: -166, y: -27}
+      - {x: -204, y: -27}
+      - {x: -218, y: -39}
+    - - {x: -88, y: -29}
+      - {x: -97, y: -35}
+      - {x: -97, y: -75}
+      - {x: -94, y: -90}
+      - {x: -26, y: -90}
+      - {x: -26, y: -33}
+      - {x: -34, y: -29}
+    - - {x: 206, y: -41}
+      - {x: 194, y: -29}
+      - {x: 163, y: -29}
+      - {x: 147, y: -37}
+      - {x: 147, y: -49}
+      - {x: 148, y: -51}
+      - {x: 154, y: -56}
+      - {x: 147, y: -66}
+      - {x: 147, y: -78}
+      - {x: 163, y: -89}
+      - {x: 196, y: -89}
+      - {x: 207, y: -78}
+      - {x: 207, y: -48}
+    - - {x: 271, y: -28}
+      - {x: 263, y: -30}
+      - {x: 263, y: -75}
+      - {x: 273, y: -89}
+      - {x: 314, y: -89}
+      - {x: 325, y: -86}
+      - {x: 325, y: -37}
+      - {x: 322, y: -28}
+    - - {x: -339, y: -32}
+      - {x: -339, y: -87}
+      - {x: -278, y: -87}
+      - {x: -276, y: -77}
+      - {x: -276, y: -33}
+      - {x: -279, y: -32}
+    - - {x: -469, y: -34}
+      - {x: -476, y: -38}
+      - {x: -476, y: -85}
+      - {x: -396, y: -85}
+      - {x: -396, y: -38}
+      - {x: -410, y: -34}
+    - - {x: 387, y: -52}
+      - {x: 383, y: -55}
+      - {x: 383, y: -61}
+      - {x: 384, y: -64}
+      - {x: 397, y: -64}
+      - {x: 400, y: -61}
+      - {x: 400, y: -57}
+      - {x: 397, y: -52}
+    - - {x: -479, y: 109}
+      - {x: -484, y: 101}
+      - {x: -484, y: 66}
+      - {x: -468, y: 23}
+      - {x: -446, y: 6}
+      - {x: -227, y: 6}
+      - {x: -227, y: 107}
+      - {x: -228, y: 109}
+    - - {x: -160, y: 88}
+      - {x: -168, y: 81}
+      - {x: -169, y: 62}
+      - {x: -169, y: 33}
+      - {x: -71, y: 33}
+      - {x: -71, y: 71}
+      - {x: -79, y: 88}
+    - - {x: -22, y: 88}
+      - {x: -24, y: 84}
+      - {x: -24, y: 60}
+      - {x: -18, y: 38}
+      - {x: 59, y: 38}
+      - {x: 62, y: 52}
+      - {x: 62, y: 88}
+    - - {x: 240, y: 88}
+      - {x: 234, y: 74}
+      - {x: 234, y: 38}
+      - {x: 318, y: 38}
+      - {x: 320, y: 41}
+      - {x: 320, y: 75}
+      - {x: 315, y: 88}
+    - - {x: 189, y: 89}
+      - {x: 110, y: 89}
+      - {x: 106, y: 83}
+      - {x: 106, y: 39}
+      - {x: 188, y: 39}
+      - {x: 189, y: 41}
+      - {x: 193, y: 69}
+      - {x: 193, y: 87}
+    - - {x: -104, y: 190}
+      - {x: -328, y: 205}
+      - {x: -492, y: 205}
+      - {x: -492, y: 142}
+      - {x: -491, y: 138}
+      - {x: -469, y: 131}
+      - {x: -306, y: 131}
+      - {x: -118, y: 137}
+      - {x: -103, y: 168}
+      - {x: -103, y: 187}
+    - - {x: -50, y: 183}
+      - {x: -55, y: 178}
+      - {x: -55, y: 145}
+      - {x: -54, y: 142}
+      - {x: 206, y: 142}
+      - {x: 211, y: 160}
+      - {x: 211, y: 178}
+      - {x: 208, y: 183}
+    - - {x: -494, y: 327}
+      - {x: -494, y: 224}
+      - {x: -267, y: 224}
+      - {x: -200, y: 225}
+      - {x: -176, y: 246}
+      - {x: -167, y: 280}
+      - {x: -167, y: 327}
+    - - {x: 131, y: 304}
+      - {x: 131, y: 266}
+      - {x: 137, y: 254}
+      - {x: 262, y: 254}
+      - {x: 266, y: 262}
+      - {x: 266, y: 304}
+    - - {x: -95, y: 305}
+      - {x: -103, y: 299}
+      - {x: -105, y: 289}
+      - {x: -105, y: 255}
+      - {x: 73, y: 255}
+      - {x: 73, y: 305}
+    - - {x: -496, y: 503}
+      - {x: -496, y: 359}
+      - {x: 208, y: 359}
+      - {x: 240, y: 424}
+      - {x: 240, y: 491}
+      - {x: 226, y: 503}
+    - - {x: 393, y: 491}
+      - {x: 367, y: 462}
+      - {x: 367, y: 381}
+      - {x: 404, y: 360}
+      - {x: 460, y: 360}
+      - {x: 487, y: 387}
+      - {x: 487, y: 474}
+      - {x: 451, y: 491}
+    - - {x: 285, y: 411}
+      - {x: 285, y: 376}
+      - {x: 320, y: 376}
+      - {x: 322, y: 390}
+      - {x: 322, y: 411}
+    - - {x: 293, y: 489}
+      - {x: 291, y: 488}
+      - {x: 286, y: 476}
+      - {x: 286, y: 461}
+      - {x: 292, y: 451}
+      - {x: 315, y: 451}
+      - {x: 324, y: 454}
+      - {x: 324, y: 479}
+      - {x: 311, y: 489}
+    physicsShape:
+    - - {x: -468, y: -129}
+      - {x: -468, y: -482}
+      - {x: -461, y: -488}
+      - {x: 157, y: -488}
+      - {x: 157, y: -134}
+      - {x: 150, y: -129}
+    - - {x: -457, y: -141}
+      - {x: 140, y: -141}
+      - {x: 139, y: -463}
+      - {x: 139, y: -471}
+      - {x: -457, y: -471}
+    - - {x: 200, y: -318}
+      - {x: 200, y: -435}
+      - {x: 235, y: -447}
+      - {x: 284, y: -447}
+      - {x: 319, y: -420}
+      - {x: 319, y: -333}
+      - {x: 288, y: -318}
+    - - {x: 365, y: -317}
+      - {x: 365, y: -434}
+      - {x: 400, y: -446}
+      - {x: 449, y: -446}
+      - {x: 484, y: -419}
+      - {x: 484, y: -332}
+      - {x: 453, y: -317}
+    - - {x: 229, y: -134}
+      - {x: 201, y: -157}
+      - {x: 201, y: -232}
+      - {x: 203, y: -247}
+      - {x: 248, y: -263}
+      - {x: 279, y: -263}
+      - {x: 320, y: -236}
+      - {x: 320, y: -156}
+      - {x: 274, y: -134}
+    - - {x: 391, y: -133}
+      - {x: 363, y: -153}
+      - {x: 363, y: -239}
+      - {x: 388, y: -262}
+      - {x: 444, y: -262}
+      - {x: 482, y: -246}
+      - {x: 482, y: -153}
+      - {x: 442, y: -133}
+    - - {x: 53, y: -24}
+      - {x: 40, y: -32}
+      - {x: 32, y: -50}
+      - {x: 32, y: -79}
+      - {x: 41, y: -90}
+      - {x: 44, y: -92}
+      - {x: 70, y: -92}
+      - {x: 85, y: -85}
+      - {x: 85, y: -31}
+      - {x: 82, y: -24}
+    - - {x: 428, y: -39}
+      - {x: 404, y: -39}
+      - {x: 401, y: -40}
+      - {x: 401, y: -87}
+      - {x: 436, y: -87}
+      - {x: 440, y: -79}
+      - {x: 440, y: -59}
+      - {x: 438, y: -50}
+    - - {x: -173, y: -28}
+      - {x: -200, y: -28}
+      - {x: -217, y: -36}
+      - {x: -217, y: -72}
+      - {x: -211, y: -86}
+      - {x: -173, y: -86}
+      - {x: -160, y: -74}
+      - {x: -160, y: -46}
+      - {x: -162, y: -38}
+    - - {x: 304, y: -29}
+      - {x: 275, y: -29}
+      - {x: 264, y: -40}
+      - {x: 264, y: -68}
+      - {x: 267, y: -74}
+      - {x: 282, y: -85}
+      - {x: 302, y: -85}
+      - {x: 312, y: -83}
+      - {x: 321, y: -65}
+      - {x: 321, y: -42}
+    - - {x: -84, y: -30}
+      - {x: -96, y: -46}
+      - {x: -96, y: -58}
+      - {x: -90, y: -84}
+      - {x: -70, y: -84}
+      - {x: -34, y: -80}
+      - {x: -29, y: -69}
+      - {x: -29, y: -45}
+      - {x: -44, y: -30}
+    - - {x: 194, y: -30}
+      - {x: 163, y: -30}
+      - {x: 148, y: -37}
+      - {x: 148, y: -70}
+      - {x: 162, y: -84}
+      - {x: 189, y: -84}
+      - {x: 203, y: -76}
+      - {x: 203, y: -38}
+    - - {x: -336, y: -33}
+      - {x: -338, y: -34}
+      - {x: -338, y: -75}
+      - {x: -336, y: -80}
+      - {x: -285, y: -80}
+      - {x: -281, y: -39}
+      - {x: -281, y: -33}
+    - - {x: -425, y: -35}
+      - {x: -452, y: -35}
+      - {x: -474, y: -42}
+      - {x: -474, y: -74}
+      - {x: -473, y: -79}
+      - {x: -401, y: -79}
+      - {x: -401, y: -41}
+    - - {x: 385, y: -55}
+      - {x: 384, y: -58}
+      - {x: 387, y: -61}
+      - {x: 394, y: -61}
+      - {x: 396, y: -59}
+      - {x: 396, y: -58}
+      - {x: 393, y: -55}
+    - - {x: 441, y: -47}
+      - {x: 441, y: -49}
+      - {x: 443, y: -51}
+      - {x: 447, y: -50}
+      - {x: 451, y: -46}
+      - {x: 450, y: -43}
+      - {x: 446, y: -43}
+    - - {x: 400, y: -32}
+      - {x: 400, y: -34}
+      - {x: 406, y: -40}
+      - {x: 409, y: -39}
+      - {x: 409, y: -35}
+      - {x: 404, y: -30}
+      - {x: 402, y: -30}
+    - - {x: 432, y: -29}
+      - {x: 427, y: -33}
+      - {x: 427, y: -38}
+      - {x: 428, y: -39}
+      - {x: 433, y: -39}
+      - {x: 437, y: -33}
+      - {x: 437, y: -30}
+      - {x: 435, y: -29}
+    - - {x: -483, y: 109}
+      - {x: -483, y: 14}
+      - {x: -446, y: 7}
+      - {x: -229, y: 7}
+      - {x: -227, y: 9}
+      - {x: -227, y: 109}
+    - - {x: -157, y: 88}
+      - {x: -165, y: 83}
+      - {x: -168, y: 55}
+      - {x: -168, y: 33}
+      - {x: -72, y: 33}
+      - {x: -72, y: 73}
+      - {x: -79, y: 88}
+    - - {x: 62, y: 84}
+      - {x: 59, y: 87}
+      - {x: -23, y: 87}
+      - {x: -23, y: 62}
+      - {x: -17, y: 39}
+      - {x: 52, y: 39}
+      - {x: 57, y: 44}
+      - {x: 62, y: 72}
+    - - {x: 312, y: 87}
+      - {x: 239, y: 87}
+      - {x: 235, y: 58}
+      - {x: 235, y: 42}
+      - {x: 239, y: 39}
+      - {x: 318, y: 39}
+      - {x: 320, y: 43}
+      - {x: 320, y: 64}
+      - {x: 315, y: 82}
+    - - {x: 109, y: 88}
+      - {x: 107, y: 86}
+      - {x: 107, y: 53}
+      - {x: 112, y: 40}
+      - {x: 186, y: 40}
+      - {x: 192, y: 45}
+      - {x: 192, y: 84}
+      - {x: 191, y: 88}
+    - - {x: -491, y: 205}
+      - {x: -491, y: 132}
+      - {x: -104, y: 132}
+      - {x: -104, y: 201}
+      - {x: -119, y: 205}
+    - - {x: 173, y: 183}
+      - {x: -55, y: 183}
+      - {x: -55, y: 142}
+      - {x: 203, y: 142}
+      - {x: 210, y: 164}
+      - {x: 210, y: 181}
+      - {x: 205, y: 182}
+    - - {x: -173, y: 327}
+      - {x: -493, y: 327}
+      - {x: -493, y: 225}
+      - {x: -203, y: 225}
+      - {x: -179, y: 241}
+      - {x: -168, y: 299}
+      - {x: -168, y: 323}
+    - - {x: 132, y: 303}
+      - {x: 132, y: 278}
+      - {x: 138, y: 255}
+      - {x: 260, y: 255}
+      - {x: 266, y: 275}
+      - {x: 266, y: 300}
+      - {x: 264, y: 303}
+    - - {x: -96, y: 304}
+      - {x: -104, y: 293}
+      - {x: -104, y: 256}
+      - {x: 71, y: 256}
+      - {x: 72, y: 260}
+      - {x: 72, y: 303}
+      - {x: 71, y: 304}
+    - - {x: -496, y: 502}
+      - {x: -496, y: 360}
+      - {x: 207, y: 360}
+      - {x: 240, y: 423}
+      - {x: 240, y: 500}
+      - {x: 238, y: 502}
+    - - {x: 407, y: 490}
+      - {x: 368, y: 463}
+      - {x: 368, y: 386}
+      - {x: 370, y: 377}
+      - {x: 415, y: 361}
+      - {x: 454, y: 361}
+      - {x: 487, y: 374}
+      - {x: 487, y: 479}
+      - {x: 448, y: 490}
+    - - {x: 286, y: 409}
+      - {x: 286, y: 379}
+      - {x: 319, y: 379}
+      - {x: 319, y: 407}
+      - {x: 316, y: 409}
+    - - {x: 289, y: 488}
+      - {x: 288, y: 486}
+      - {x: 288, y: 463}
+      - {x: 291, y: 454}
+      - {x: 311, y: 454}
+      - {x: 321, y: 462}
+      - {x: 321, y: 486}
+      - {x: 315, y: 488}
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -28,6 +28,7 @@ public class PlayerDataUIValue : MonoBehaviour
 
     public RectTransform[] RewardsPanelInPanelShowReward;
     public Image[] RewardsImageInPanelShowReward;
+    public Sprite[] RewardsSprite;
 
     public bool isLevelUp = false;
 
@@ -50,8 +51,8 @@ public class PlayerDataUIValue : MonoBehaviour
             PanelMain.gameObject.SetActive(true);
             PanelShowReward.gameObject.SetActive(true);
             PanelShowSummary.gameObject.SetActive(true);
-            ButtonStart.gameObject.SetActive(true);
-            ButtonMainMenu.gameObject.SetActive(true);
+            ButtonStart.gameObject.SetActive(false);
+            ButtonMainMenu.gameObject.SetActive(false);
 
             if (isLevelUp == true)
             {
@@ -110,12 +111,14 @@ public class PlayerDataUIValue : MonoBehaviour
         TextExpPanelReward.text = "0";
         TextMoneyPanelReward.text = "0";
 
-        for (int i = 0; i < RewardsPanelInPanelShowReward.Length; i++)
+        for (int i = 0; i < RewardsPanelInPanelShowReward.Length - 3; i++)
         {
             Color ColorImage = RewardsImageInPanelShowReward[i].color;
             ColorImage.a = 0f;
             RewardsImageInPanelShowReward[i].color = ColorImage;
+            RewardsImageInPanelShowReward[i+3].color = ColorImage;
             RewardsPanelInPanelShowReward[i].DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.01f);
+            RewardsPanelInPanelShowReward[i+3].DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.01f);
         }
 
         TextLevelUp.color = new Color(1f, 1f, 1f, 0f);
@@ -176,16 +179,22 @@ public class PlayerDataUIValue : MonoBehaviour
         j = 0;
         l = 0;
 
-        for (int i = 0; i < RewardsPanelInPanelShowReward.Length; i++)
+        for (int i = 0; i < RewardsPanelInPanelShowReward.Length - 3; i++)
         {
-            RewardsImageInPanelShowReward[i].color = Random.ColorHSV();
-            RewardsPanelInPanelShowReward[i].DOScale(new Vector3(1, 1, 1), 1.5f);
+            RewardsImageInPanelShowReward[i].color = Color.white; //Random.ColorHSV();
+            RewardsImageInPanelShowReward[i+3].color = Color.white; //Random.ColorHSV();
+            RewardsImageInPanelShowReward[i + 3].sprite = RewardsSprite[Random.Range(0, RewardsSprite.Length)];
+            RewardsPanelInPanelShowReward[i].DOScale(new Vector3(0.7f, 0.7f, 0.7f), 1.5f);
+            RewardsPanelInPanelShowReward[i + 3].DOScale(new Vector3(0.52f, 0.5f, 0.5f), 1.5f);
 
             for (int k = 0; k < 10; k++)
             {
                 Color ColorImage = RewardsImageInPanelShowReward[i].color;
+                Color ColorImage1 = RewardsImageInPanelShowReward[i+3].color;
                 ColorImage.a = k * 0.1f;
+                ColorImage1.a = k * 0.1f;
                 RewardsImageInPanelShowReward[i].color = ColorImage;
+                RewardsImageInPanelShowReward[i+3].color = ColorImage1;
                 yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(1.0f);
