@@ -19,18 +19,25 @@ public class AI_Agent_Moving1 : MonoBehaviour
     public float jumpPower;
     public float jumpPowerForward;
 
+    public float agentTimerWait = 4;
+
     public bool isGrounded;
     public bool needJumping;
     public bool isStartGame;
     public bool wasJump;
 
+    public bool isChangedFromUntagged = false;
+    public Animator animator;
+
     public void Start()
     {
+        animator = GetComponent<Animator>();
+        isChangedFromUntagged = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
         cubesCountOld = level1mg.cubes.Count;
         isStartGame = false;
         wasJump = false;
-        Invoke("OnAwakeAgent", 2f);
+        Invoke("OnAwakeAgent", agentTimerWait);
     }
 
     public void OnAwakeAgent()
@@ -108,6 +115,15 @@ public class AI_Agent_Moving1 : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             needJumping = false;
+        }
+    }
+
+    public void Update()
+    {
+        if ((this.gameObject.tag == "Untagged") && (isChangedFromUntagged == false))
+        {
+            isChangedFromUntagged = true;
+            StartCoroutine(VictoryDance());
         }
     }
 
@@ -189,5 +205,16 @@ public class AI_Agent_Moving1 : MonoBehaviour
         }
         else
             return;
+    }
+
+    IEnumerator VictoryDance()
+    {
+        animator.SetBool("IsFinished", true);
+        //animator.SetFloat("VictoryDance", (int)Random.Range(0, 3));
+        yield return new WaitForSeconds(2f);
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent.enabled = false;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        yield return null;
     }
 }

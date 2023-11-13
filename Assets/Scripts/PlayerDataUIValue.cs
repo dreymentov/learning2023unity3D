@@ -48,6 +48,8 @@ public class PlayerDataUIValue : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Lobby")
         {
+            Cursor.lockState = CursorLockMode.None;
+
             PanelMain.gameObject.SetActive(true);
             PanelShowReward.gameObject.SetActive(true);
             PanelShowSummary.gameObject.SetActive(true);
@@ -73,10 +75,24 @@ public class PlayerDataUIValue : MonoBehaviour
                     }
                 }
             }
+            else if (isLevelUp == false)
+            {
+                if (PanelLevelUp.gameObject.activeSelf == true)
+                {
+                    if (Input.GetKeyUp("escape"))
+                    {
+                        PanelLevelUp.gameObject.SetActive(false);
+                        PanelLevelUpBackground.gameObject.SetActive(false);
+                    }
+                }
+            }
+
         }
 
         if (SceneManager.GetActiveScene().name == "Menu")
         {
+            Cursor.lockState = CursorLockMode.None;
+
             PanelMain.gameObject.SetActive(true);
             PanelShowReward.gameObject.SetActive(false);
             PanelShowSummary.gameObject.SetActive(false);
@@ -86,15 +102,18 @@ public class PlayerDataUIValue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level1")
         {
+            Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
 
         if (SceneManager.GetActiveScene().name == "Level2")
         {
+            Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
         if (SceneManager.GetActiveScene().name == "Level3")
         {
+            Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
     }
@@ -251,7 +270,12 @@ public class PlayerDataUIValue : MonoBehaviour
                 PanelLevelUp.DOScale(new Vector3(1f, 1f, 1f), 2f);
                 init.PlayerData.PlayerMoney += 500;
                 TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
+                yield return new WaitForSeconds(5f);
+                PanelLevelUp.DOScale(new Vector3(0f, 0f, 0f), 2f);
                 yield return new WaitForSeconds(2f);
+                isLevelUp = false;
+                PanelLevelUp.gameObject.SetActive(false);
+                PanelLevelUpBackground.gameObject.SetActive(false); 
             }
 
             init.PlayerData.PlayerExperience = (int)Slider.value;
