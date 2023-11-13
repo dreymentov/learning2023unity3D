@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using TMPro;
-using CMF;
 
 public class Level3Managment : MonoBehaviour
 {
@@ -21,8 +20,8 @@ public class Level3Managment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpeedMove = playerGO.GetComponent<AdvancedWalkerController>().movementSpeed;
-        playerGO.GetComponent<AdvancedWalkerController>().movementSpeed = 0;
+        SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
+        playerGO.GetComponent<PlayerControlls>().speed = 0;
 
         panelLevelText.text = "3";
         panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0f);
@@ -76,7 +75,7 @@ public class Level3Managment : MonoBehaviour
 
         panelLevel.gameObject.SetActive(false);
         panelLevelStarted.gameObject.SetActive(true);
-        playerGO.GetComponent<AdvancedWalkerController>().movementSpeed = SpeedMove;
+        playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
         yield break;
     }
 }

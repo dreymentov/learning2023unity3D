@@ -17,6 +17,8 @@ public class PlayerControlls : MonoBehaviour
     public Vector2 move;
     public Vector2 look;
 
+    //public Vector3 velocityChange;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();

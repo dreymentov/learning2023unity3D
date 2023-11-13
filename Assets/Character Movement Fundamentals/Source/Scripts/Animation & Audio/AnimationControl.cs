@@ -7,7 +7,7 @@ namespace CMF
 	//This script controls the character's animation by passing velocity values and other information ('isGrounded') to an animator component;
 	public class AnimationControl : MonoBehaviour {
 
-		public Controller controller;
+		public PlayerControlls playerControll;
 		public Animator animator;
 		public Transform animatorTransform;
 		public Transform tr;
@@ -24,71 +24,21 @@ namespace CMF
 
 		//Setup;
 		void Awake () {
-			controller = GetComponent<Controller>();
+			playerControll = GetComponent<PlayerControlls>();
 			animator = GetComponentInChildren<Animator>();
 			animatorTransform = animator.transform;
 
 			tr = transform;
 		}
 
-		//OnEnable;
-		void OnEnable()
-		{
-			//Connect events to controller events;
-			controller.OnLand += OnLand;
-			controller.OnJump += OnJump;
-		}
-
-		//OnDisable;
-		void OnDisable()
-		{
-			//Disconnect events to prevent calls to disabled gameobjects;
-			controller.OnLand -= OnLand;
-			controller.OnJump -= OnJump;
-		}
-		
 		//Update;
 		void Update () {
-
-			//Get controller velocity;
-			Vector3 _velocity = controller.GetVelocity();
-
-			//Split up velocity;
-			Vector3 _horizontalVelocity = VectorMath.RemoveDotVector(_velocity, tr.up);
-			Vector3 _verticalVelocity = _velocity - _horizontalVelocity;
-
-			//Smooth horizontal velocity for fluid animation;
-			_horizontalVelocity = Vector3.Lerp(oldMovementVelocity, _horizontalVelocity, smoothingFactor * Time.deltaTime);
-			oldMovementVelocity = _horizontalVelocity;
-
-			animator.SetFloat("VerticalSpeed", _verticalVelocity.magnitude * VectorMath.GetDotProduct(_verticalVelocity.normalized, tr.up));
-			animator.SetFloat("HorizontalSpeed", _horizontalVelocity.magnitude);
-
-			//If animator is strafing, split up horizontal velocity;
-			if(useStrafeAnimations)
-			{
-				Vector3 _localVelocity = animatorTransform.InverseTransformVector(_horizontalVelocity);
-				animator.SetFloat("ForwardSpeed", _localVelocity.z);
-				animator.SetFloat("StrafeSpeed", _localVelocity.x);
-			}
-
-			//Pass values to animator;
-			animator.SetBool("IsGrounded", controller.IsGrounded());
-			animator.SetBool("IsStrafing", useStrafeAnimations);
-		}
-
-		void OnLand(Vector3 _v)
-		{
-			//Only trigger animation if downward velocity exceeds threshold;
-			if(VectorMath.GetDotProduct(_v, tr.up) > -landVelocityThreshold)
-				return;
-
-			animator.SetTrigger("OnLand");
-		}
-
-		void OnJump(Vector3 _v)
-		{
-			
+			//animator.SetFloat("VerticalSpeed", playerControll.velocityChange.z);
+			//animator.SetFloat("HorizontalSpeed", playerControll.velocityChange.x);
+			animator.SetFloat("ForwardSpeed", playerControll.speed * playerControll.move.y);
+			animator.SetFloat("StrafeSpeed", playerControll.speed * playerControll.move.x);
+			animator.SetBool("IsGrounded", playerControll.grounded);
+			//animator.SetBool("IsStrafing", );
 		}
 	}
 }

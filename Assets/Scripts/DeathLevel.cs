@@ -56,10 +56,7 @@ public class DeathLevel : MonoBehaviour
             if (PlayerDataUIValue == null)
             {
                 PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-            }
 
-            if(PlayerDataUIValue != null)
-            {
                 int j = 0;
 
                 for (int i = 0; i < GOlost; i++)
@@ -69,10 +66,14 @@ public class DeathLevel : MonoBehaviour
                         j++;
                     }
                 }
-
-                PlayerDataUIValue.PlaceInLevel = 4 - j;
+                PlayerDataUIValue.PlaceInLevel = j + 1;
+                StartCoroutine(EndLevelDeath());
             }
-            SceneManager.LoadScene("Lobby");
+
+            if(PlayerDataUIValue != null)
+            {
+                StartCoroutine(EndLevelDeath());
+            }
         }
     }
 
@@ -105,12 +106,40 @@ public class DeathLevel : MonoBehaviour
 
     IEnumerator BotsLost()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.2f);
         gameBotObjectsLost = GameObject.FindGameObjectsWithTag("Bot");
 
         GOlost = gameBotObjectsLost.Length;
         TextLost.text = "Оставшиеся игроки: " + GOlost + "/" + gameBotObjectsLost.Length;
 
         yield break;
+    }
+
+    IEnumerator EndLevelDeath()
+    {
+        int j = 0;
+
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            StartCoroutine(CheckGO());
+
+            for (int i = 0; i < GOlost; i++)
+            {
+                if (gameBotObjects[i] == null)
+                {
+                    j++;
+                }
+            }
+
+            PlayerDataUIValue.PlaceInLevel = GOlost - j + 1;
+        }
+        else
+        {
+            j = GOlost;
+            PlayerDataUIValue.PlaceInLevel = j + 1;
+        }
+
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Lobby");
     }
 }
