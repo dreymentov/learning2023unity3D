@@ -13,7 +13,10 @@ public class GroundCheck : MonoBehaviour
             return;
         }
 
-        playerControlls.SetGrounded(true);
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            playerControlls.SetGrounded(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -33,6 +36,9 @@ public class GroundCheck : MonoBehaviour
             return;
         }
 
-        playerControlls.SetGrounded(true);
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            playerControlls.SetGrounded(true);
+        }
     }
 }

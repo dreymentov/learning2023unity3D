@@ -13,15 +13,30 @@ public class Level3Managment : MonoBehaviour
     public RectTransform panelLevelStarted;
     public TMP_Text panelLevelText;
 
+    public RectTransform panelMobile;
+
     public GameObject playerGO;
+
+    public PlayerDataUIValue PlayerDataUIValue;
 
     public float SpeedMove;
 
     // Start is called before the first frame update
     void Start()
     {
+        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
+
+        if (PlayerDataUIValue.init.PlayerData.mobile)
+        {
+            panelMobile.gameObject.SetActive(true);
+        }
+        else
+        {
+            panelMobile.gameObject.SetActive(false);
+        }
 
         panelLevelText.text = "3";
         panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0f);

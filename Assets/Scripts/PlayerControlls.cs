@@ -2,20 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PlayerControlls : MonoBehaviour
 {
     public Rigidbody rb;
     public GameObject cameraHolder;
+    public GameObject PlayerRotateHolder;
     public float speed;
     public float sensitivity;
     public float lookRotation;
     public float maxForce;
     public float jumpForce;
     public bool grounded;
+    public bool isMobile;
+    public bool isMainMenuOrLobby;
 
     public Vector2 move;
     public Vector2 look;
+
+    public Vector2 mobileMove;
+
+    public PlayerDataUIValue PlayerDataUIValue;
+
+    public FixedJoystick Joystick;
 
     //public Vector3 velocityChange;
 
@@ -37,25 +47,41 @@ public class PlayerControlls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Joystick = FindObjectOfType<FixedJoystick>();
+        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        isMobile = PlayerDataUIValue.init.PlayerData.mobile;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if(isMainMenuOrLobby == false)
+        {
+            if (isMobile == false)
+            {
+                Move();
+            }
+            else
+            {
+                MoveMobile();
+            }
+        } 
     }
 
     private void LateUpdate()
     {
-        if(cameraHolder != null)
+        if (isMobile == false)
         {
             Look();
+        }
+        else
+        {
+            return;
         }
     }
 
@@ -65,6 +91,17 @@ public class PlayerControlls : MonoBehaviour
         Vector3 currentVelocity = rb.velocity;
         Vector3 targetVelocity = new Vector3(move.x, 0, move.y);
         targetVelocity = targetVelocity * speed;
+
+        if (move.y > -0.5f)
+        {
+            cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+        }
+        else if (move.y < -0.8f)
+        {
+            cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+            PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+        }
 
         //Align direction
         targetVelocity = transform.TransformDirection(targetVelocity);
@@ -77,6 +114,36 @@ public class PlayerControlls : MonoBehaviour
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
         rb.AddForce(velocityChange, ForceMode.VelocityChange);
+    }
+
+    public void MoveMobile()
+    {
+        Vector3 currentVelocity = rb.velocity;
+        Vector3 targetVelocity = new Vector3(Joystick.Horizontal, 0, Joystick.Vertical);
+        //targetVelocity = targetVelocity * speed;
+
+        if (isMobile == true)
+        {
+            if (Joystick.Vertical < -0.8f)
+            {
+                cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+                PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+            }
+            else if (Joystick.Vertical > -0.5f)
+            {
+                cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            }
+        }
+
+        targetVelocity = transform.TransformDirection(targetVelocity);
+
+        Vector3 velocityChange = (targetVelocity - currentVelocity);
+        velocityChange = new Vector3(velocityChange.x, 0, velocityChange.z);
+
+        Vector3.ClampMagnitude(velocityChange, maxForce);
+
+        rb.AddForce(velocityChange * speed, ForceMode.VelocityChange);
     }
 
     public void Look()

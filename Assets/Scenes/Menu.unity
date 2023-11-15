@@ -10181,6 +10181,7 @@ MonoBehaviour:
     PlayerMoney: 100
     PlayerHardMoney: 10
     PlayerCharIdCheck: 29
+    mobile: 0
     PlayerCharId: 000000000000000000000000000000000000000000000000000000000001
 --- !u!114 &893214237
 MonoBehaviour:
@@ -14450,7 +14451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 736842432555266140, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_Name
-      value: C05
+      value: PlayerMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539705833119717668, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
+      propertyPath: isMainMenuOrLobby
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 511288111, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}

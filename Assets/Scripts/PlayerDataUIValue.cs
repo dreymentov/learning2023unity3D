@@ -102,18 +102,18 @@ public class PlayerDataUIValue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level1")
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
 
         if (SceneManager.GetActiveScene().name == "Level2")
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
         if (SceneManager.GetActiveScene().name == "Level3")
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
     }

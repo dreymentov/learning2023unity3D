@@ -28,15 +28,23 @@ namespace CMF
 			animator = GetComponentInChildren<Animator>();
 			animatorTransform = animator.transform;
 
-			tr = transform;
+			//tr = transform;
 		}
 
 		//Update;
 		void Update () {
 			//animator.SetFloat("VerticalSpeed", playerControll.velocityChange.z);
 			//animator.SetFloat("HorizontalSpeed", playerControll.velocityChange.x);
-			animator.SetFloat("ForwardSpeed", playerControll.speed * playerControll.move.y);
-			animator.SetFloat("StrafeSpeed", playerControll.speed * playerControll.move.x);
+			if(playerControll.isMobile == false)
+            {
+				animator.SetFloat("ForwardSpeed", playerControll.speed * playerControll.move.y);
+				animator.SetFloat("StrafeSpeed", playerControll.speed * playerControll.move.x);
+			}
+            else
+            {
+				animator.SetFloat("ForwardSpeed", playerControll.speed * playerControll.Joystick.Vertical);
+				animator.SetFloat("StrafeSpeed", playerControll.speed * playerControll.Joystick.Horizontal);
+			}
 			animator.SetBool("IsGrounded", playerControll.grounded);
 			//animator.SetBool("IsStrafing", );
 		}

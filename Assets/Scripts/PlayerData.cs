@@ -12,6 +12,8 @@ public class PlayerData
     public int PlayerHardMoney = 10;
     public int PlayerCharIdCheck = 29;
 
+    public bool mobile;
+
     public bool[] PlayerCharId = new bool[30];
 }
 

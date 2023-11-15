@@ -9,6 +9,7 @@ TagManager:
   - Bot
   - Death
   - LobbyUI
+  - IsNotGround
   layers:
   - Default
   - TransparentFX

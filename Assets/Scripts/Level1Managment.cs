@@ -47,11 +47,14 @@ public class Level1Managment : MonoBehaviour
     public RectTransform panelLevel;
     public RectTransform panelLevelStarted;
     public TMP_Text panelLevelText;
+
+    public RectTransform panelMobile;
     void Start()
     {
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
 
+        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
 
         DeathLevel = FindObjectOfType<DeathLevel>();
         cyclingLifeCubes = new int[cubes.Count];
@@ -70,6 +73,15 @@ public class Level1Managment : MonoBehaviour
 
         startedStop = false;
         isStartGame = true;
+
+        if(PlayerDataUIValue.init.PlayerData.mobile)
+        {
+            panelMobile.gameObject.SetActive(true);
+        }
+        else
+        {
+            panelMobile.gameObject.SetActive(false);
+        }
 
         panelLevelText.text = "3";
         panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0f);
