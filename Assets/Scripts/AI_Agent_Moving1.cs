@@ -31,6 +31,11 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     public void Start()
     {
+        if(level1mg != null)
+        {
+            AI_Agent_Moving1 agentMove1 = this.GetComponent<AI_Agent_Moving1>();
+            Destroy(agentMove1);
+        }
         animator = GetComponent<Animator>();
         isChangedFromUntagged = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -42,6 +47,11 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     public void OnAwakeAgent()
     {
+        if (level1mg != null)
+        {
+            AI_Agent_Moving1 agentMove1 = this.GetComponent<AI_Agent_Moving1>();
+            Destroy(agentMove1);
+        }
         agent = GetComponent<NavMeshAgent>();
         goal = level1mg.cubes[Random.Range(0, level1mg.cubes.Count)].transform;
         agent.destination = goal.position;

@@ -14,6 +14,7 @@ public class PlayerControlls : MonoBehaviour
     public float lookRotation;
     public float maxForce;
     public float jumpForce;
+    public float powerKick;
     public bool grounded;
     public bool isMobile;
     public bool isMainMenuOrLobby;
@@ -73,7 +74,7 @@ public class PlayerControlls : MonoBehaviour
         } 
     }
 
-    private void LateUpdate()
+    /*private void LateUpdate()
     {
         if (isMobile == false)
         {
@@ -83,7 +84,7 @@ public class PlayerControlls : MonoBehaviour
         {
             return;
         }
-    }
+    }*/
 
     public void Move()
     {
@@ -94,14 +95,27 @@ public class PlayerControlls : MonoBehaviour
 
         if (move.y > -0.5f)
         {
-            cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-            PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y, 0), 0.5f);
         }
         else if (move.y < -0.8f)
         {
-            cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
-            PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+            //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+            //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+            PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y - 180, 0), 0.5f);
         }
+
+        if(move.x > 0)
+        {
+            PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y + 90, 0), 0.5f);
+        }
+        else if(move.x < 0)
+        {
+            PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y - 90, 0), 0.5f);
+        }
+
+        //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 
         //Align direction
         targetVelocity = transform.TransformDirection(targetVelocity);
@@ -124,16 +138,30 @@ public class PlayerControlls : MonoBehaviour
 
         if (isMobile == true)
         {
+
             if (Joystick.Vertical < -0.8f)
             {
-                cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
-                PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+                //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+                //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+                PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y - 180, 0), 0.5f);
             }
             else if (Joystick.Vertical > -0.5f)
             {
-                cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-                PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y, 0), 0.5f);
             }
+
+            if (Joystick.Horizontal > 0)
+            {
+                PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y + 90, 0), 0.5f);
+            }
+            else if (Joystick.Horizontal < 0)
+            {
+                PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y - 90, 0), 0.5f);
+            }
+
+            //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
         }
 
         targetVelocity = transform.TransformDirection(targetVelocity);
@@ -172,4 +200,26 @@ public class PlayerControlls : MonoBehaviour
     {
         grounded = state;
     }
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
+        {
+            Vector3 KickPower = Vector3.zero;
+            KickPower = Vector3.back * powerKick;
+            rb.AddForce(KickPower, ForceMode.VelocityChange);
+            Debug.Log(this + " kicked in stay");
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
+        {
+            Vector3 KickPower = Vector3.zero;
+            KickPower = -Vector3.back * powerKick;
+            rb.AddForce(KickPower, ForceMode.VelocityChange);
+            Debug.Log(this + " kicked in stay");
+        }
+    }*/
 }

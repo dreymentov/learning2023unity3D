@@ -109,19 +109,27 @@ public class PlayerUIControl : MonoBehaviour
         panel.gameObject.SetActive(false);
         isPressed = false;
         string Level;
-        int ii = Random.Range(0, 100);
+        int ii = Random.Range(0, 150);
 
-        if (ii > 65)
+        if (ii > 120)
         {
             Level = "Level1";
         }
-        else if(ii > 32 && ii <= 65)
+        else if(ii > 90 && ii <= 120)
         {
             Level = "Level2";
         }
-        else
+        else if (ii > 60 && ii <= 90)
         {
             Level = "Level3";
+        }
+        else if (ii > 30 && ii <= 60)
+        {
+            Level = "Level4";
+        }
+        else
+        {
+            Level = "Level5";
         }
         isPressed = false;
         StopAllCoroutines();
@@ -132,7 +140,8 @@ public class PlayerUIControl : MonoBehaviour
             imageTransform.transform.position = imagesList[i].transform.position;
             i++;
         }
-        SceneManager.LoadScene(Level);
+        //SceneManager.LoadScene(Level);
+        SceneManager.LoadScene("Level4");
         yield return null;
     }
 

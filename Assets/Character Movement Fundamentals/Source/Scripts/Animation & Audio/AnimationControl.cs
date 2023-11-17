@@ -22,6 +22,8 @@ namespace CMF
 		private float smoothingFactor = 40f;
 		Vector3 oldMovementVelocity = Vector3.zero;
 
+		public bool isMoving;
+
 		//Setup;
 		void Awake () {
 			playerControll = GetComponent<PlayerControlls>();
@@ -35,7 +37,7 @@ namespace CMF
 		void Update () {
 			//animator.SetFloat("VerticalSpeed", playerControll.velocityChange.z);
 			//animator.SetFloat("HorizontalSpeed", playerControll.velocityChange.x);
-			if(playerControll.isMobile == false)
+			/*if(playerControll.isMobile == false)
             {
 				animator.SetFloat("ForwardSpeed", playerControll.speed * playerControll.move.y);
 				animator.SetFloat("StrafeSpeed", playerControll.speed * playerControll.move.x);
@@ -44,7 +46,34 @@ namespace CMF
             {
 				animator.SetFloat("ForwardSpeed", playerControll.speed * playerControll.Joystick.Vertical);
 				animator.SetFloat("StrafeSpeed", playerControll.speed * playerControll.Joystick.Horizontal);
+			}*/
+
+			if(playerControll.isMobile == false)
+            {
+				if ((playerControll.move.x != 0) || (playerControll.move.y != 0))
+				{
+					isMoving = true;
+				}
+                else
+                {
+					isMoving = false;
+                }
+				animator.SetBool("IsMoving", isMoving);
 			}
+            else
+            {
+				if ((playerControll.Joystick.Horizontal != 0) || (playerControll.speed * playerControll.Joystick.Vertical != 0))
+				{
+					isMoving = true;
+				}
+				else
+				{
+					isMoving = false;
+				}
+				animator.SetBool("IsMoving", isMoving);
+			}
+
+
 			animator.SetBool("IsGrounded", playerControll.grounded);
 			//animator.SetBool("IsStrafing", );
 		}

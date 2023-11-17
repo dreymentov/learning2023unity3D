@@ -116,6 +116,16 @@ public class PlayerDataUIValue : MonoBehaviour
             //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
+        if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            //Cursor.lockState = CursorLockMode.Locked;
+            PanelMain.gameObject.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name == "Level5")
+        {
+            //Cursor.lockState = CursorLockMode.Locked;
+            PanelMain.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator ResultCount()
