@@ -140,8 +140,8 @@ public class PlayerUIControl : MonoBehaviour
             imageTransform.transform.position = imagesList[i].transform.position;
             i++;
         }
-        //SceneManager.LoadScene(Level);
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene(Level);
+        //SceneManager.LoadScene("Level5");
         yield return null;
     }
 

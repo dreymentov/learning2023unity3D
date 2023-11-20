@@ -18,17 +18,22 @@ public class DeathLevel : MonoBehaviour
 
     public int BotsNumber;
 
+    public Level5Managment L5M;
+
     void Start()
     {
         BotsNumber = Random.Range(0, 10);
 
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        L5M = FindObjectOfType<Level5Managment>();
         gameBotObjects = GameObject.FindGameObjectsWithTag("Bot");
         
         for(int i = 0; i < BotsNumber; i++)
         {
             Destroy(gameBotObjects[Random.Range(0, gameBotObjects.Length - 1)]);
         }
+
+        StartCoroutine(CheckGO());
 
         StartCoroutine(BotsLost());
     }
@@ -100,7 +105,8 @@ public class DeathLevel : MonoBehaviour
 
         int jj = GOlost - j;
         TextLost.text = "Оставшиеся игроки: " + jj + "/" + gameBotObjectsLost.Length;
-
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(CheckGO());
         yield break;
     }
 
@@ -108,6 +114,11 @@ public class DeathLevel : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         gameBotObjectsLost = GameObject.FindGameObjectsWithTag("Bot");
+
+        if(L5M != null)
+        {
+            L5M.gameBotObjects = gameBotObjectsLost;
+        }
 
         GOlost = gameBotObjectsLost.Length;
         TextLost.text = "Оставшиеся игроки: " + GOlost + "/" + gameBotObjectsLost.Length;
@@ -119,7 +130,7 @@ public class DeathLevel : MonoBehaviour
     {
         int j = 0;
 
-        if (SceneManager.GetActiveScene().name == "Level1")
+        if ((SceneManager.GetActiveScene().name == "Level1") || (SceneManager.GetActiveScene().name == "Level5"))
         {
             StartCoroutine(CheckGO());
 

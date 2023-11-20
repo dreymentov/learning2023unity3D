@@ -31,6 +31,8 @@ public class Level4Managment : MonoBehaviour
     public GameObject[] Obstacles4;
     public GameObject[] Obstacles5;
 
+    public float intervalFinalObstacles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -200,55 +202,78 @@ public class Level4Managment : MonoBehaviour
         FinalObstacle.transform.DOLocalMoveZ(0.75f, 10f);
         yield return new WaitForSeconds(10f);
 
-        Obstacles[0].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[0].transform.DOLocalMoveZ(1.5f, 2f);
-        yield return new WaitForSeconds(2f);
-        Obstacles[0].gameObject.transform.localPosition = Vector3.zero;
-        Obstacles[0].SetActive(false);
+        StartCoroutine(StartObst1());
+        yield return new WaitForSeconds(intervalFinalObstacles);
+        StartCoroutine(StartObst2());
+        yield return new WaitForSeconds(intervalFinalObstacles);
+        StartCoroutine(StartObst3());
+        yield return new WaitForSeconds(intervalFinalObstacles);
+        StartCoroutine(StartObst4());
+        yield return new WaitForSeconds(intervalFinalObstacles);
+        StartCoroutine(StartObst5());
+        yield return new WaitForSeconds(6f);
 
-        Obstacles[1].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[1].transform.DOLocalMoveZ(1.5f, 2f);
-        yield return new WaitForSeconds(2f);
-        Obstacles[1].gameObject.transform.localPosition = Vector3.zero;
-        Obstacles[1].SetActive(false);
-
-        Obstacles[2].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[2].transform.DOLocalMoveZ(1.5f, 2f);
-        yield return new WaitForSeconds(2f);
-        Obstacles[2].gameObject.transform.localPosition = Vector3.zero;
-        Obstacles[2].SetActive(false);
-
-        Obstacles[3].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[3].transform.DOLocalMoveZ(1.5f, 2f);
-        yield return new WaitForSeconds(2f);
-        Obstacles[3].gameObject.transform.localPosition = Vector3.zero;
-        Obstacles[3].SetActive(false);
-
-        Obstacles[4].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[4].transform.DOLocalMoveZ(1.5f, 2f);
-        yield return new WaitForSeconds(2f);
-        Obstacles[4].gameObject.transform.localPosition = Vector3.zero;
-        Obstacles[4].SetActive(false);
-
-        Obstacles[5].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[5].transform.DOLocalMoveZ(1.5f, 2f);
-        yield return new WaitForSeconds(2f);
-        Obstacles[5].gameObject.transform.localPosition = Vector3.zero;
-        Obstacles[5].SetActive(false);
-
-        Obstacles[6].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[6].transform.DOLocalMoveZ(1.5f, 2f);
-        yield return new WaitForSeconds(2f);
-        Obstacles[6].gameObject.transform.localPosition = Vector3.zero;
-        Obstacles[6].SetActive(false);
+        if (PlayerDataUIValue != null)
+        {
+            PlayerDataUIValue.PlaceInLevel = 1;
+        }
+        SceneManager.LoadScene("Lobby");
 
         yield break;
     }
+
+    IEnumerator StartObst1()
+    {
+        Obstacles1[0].SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles1[0].transform.DOLocalMoveZ(1.5f, 4f);
+        yield return new WaitForSeconds(4f);
+        Obstacles1[0].gameObject.transform.localPosition = Vector3.zero;
+        Obstacles1[0].SetActive(false);
+        yield break;
+    }
+
+    IEnumerator StartObst2()
+    {
+        Obstacles2[0].SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles2[0].transform.DOLocalMoveZ(1.5f, 4f);
+        yield return new WaitForSeconds(4f);
+        Obstacles2[0].gameObject.transform.localPosition = Vector3.zero;
+        Obstacles2[0].SetActive(false);
+        yield break;
+    }
+
+    IEnumerator StartObst3()
+    {
+        Obstacles3[0].SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles3[0].transform.DOLocalMoveZ(1.5f, 4f);
+        yield return new WaitForSeconds(4f);
+        Obstacles3[0].gameObject.transform.localPosition = Vector3.zero;
+        Obstacles3[0].SetActive(false);
+        yield break;
+    }
+
+    IEnumerator StartObst4()
+    {
+        Obstacles4[0].SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles4[0].transform.DOLocalMoveZ(1.5f, 4f);
+        yield return new WaitForSeconds(4f);
+        Obstacles4[0].gameObject.transform.localPosition = Vector3.zero;
+        Obstacles4[0].SetActive(false);
+        yield break;
+    }
+    IEnumerator StartObst5()
+    {
+        Obstacles5[0].SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles5[0].transform.DOLocalMoveZ(1.5f, 4f);
+        yield return new WaitForSeconds(4f);
+        Obstacles5[0].gameObject.transform.localPosition = Vector3.zero;
+        Obstacles5[0].SetActive(false);
+        yield break;
+    }
+
 }

@@ -7779,7 +7779,7 @@ MonoBehaviour:
   cubesCountOld: 0
   changeValue: 0
   changeValueJump: 0
-  jumpPower: 2
+  jumpPower: 4
   jumpPowerForward: 5
   agentTimerWait: 5
   isGrounded: 0
