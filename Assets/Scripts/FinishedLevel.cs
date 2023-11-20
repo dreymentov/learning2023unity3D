@@ -56,8 +56,9 @@ public class FinishedLevel : MonoBehaviour
             other.gameObject.tag = "Untagged";
 
             int j = gameObjectsInList.Count;
-            int jj = DeathLevel.gameBotObjectsLost.Length - j;
-            TextLost.text = "Оставшиеся игроки: " + jj + "/" + DeathLevel.gameBotObjectsLost.Length;
+            int jj = DeathLevel.gameBotObjectsLost.Length + 1 - j;
+            int jjj = DeathLevel.gameBotObjectsLost.Length + 1;
+            TextLost.text = "Оставшиеся игроки: " + jj + "/" + jjj;
         }
 
         else if (other.gameObject.CompareTag("Player"))

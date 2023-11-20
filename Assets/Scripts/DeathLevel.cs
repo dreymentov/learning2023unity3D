@@ -33,9 +33,9 @@ public class DeathLevel : MonoBehaviour
             Destroy(gameBotObjects[Random.Range(0, gameBotObjects.Length - 1)]);
         }
 
-        StartCoroutine(CheckGO());
-
         StartCoroutine(BotsLost());
+
+        StartCoroutine(CheckGO());
     }
 
     // Update is called once per frame
@@ -61,17 +61,6 @@ public class DeathLevel : MonoBehaviour
             if (PlayerDataUIValue == null)
             {
                 PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-
-                int j = 0;
-
-                for (int i = 0; i < GOlost; i++)
-                {
-                    if (gameBotObjects[i] == null)
-                    {
-                        j++;
-                    }
-                }
-                PlayerDataUIValue.PlaceInLevel = j + 1;
                 StartCoroutine(EndLevelDeath());
             }
 
@@ -93,21 +82,24 @@ public class DeathLevel : MonoBehaviour
 
     IEnumerator CheckGO()
     {
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(CheckGO());
+
         int j = 0;
 
-        for (int i = 0; i < GOlost; i++)
+        for (int i = 0; i <= gameBotObjectsLost.Length - 1; i++)
         {
-            if (gameBotObjectsLost[i] == null)
+            if (gameBotObjectsLost[i] != null)
             {
                 j++;
             }
         }
 
-        int jj = GOlost - j;
-        TextLost.text = "Оставшиеся игроки: " + jj + "/" + gameBotObjectsLost.Length;
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(CheckGO());
-        yield break;
+        int jj = j + 1;
+        int ii = GOlost;
+        TextLost.text = "Оставшиеся игроки: " + jj + "/" + ii;
+        
+        yield return null;
     }
 
     IEnumerator BotsLost()
@@ -120,8 +112,8 @@ public class DeathLevel : MonoBehaviour
             L5M.gameBotObjects = gameBotObjectsLost;
         }
 
-        GOlost = gameBotObjectsLost.Length;
-        TextLost.text = "Оставшиеся игроки: " + GOlost + "/" + gameBotObjectsLost.Length;
+        GOlost = gameBotObjectsLost.Length + 1;
+        TextLost.text = "Оставшиеся игроки: " + GOlost + "/" + GOlost;
 
         yield break;
     }
@@ -134,23 +126,22 @@ public class DeathLevel : MonoBehaviour
         {
             StartCoroutine(CheckGO());
 
-            for (int i = 0; i < GOlost; i++)
+            for (int i = 0; i <= gameBotObjectsLost.Length - 1; i++)
             {
-                if (gameBotObjects[i] == null)
+                if (gameBotObjectsLost[i] != null)
                 {
                     j++;
                 }
             }
 
-            PlayerDataUIValue.PlaceInLevel = GOlost - j + 1;
+            PlayerDataUIValue.PlaceInLevel = j + 1;
         }
         else
         {
-            j = GOlost;
-            PlayerDataUIValue.PlaceInLevel = j + 1;
+            PlayerDataUIValue.PlaceInLevel = GOlost;
         }
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         SceneManager.LoadScene("Lobby");
     }
 }
