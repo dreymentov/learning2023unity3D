@@ -28,9 +28,26 @@ public class PlayerUIControl : MonoBehaviour
     public bool isActivacted;
     public bool isPressed = false;
 
+    public PlayerData playerData;
+    public PlayerDataUIValue PlayerDataUIValue;
+
+    public GameObject ImageTextFirstGame;
+    public bool FirstTime;
 
     public void Start()
     {
+        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+
+        if (FirstTime == true)
+        {
+            ImageTextFirstGame.gameObject.SetActive(true);
+        }
+        else
+        {
+            ImageTextFirstGame.gameObject.SetActive(false);
+        }
+
         PosTf = new Vector2[imagesList.Length];
         for(int i = 0; i < imagesList.Length; i++)
         {
@@ -133,15 +150,25 @@ public class PlayerUIControl : MonoBehaviour
         }
         isPressed = false;
         StopAllCoroutines();
+        int i = 0;
         foreach (var imageTransform in imagesList)
         {
-            int i = 0;
             DOTween.Kill(imageTransform.transform);
             imageTransform.transform.position = imagesList[i].transform.position;
             i++;
         }
-        SceneManager.LoadScene(Level);
+        FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+        if (FirstTime == true)
+        {
+            SceneManager.LoadScene("Level2");
+        }
+        else
+        {
+            SceneManager.LoadScene(Level);
+        }
+
         //SceneManager.LoadScene("Level5");
+
         yield return null;
     }
 

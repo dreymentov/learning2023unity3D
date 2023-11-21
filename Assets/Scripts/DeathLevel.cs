@@ -138,7 +138,19 @@ public class DeathLevel : MonoBehaviour
         }
         else
         {
-            PlayerDataUIValue.PlaceInLevel = GOlost;
+            if (PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay == true)
+            {
+                PlayerDataUIValue.PlaceInLevel = GOlost;
+                Init init = PlayerDataUIValue.init;
+                init.PlayerData.PlayerFirstTimeNeedShop = true;
+
+                Debug.Log("œŒœ€“ ¿ »«Ã≈Õ»“‹ Õ¿ »—“»Õ”");
+                Debug.Log(init.PlayerData.PlayerFirstTimeNeedShop);
+            }
+            else
+            {
+                PlayerDataUIValue.PlaceInLevel = GOlost;
+            }
         }
 
         yield return new WaitForSeconds(0.2f);

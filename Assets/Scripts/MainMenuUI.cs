@@ -18,8 +18,37 @@ public class MainMenuUI : MonoBehaviour
     public GameObject PanelShop;
     public GameObject[] Scrolls;
 
+    public GameObject ImageTextFirstGame;
+    public GameObject ImageTextFirstGameShop;
+
+    public PlayerDataUIValue PlayerDataUIValue;
+    public bool FirstTime;
+    public bool FirstTimeShop;
+
     public void Start()
     {
+        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+        FirstTimeShop = PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop;
+
+        if ((FirstTime == true) && (FirstTimeShop == false))
+        {
+            ImageTextFirstGame.gameObject.SetActive(true);
+        }
+        else
+        {
+            ImageTextFirstGame.gameObject.SetActive(false);
+        }
+
+        if ((FirstTime == true) && (FirstTimeShop == true))
+        {
+            ImageTextFirstGameShop.gameObject.SetActive(true);
+        }
+        else
+        {
+            ImageTextFirstGameShop.gameObject.SetActive(false);
+        }
+
         ButtonMenu.SetActive(false);
         ButtonShop.SetActive(true);
         PanelShop.SetActive(false);
@@ -31,6 +60,17 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartShopping()
     {
+        if(ImageTextFirstGameShop.gameObject.active == true) 
+        {
+            ImageTextFirstGameShop.gameObject.SetActive(false);
+        }
+        
+        if ((FirstTime == true) && (FirstTimeShop == true))
+        {
+            PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay = false;
+            PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop = false;
+        }
+
         var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
         cam.Follow = CameraTargetTimeShop.transform;
         cam.LookAt = CameraTargetTimeShop.transform;

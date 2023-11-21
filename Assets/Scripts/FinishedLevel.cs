@@ -72,11 +72,38 @@ public class FinishedLevel : MonoBehaviour
                     if (PlayerDataUIValue == null)
                     {
                         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-                        PlayerDataUIValue.PlaceInLevel = i + 1;
+
+                        if(PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay == true)
+                        {
+                            Init init = PlayerDataUIValue.init;
+                            init.PlayerData.PlayerFirstTimeNeedShop = true;
+
+                            Debug.Log("œŒœ€“ ¿ »«Ã≈Õ»“‹ Õ¿ »—“»Õ”");
+                            Debug.Log(init.PlayerData.PlayerFirstTimeNeedShop);
+
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                        else
+                        {
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
                     }
                     else
                     {
-                        PlayerDataUIValue.PlaceInLevel = i + 1;
+                        if (PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay == true)
+                        {
+                            Init init = PlayerDataUIValue.init;
+                            init.PlayerData.PlayerFirstTimeNeedShop = true;
+
+                            Debug.Log("œŒœ€“ ¿ »«Ã≈Õ»“‹ Õ¿ »—“»Õ”");
+                            Debug.Log(init.PlayerData.PlayerFirstTimeNeedShop);
+
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                        else
+                        {
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
                     }
 
                     Finished = true;

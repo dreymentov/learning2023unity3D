@@ -15,17 +15,38 @@ public class Level2Managment : MonoBehaviour
 
     public RectTransform panelMobile;
 
+    public RectTransform panelTutorial;
+    public TMP_Text tutorTextQuest;
+    public TMP_Text tutorTextLost;
+    public RectTransform tutorButton;
+
+    public RectTransform panelQuest;
+    public RectTransform panelLost;
+    public TMP_Text TextQuest;
+    public TMP_Text TextLost;
+
     public GameObject playerGO;
 
     public PlayerDataUIValue PlayerDataUIValue;
 
     public float SpeedMove;
 
+    public bool FirstTime;
+    public int FirstTimeIntCoroutine;
+
+    public DeathLevel deathLevel;
+
+    public GameObject[] bots;
+
+    public float NativeSpeedBot;
+    public float NativeSpeed;
+
+
     // Start is called before the first frame update
     void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-
+        deathLevel = FindObjectOfType<DeathLevel>();
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
 
@@ -38,10 +59,28 @@ public class Level2Managment : MonoBehaviour
             panelMobile.gameObject.SetActive(false);
         }
 
+        FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+
+        if(FirstTime)
+        {
+            FirstTimeIntCoroutine = 0;
+        }
+
+        panelTutorial.gameObject.SetActive(false);
+        tutorTextQuest.gameObject.SetActive(false);
+        tutorTextLost.gameObject.SetActive(false);
+        tutorButton.gameObject.SetActive(false);
+        TextQuest.gameObject.SetActive(false);
+        TextLost.gameObject.SetActive(false);
+        panelQuest.gameObject.SetActive(false);
+        panelLost.gameObject.SetActive(false);
+
         panelLevelText.text = "3";
         panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0f);
         panelLevel.gameObject.SetActive(true);
         panelLevelStarted.gameObject.SetActive(false);
+
+
 
         StartCoroutine(StartGameTextAndPanel());
     }
@@ -91,6 +130,77 @@ public class Level2Managment : MonoBehaviour
         panelLevel.gameObject.SetActive(false);
         panelLevelStarted.gameObject.SetActive(true);
         playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
-        yield break;
+
+        if(FirstTime == true)
+        {
+            bots = deathLevel.gameBotObjectsLost;
+            NativeSpeedBot = bots[0].GetComponent<NavMeshAgent>().speed;
+
+            foreach (var bot in bots)
+            {
+                bot.GetComponent<NavMeshAgent>().speed = 0;
+            }
+
+            NativeSpeed = playerGO.GetComponent<PlayerControlls>().speed;
+            playerGO.GetComponent<PlayerControlls>().speed = 0;
+
+            panelTutorial.gameObject.SetActive(true);
+            tutorTextQuest.gameObject.SetActive(true);
+            tutorButton.gameObject.SetActive(true);
+            panelQuest.gameObject.SetActive(true);
+            TextQuest.gameObject.SetActive(true);
+
+            yield break;
+        }
+        else
+        {
+            yield break;
+        }
+    }
+
+    public void PressButtonStartCoroutine()
+    {
+        StartCoroutine(StartFirstGame());
+    }
+
+    IEnumerator StartFirstGame()
+    {
+        if(FirstTimeIntCoroutine == 0)
+        {
+            FirstTimeIntCoroutine = 1;
+
+            tutorTextQuest.gameObject.SetActive(false);
+            panelQuest.gameObject.SetActive(false);
+            TextQuest.gameObject.SetActive(false);
+            tutorTextLost.gameObject.SetActive(true);
+            TextLost.text = deathLevel.TextLost.text;
+            panelLost.gameObject.SetActive(true);
+            TextLost.gameObject.SetActive(true);
+            yield break;
+        }
+
+        else if (FirstTimeIntCoroutine == 1)
+        {
+            FirstTimeIntCoroutine = 2;
+
+            foreach (var bot in bots)
+            {
+                bot.GetComponent<NavMeshAgent>().speed = NativeSpeedBot * 0.5f;
+            }
+            playerGO.GetComponent<PlayerControlls>().speed = NativeSpeed;
+
+            tutorTextLost.gameObject.SetActive(false);
+            panelLost.gameObject.SetActive(false);
+            TextLost.gameObject.SetActive(false);
+
+            panelTutorial.gameObject.SetActive(false);
+            tutorButton.gameObject.SetActive(false);
+
+            yield return null;
+        }
+        else
+        {
+            yield break;
+        }
     }
 }
