@@ -15,8 +15,6 @@ public class PlayerData
     public bool mobile;
     public bool PlayerFirstTimePlay = true;
     public bool PlayerFirstTimeNeedShop = false;
-
-    public bool[] PlayerCharId = new bool[30];
 }
 
 

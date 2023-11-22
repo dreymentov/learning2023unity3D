@@ -702,10 +702,10 @@ MonoBehaviour:
     mobile: 0
     PlayerFirstTimePlay: 1
     PlayerFirstTimeNeedShop: 0
-    PlayerCharId: 000000000000000000000000000000000000000000000000000000000000
   PlayerDataUIValue: {fileID: 0}
-  ImageTextFirstGame: {fileID: 0}
+  ImageTextFirstGame: {fileID: 1293707108}
   FirstTime: 0
+  FirstTimeNeedShop: 0
 --- !u!114 &33908765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1520,13 +1520,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9143065101116797405, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: PlayerDataUIValue
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
---- !u!1 &101723031 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5403591545650693330, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-  m_PrefabInstance: {fileID: 101723030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &101723032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4735175798714015336, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
@@ -3559,7 +3558,7 @@ MonoBehaviour:
   MainCanvas: {fileID: 0}
   CheckChar: {fileID: 1461510336}
   ButtonBuy: {fileID: 493108846}
-  CCharGet: {fileID: 1461510337}
+  CCharGet: {fileID: 0}
   MCanvas: {fileID: 0}
   CostForBuy: 0
   CharId: 29
@@ -4541,7 +4540,7 @@ MonoBehaviour:
   MainCanvas: {fileID: 0}
   CheckChar: {fileID: 1461510336}
   ButtonBuy: {fileID: 493108846}
-  CCharGet: {fileID: 1461510337}
+  CCharGet: {fileID: 0}
   MCanvas: {fileID: 0}
   CostForBuy: 50
   CharId: 4
@@ -5965,7 +5964,7 @@ MonoBehaviour:
   MainCanvas: {fileID: 0}
   CheckChar: {fileID: 1461510336}
   ButtonBuy: {fileID: 493108846}
-  CCharGet: {fileID: 1461510337}
+  CCharGet: {fileID: 0}
   MCanvas: {fileID: 0}
   CostForBuy: 0
   CharId: 29
@@ -7896,7 +7895,7 @@ MonoBehaviour:
   MainCanvas: {fileID: 0}
   CheckChar: {fileID: 1461510336}
   ButtonBuy: {fileID: 493108846}
-  CCharGet: {fileID: 1461510337}
+  CCharGet: {fileID: 0}
   MCanvas: {fileID: 0}
   CostForBuy: 0
   CharId: 29
@@ -9025,7 +9024,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461510337}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CheckCharactersScript, Assembly-CSharp
         m_MethodName: ClickPreviousCharacter
         m_Mode: 1
@@ -10261,10 +10260,10 @@ MonoBehaviour:
     mobile: 0
     PlayerFirstTimePlay: 1
     PlayerFirstTimeNeedShop: 0
-    PlayerCharId: 000000000000000000000000000000000000000000000000000000000000
   PlayerDataUIValue: {fileID: 0}
   ImageTextFirstGame: {fileID: 1293707108}
   FirstTime: 0
+  FirstTimeNeedShop: 0
 --- !u!225 &893214234
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -10350,9 +10349,8 @@ MonoBehaviour:
     PlayerHardMoney: 10
     PlayerCharIdCheck: 29
     mobile: 0
-    PlayerFirstTimePlay: 1
+    PlayerFirstTimePlay: 0
     PlayerFirstTimeNeedShop: 0
-    PlayerCharId: 000000000000000000000000000000000000000000000000000000000001
 --- !u!114 &893214237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14630,7 +14628,7 @@ MonoBehaviour:
   MainCanvas: {fileID: 0}
   CheckChar: {fileID: 1461510336}
   ButtonBuy: {fileID: 493108846}
-  CCharGet: {fileID: 1461510337}
+  CCharGet: {fileID: 0}
   MCanvas: {fileID: 0}
   CostForBuy: 0
   CharId: 29
@@ -16581,39 +16579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf74d22182551647a75a953b3514657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goCharacters:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 101723031}
-  - {fileID: 1739409853}
-  MainCanvas: {fileID: 893214232}
-  goId: 0
+  MainCanvas: {fileID: 0}
 --- !u!4 &1461510338
 Transform:
   m_ObjectHideFlags: 0
@@ -18396,11 +18362,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 90.625, y: 89.0625}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1739409853 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 736842432555266140, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
-  m_PrefabInstance: {fileID: 1313423400}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1739409863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 104175313530153702, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
@@ -19089,7 +19050,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461510337}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CheckCharactersScript, Assembly-CSharp
         m_MethodName: ClickNextCharacter
         m_Mode: 1
@@ -20817,7 +20778,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461510337}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CheckCharactersScript, Assembly-CSharp
         m_MethodName: ClickRandomCharacter
         m_Mode: 1

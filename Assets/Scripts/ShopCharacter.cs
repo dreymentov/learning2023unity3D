@@ -50,7 +50,6 @@ public class ShopCharacter : MonoBehaviour
         ButtonBuy.SetActive(false);
         CCharGet = CheckChar.GetComponent<CheckCharactersScript>();
         MCanvas = MainCanvas.gameObject.GetComponent<PlayerDataUIValue>();
-        isBuyOrNot = MCanvas.init.PlayerData.PlayerCharId[CharId];
     }
     private void OnDisable()
     {
@@ -59,9 +58,6 @@ public class ShopCharacter : MonoBehaviour
 
     public void BuyCharacter()
     {
-        CCharGet.goCharacters[CCharGet.goId].SetActive(false);
-        CCharGet.goId = CharId;
-        CCharGet.goCharacters[CharId].SetActive(true);
         if( isBuyOrNot == false)
         {
             ButtonBuy.SetActive(true);

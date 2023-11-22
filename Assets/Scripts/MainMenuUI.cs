@@ -60,25 +60,40 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartShopping()
     {
-        if(ImageTextFirstGameShop.gameObject.active == true) 
-        {
-            ImageTextFirstGameShop.gameObject.SetActive(false);
-        }
-        
         if ((FirstTime == true) && (FirstTimeShop == true))
         {
+            if (ImageTextFirstGameShop.gameObject.active == true)
+            {
+                ImageTextFirstGameShop.gameObject.SetActive(false);
+            }
+
             PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay = false;
             PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop = false;
-        }
 
-        var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
-        cam.Follow = CameraTargetTimeShop.transform;
-        cam.LookAt = CameraTargetTimeShop.transform;
-        ButtonMenu.SetActive(true);
-        ButtonShop.SetActive(false);
-        ButtonStart.SetActive(false);
-        ButtonExit.SetActive(false);
-        PanelShop.SetActive(true);
+            var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
+            cam.Follow = CameraTargetTimeShop.transform;
+            cam.LookAt = CameraTargetTimeShop.transform;
+            ButtonMenu.SetActive(true);
+            ButtonShop.SetActive(false);
+            ButtonStart.SetActive(false);
+            ButtonExit.SetActive(false);
+            PanelShop.SetActive(true);
+        }
+        else if ((FirstTime == true) && (FirstTimeShop == false))
+        {
+            return;
+        }
+        else
+        {
+            var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
+            cam.Follow = CameraTargetTimeShop.transform;
+            cam.LookAt = CameraTargetTimeShop.transform;
+            ButtonMenu.SetActive(true);
+            ButtonShop.SetActive(false);
+            ButtonStart.SetActive(false);
+            ButtonExit.SetActive(false);
+            PanelShop.SetActive(true);
+        }
     }
 
     public void ExitToMainMenu()

@@ -33,11 +33,13 @@ public class PlayerUIControl : MonoBehaviour
 
     public GameObject ImageTextFirstGame;
     public bool FirstTime;
+    public bool FirstTimeNeedShop;
 
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+        FirstTimeNeedShop = PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop;
 
         if (FirstTime == true)
         {
@@ -57,25 +59,35 @@ public class PlayerUIControl : MonoBehaviour
     }
     public void StartGameImage()
     {
-        isPressed = true;
+        FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+        FirstTimeNeedShop = PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop;
 
-        panel.gameObject.SetActive(true);
-
-        border_X = imageCheckerLeft.transform.localPosition.x;
-        border_X1 = imageCheckerRight.transform.localPosition.x;
-
-        isActivacted = false;
-
-        foreach(var image in imagesList)
+        if ((FirstTime == true) && (FirstTimeNeedShop == true))
         {
-            image.color = Random.ColorHSV();
+            return;
         }
-
-        foreach(var imageTransformStart in imagesList)
+        else
         {
-            StartCoroutine(ImageMoveStart(imageTransformStart));
+            isPressed = true;
+
+            panel.gameObject.SetActive(true);
+
+            border_X = imageCheckerLeft.transform.localPosition.x;
+            border_X1 = imageCheckerRight.transform.localPosition.x;
+
+            isActivacted = false;
+
+            foreach (var image in imagesList)
+            {
+                image.color = Random.ColorHSV();
+            }
+
+            foreach (var imageTransformStart in imagesList)
+            {
+                StartCoroutine(ImageMoveStart(imageTransformStart));
+            }
+            StartCoroutine(WaitAwakeGame());
         }
-        StartCoroutine(WaitAwakeGame());
     }
 
     public void StartMainMenu()

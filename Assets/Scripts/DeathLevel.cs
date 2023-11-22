@@ -122,7 +122,7 @@ public class DeathLevel : MonoBehaviour
     {
         int j = 0;
 
-        if ((SceneManager.GetActiveScene().name == "Level1") || (SceneManager.GetActiveScene().name == "Level5"))
+        if ((SceneManager.GetActiveScene().name == "Level1") || (SceneManager.GetActiveScene().name == "Level4") || (SceneManager.GetActiveScene().name == "Level5"))
         {
             StartCoroutine(CheckGO());
 

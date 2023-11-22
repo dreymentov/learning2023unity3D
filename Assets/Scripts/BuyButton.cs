@@ -18,7 +18,7 @@ public class BuyButton : MonoBehaviour
     public void StartBuy()
     {
         int cost = ThisCharacter.GetComponent<ShopCharacter>().CostForBuy;
-        if (CMainInit.PlayerData.PlayerCharId[CCharScript.goId] == false)
+        /*if (CMainInit.PlayerData.PlayerCharId[CCharScript.goId] == false)
         {
             if(CMainInit.PlayerData.PlayerMoney >= cost)
             {
@@ -30,7 +30,7 @@ public class BuyButton : MonoBehaviour
                 ThisCharacter.GetComponent<ShopCharacter>().Cost.SetActive(false);
                 this.gameObject.SetActive(false);
             }
-        }
+        }*/
     }
 
     public void OnEnable()
@@ -43,11 +43,6 @@ public class BuyButton : MonoBehaviour
 
     public void OnDisable()
     {
-        if (CMainInit.PlayerData.PlayerCharId[CCharScript.goId] == false)
-        {
-            CCharScript.goCharacters[CCharScript.goId].SetActive(false);
-            CCharScript.goId = 29;
-            CCharScript.goCharacters[CCharScript.goId].SetActive(true);
-        }
+        
     }
 }
