@@ -25,6 +25,11 @@ public class MainMenuUI : MonoBehaviour
     public bool FirstTime;
     public bool FirstTimeShop;
 
+    [Header("Inn App Shop")]
+    public GameObject PanelInnShop;
+    public GameObject ButtonInnShop;
+
+
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -49,8 +54,6 @@ public class MainMenuUI : MonoBehaviour
             ImageTextFirstGameShop.gameObject.SetActive(false);
         }
 
-        ButtonMenu.SetActive(false);
-        ButtonShop.SetActive(true);
         PanelShop.SetActive(false);
         foreach (var scroll in Scrolls)
         {
@@ -62,22 +65,30 @@ public class MainMenuUI : MonoBehaviour
     {
         if ((FirstTime == true) && (FirstTimeShop == true))
         {
-            if (ImageTextFirstGameShop.gameObject.active == true)
+            if(PanelShop.gameObject.active == false)
             {
-                ImageTextFirstGameShop.gameObject.SetActive(false);
+                if (ImageTextFirstGameShop.gameObject.active == true)
+                {
+                    ImageTextFirstGameShop.gameObject.SetActive(false);
+                }
+
+                PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay = false;
+                PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop = false;
+                FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+                FirstTimeShop = PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop;
+
+                var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
+                cam.Follow = CameraTargetTimeShop.transform;
+                cam.LookAt = CameraTargetTimeShop.transform;
+                ButtonStart.SetActive(false);
+                ButtonExit.SetActive(false);
+                PanelShop.SetActive(true);
+                PanelInnShop.SetActive(false);
             }
-
-            PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay = false;
-            PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop = false;
-
-            var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
-            cam.Follow = CameraTargetTimeShop.transform;
-            cam.LookAt = CameraTargetTimeShop.transform;
-            ButtonMenu.SetActive(true);
-            ButtonShop.SetActive(false);
-            ButtonStart.SetActive(false);
-            ButtonExit.SetActive(false);
-            PanelShop.SetActive(true);
+            else
+            {
+                ExitToMainMenu();
+            }
         }
         else if ((FirstTime == true) && (FirstTimeShop == false))
         {
@@ -85,14 +96,20 @@ public class MainMenuUI : MonoBehaviour
         }
         else
         {
-            var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
-            cam.Follow = CameraTargetTimeShop.transform;
-            cam.LookAt = CameraTargetTimeShop.transform;
-            ButtonMenu.SetActive(true);
-            ButtonShop.SetActive(false);
-            ButtonStart.SetActive(false);
-            ButtonExit.SetActive(false);
-            PanelShop.SetActive(true);
+            if (PanelShop.gameObject.active == false)
+            {
+                var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
+                cam.Follow = CameraTargetTimeShop.transform;
+                cam.LookAt = CameraTargetTimeShop.transform;
+                ButtonStart.SetActive(false);
+                ButtonExit.SetActive(false);
+                PanelShop.SetActive(true);
+                PanelInnShop.SetActive(false);
+            }
+            else
+            {
+                ExitToMainMenu();
+            }
         }
     }
 
@@ -101,12 +118,31 @@ public class MainMenuUI : MonoBehaviour
         var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
         cam.Follow = CameraTargetStart.transform;
         cam.LookAt = CameraTargetStart.transform;
-        ButtonMenu.SetActive(false);
-        ButtonShop.SetActive(true);
         ButtonStart.SetActive(true);
         ButtonExit.SetActive(true);
         ButtonBuy.SetActive(false);
         PanelShop.SetActive(false);
+        PanelInnShop.SetActive(false);
+    }
+
+    public void GoToInnShop()
+    {
+
+        if(FirstTime == false)
+        {
+            if(PanelInnShop.gameObject.active == false)
+            {
+                ButtonStart.SetActive(false);
+                ButtonExit.SetActive(false);
+                PanelShop.SetActive(false);
+                PanelInnShop.SetActive(true);
+            }
+            else
+            {
+                ExitToMainMenu();
+            }
+            
+        }
     }
 
     public void ShopChar()
