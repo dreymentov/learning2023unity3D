@@ -10,16 +10,22 @@ public class FinishedLevel : MonoBehaviour
     public List<GameObject> gameObjectsInList;
 
     public bool Finished;
+    public bool isInvoked;
 
     public TMP_Text TextLost;
 
     public DeathLevel DeathLevel;
+
+    public GameObject panelFinished;
+    public TMP_Text textFinished;
+    public GameObject InPanelFinishedGO;
 
     void Start()
     {
         DeathLevel = FindObjectOfType<DeathLevel>();
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         Finished = false;
+        isInvoked = false;
     }
 
     private void OnEnable()
@@ -31,7 +37,11 @@ public class FinishedLevel : MonoBehaviour
     {
         if (Finished)
         {
-            SceneManager.LoadScene("Lobby");
+            if(isInvoked == false)
+            { 
+                isInvoked = true;
+                StartCoroutine(FinishedAlive());
+            }
         }
 
         /*foreach(GameObject go in gameObjectsInList)
@@ -114,5 +124,13 @@ public class FinishedLevel : MonoBehaviour
         {
             return;
         }
+    }
+
+    IEnumerator FinishedAlive()
+    {
+        DeathLevel.panelWinInDeathlevel.GetComponent<panelWinScript>().panelWinInvoke();
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Lobby");
+        yield break;
     }
 }

@@ -10,14 +10,13 @@ using DG.Tweening;
 public class PlayerUIControl : MonoBehaviour
 {
     public Transform panel;
+    public Transform MainImagesMover;
 
     public Image[] imagesList;
-
-    public Vector2[] PosTf;
+    public Image[] imagesList1;
 
     public Image imageCenterInPanel;
-    public Image imageCheckerLeft;
-    public Image imageCheckerRight;
+    public Image imageCenterImageInPanel;
 
     public float border_X;
     public float border_X1;
@@ -27,6 +26,7 @@ public class PlayerUIControl : MonoBehaviour
 
     public bool isActivacted;
     public bool isPressed = false;
+    public bool isStop = false;
 
     public PlayerData playerData;
     public PlayerDataUIValue PlayerDataUIValue;
@@ -50,12 +50,8 @@ public class PlayerUIControl : MonoBehaviour
             ImageTextFirstGame.gameObject.SetActive(false);
         }
 
-        PosTf = new Vector2[imagesList.Length];
-        for(int i = 0; i < imagesList.Length; i++)
-        {
-            PosTf[i] = imagesList[i].transform.position;
-        }
         isPressed = false;
+        isStop = false;
     }
     public void StartGameImage()
     {
@@ -72,20 +68,19 @@ public class PlayerUIControl : MonoBehaviour
 
             panel.gameObject.SetActive(true);
 
-            border_X = imageCheckerLeft.transform.localPosition.x;
-            border_X1 = imageCheckerRight.transform.localPosition.x;
-
             isActivacted = false;
 
-            foreach (var image in imagesList)
+            /*foreach (var image in imagesList)
             {
                 image.color = Random.ColorHSV();
             }
-
-            foreach (var imageTransformStart in imagesList)
+            foreach (var image in imagesList1)
             {
-                StartCoroutine(ImageMoveStart(imageTransformStart));
-            }
+                image.color = Random.ColorHSV();
+            }*/
+
+            StartCoroutine(ImageMoveStart(MainImagesMover));
+            StartCoroutine(ChangeImageLevel());
             StartCoroutine(WaitAwakeGame());
         }
     }
@@ -97,89 +92,100 @@ public class PlayerUIControl : MonoBehaviour
 
     void Update()
     {
-        if ((isActivacted == false) && (isPressed == true))
+        if(MainImagesMover.localPosition.x >= 2000)
         {
-            foreach (var imageTransform in imagesList)
-            {
-                if (imageTransform.transform.localPosition.x >= border_X1)
-                {
-                    if (ImageMoveStart(imageTransform) != null)
-                    {
-                        StopCoroutine(ImageMoveStart(imageTransform));
-                        StartCoroutine(ImageMove(imageTransform));
-                    }
-                    else
-                    {
-                        StopCoroutine(ImageMove(imageTransform));
-                        StartCoroutine(ImageMoveStart(imageTransform));
-                    }
-                }
-            }
+            StopCoroutine(ImageMoveStart(MainImagesMover));
+            StopCoroutine(ImageMove(MainImagesMover));
+            StartCoroutine(ImageMove(MainImagesMover));
+            
+        }
+        else
+        {
+            return;
         }
     }
 
-    IEnumerator ImageMoveStart(Image imageTransform)
+    IEnumerator ImageMoveStart(Transform imageTransform)
     {
-        imageTransform.transform.DOMoveX(imageTransform.transform.position.x + speedMove, _cycleLength).SetLoops(-1, LoopType.Incremental).SetTarget(imageTransform.transform);
+        imageTransform.localPosition = new Vector3(0, imageTransform.localPosition.y, imageTransform.localPosition.z);
+        imageTransform.transform.DOMoveX(imageTransform.position.x + speedMove, _cycleLength).SetLoops(-1, LoopType.Incremental).SetTarget(imageTransform.transform);
         yield return null;
     }
 
-    IEnumerator ImageMove(Image imageTransform)
+    IEnumerator ImageMove(Transform imageTransform)
     {
         DOTween.Kill(imageTransform.transform);
-        imageCenterInPanel.color = imageTransform.color;
-        imageTransform.transform.localPosition = new Vector3(border_X, 0, 0);
-        imageTransform.transform.DOMoveX(imageTransform.transform.position.x + speedMove, _cycleLength).SetLoops(-1, LoopType.Incremental).SetTarget(imageTransform.transform);
+        imageTransform.localPosition = new Vector3(0, imageTransform.localPosition.y, imageTransform.localPosition.z);
+        imageTransform.transform.DOMoveX(imageTransform.position.x + speedMove, _cycleLength).SetLoops(-1, LoopType.Incremental).SetTarget(imageTransform.transform);
         yield return null;
     }
 
     IEnumerator AwakeGame()
     {
-        panel.gameObject.SetActive(false);
-        isPressed = false;
         string Level;
         int ii = Random.Range(0, 150);
+        int imageLevel = 0;
 
         if (ii > 120)
         {
             Level = "Level1";
+            imageLevel = 0;
         }
         else if(ii > 90 && ii <= 120)
         {
             Level = "Level2";
+            imageLevel = 1;
         }
         else if (ii > 60 && ii <= 90)
         {
             Level = "Level3";
+            imageLevel = 2;
         }
         else if (ii > 30 && ii <= 60)
         {
             Level = "Level4";
+            imageLevel = 3;
         }
         else
         {
             Level = "Level5";
+            imageLevel = 4;
         }
+
+        isStop = true;
+        StopCoroutine(ChangeImageLevel());
         isPressed = false;
-        StopAllCoroutines();
-        int i = 0;
-        foreach (var imageTransform in imagesList)
+
+        StopCoroutine(ImageMove(MainImagesMover));
+
+        DOTween.Kill(MainImagesMover.transform);
+
+        if(FirstTime == true)
         {
-            DOTween.Kill(imageTransform.transform);
-            imageTransform.transform.position = imagesList[i].transform.position;
-            i++;
+            Sprite sprite = imagesList1[1].GetComponent<Image>().sprite;
+            imageCenterImageInPanel.GetComponent<Image>().sprite = sprite;
         }
+        else
+        {
+            Sprite sprite = imagesList1[imageLevel].GetComponent<Image>().sprite;
+            imageCenterImageInPanel.GetComponent<Image>().sprite = sprite;
+        }
+        yield return new WaitForSeconds(1.5f);
+
+        panel.gameObject.SetActive(false);
+
         FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
-        if (FirstTime == true)
+
+        /*if (FirstTime == true)
         {
             SceneManager.LoadScene("Level2");
         }
         else
         {
             SceneManager.LoadScene(Level);
-        }
+        }*/
 
-        //SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene("Level4");
 
         yield return null;
     }
@@ -187,7 +193,23 @@ public class PlayerUIControl : MonoBehaviour
     IEnumerator WaitAwakeGame()
     {
         yield return new WaitForSeconds(waitTimer);
-        isPressed = false;
         StartCoroutine(AwakeGame());
+        yield return null;
+    }
+
+    IEnumerator ChangeImageLevel()
+    {
+        if(isStop == false)
+        {
+            Sprite sprite = imagesList1[Random.Range(0, imagesList1.Length)].GetComponent<Image>().sprite;
+            imageCenterImageInPanel.GetComponent<Image>().sprite = sprite;
+            yield return new WaitForSeconds(0.1f);
+            StartCoroutine(ChangeImageLevel());
+        }
+        else
+        {
+            yield break;
+        }
+        
     }
 }

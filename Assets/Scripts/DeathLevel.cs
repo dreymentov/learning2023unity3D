@@ -12,6 +12,8 @@ public class DeathLevel : MonoBehaviour
     public GameObject[] gameBotObjects;
     public GameObject[] gameBotObjectsLost;
 
+    public GameObject panelWinInDeathlevel;
+
     public TMP_Text TextLost;
 
     public int GOlost;
@@ -27,8 +29,8 @@ public class DeathLevel : MonoBehaviour
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         L5M = FindObjectOfType<Level5Managment>();
         gameBotObjects = GameObject.FindGameObjectsWithTag("Bot");
-        
-        for(int i = 0; i < BotsNumber; i++)
+
+        for (int i = 0; i < BotsNumber; i++)
         {
             Destroy(gameBotObjects[Random.Range(0, gameBotObjects.Length - 1)]);
         }
@@ -41,7 +43,7 @@ public class DeathLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerDataUIValue == null)
+        if (PlayerDataUIValue == null)
         {
             PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         }
@@ -64,7 +66,7 @@ public class DeathLevel : MonoBehaviour
                 StartCoroutine(EndLevelDeath());
             }
 
-            if(PlayerDataUIValue != null)
+            if (PlayerDataUIValue != null)
             {
                 StartCoroutine(EndLevelDeath());
             }
@@ -73,11 +75,12 @@ public class DeathLevel : MonoBehaviour
 
     public void WinTheLevel()
     {
+        panelWinInDeathlevel.GetComponent<panelWinScript>().panelWinInvoke();
+
         if (PlayerDataUIValue != null)
         {
             PlayerDataUIValue.PlaceInLevel = 1;
         }
-        SceneManager.LoadScene("Lobby");
     }
 
     IEnumerator CheckGO()
@@ -94,11 +97,18 @@ public class DeathLevel : MonoBehaviour
                 j++;
             }
         }
+        if (j == 0)
+        {
+            WinTheLevel();
+        }
+        else
+        {
 
+        }
         int jj = j + 1;
         int ii = GOlost;
         TextLost.text = "ŒÒÚ‡‚¯ËÂÒˇ Ë„ÓÍË: " + jj + "/" + ii;
-        
+
         yield return null;
     }
 
@@ -107,7 +117,7 @@ public class DeathLevel : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         gameBotObjectsLost = GameObject.FindGameObjectsWithTag("Bot");
 
-        if(L5M != null)
+        if (L5M != null)
         {
             L5M.gameBotObjects = gameBotObjectsLost;
         }
@@ -143,9 +153,6 @@ public class DeathLevel : MonoBehaviour
                 PlayerDataUIValue.PlaceInLevel = GOlost;
                 Init init = PlayerDataUIValue.init;
                 init.PlayerData.PlayerFirstTimeNeedShop = true;
-
-                Debug.Log("œŒœ€“ ¿ »«Ã≈Õ»“‹ Õ¿ »—“»Õ”");
-                Debug.Log(init.PlayerData.PlayerFirstTimeNeedShop);
             }
             else
             {

@@ -41,6 +41,9 @@ public class Level2Managment : MonoBehaviour
     public float NativeSpeedBot;
     public float NativeSpeed;
 
+    public GameObject panelWin;
+    public panelWinScript panelWinScripting;
+
 
     // Start is called before the first frame update
     void Start()
@@ -93,11 +96,13 @@ public class Level2Managment : MonoBehaviour
 
     IEnumerator StartGameTextAndPanel()
     {
+        Color nativeColorText = panelLevelText.color;
+
         panelLevelText.text = "3";
         for (int i = 0; i < 10; i++)
         {
             panelLevelText.rectTransform.DOScale(new Vector3(0.1f * i, 0.1f * i, 0.1f * i), 0.1f);
-            panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0 + 36 * i), 0.1f);
+            //panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0 + 36 * i), 0.1f);
             yield return new WaitForSeconds(0.1f);
         }
         panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
@@ -108,7 +113,7 @@ public class Level2Managment : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             panelLevelText.rectTransform.DOScale(new Vector3(0.1f * i, 0.1f * i, 0.1f * i), 0.1f);
-            panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0 + 36 * i), 0.1f);
+            //panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0 + 36 * i), 0.1f);
             yield return new WaitForSeconds(0.1f);
         }
         panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
@@ -119,19 +124,29 @@ public class Level2Managment : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             panelLevelText.rectTransform.DOScale(new Vector3(0.1f * i, 0.1f * i, 0.1f * i), 0.1f);
-            panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0 + 36 * i), 0.1f);
+            //panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0 + 36 * i), 0.1f);
             yield return new WaitForSeconds(0.1f);
         }
-        panelLevelText.text = "GO!";
-        panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
-        panelLevelText.rectTransform.DOScale(new Vector3(1, 1, 1), 0.5f);
-        yield return new WaitForSeconds(0.6f);
 
-        panelLevel.gameObject.SetActive(false);
+        panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
+        yield return new WaitForSeconds(0.3f);
+
         panelLevelStarted.gameObject.SetActive(true);
         playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
 
-        if(FirstTime == true)
+        panelLevelText.text = "GO!";
+        //panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
+        panelLevelText.rectTransform.DOScale(new Vector3(1, 1, 1), 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(ChangeColorAlpha(panelLevelText));
+        panelLevelText.rectTransform.DOMoveY(2000f, 1f);
+        yield return new WaitForSeconds(0.5f);
+
+        panelLevel.gameObject.SetActive(false);
+        panelLevelText.rectTransform.DOMoveY(-2000f, 0.1f);
+        panelLevelText.color = nativeColorText;
+
+        if (FirstTime == true)
         {
             bots = deathLevel.gameBotObjectsLost;
             NativeSpeedBot = bots[0].GetComponent<NavMeshAgent>().speed;
@@ -202,5 +217,21 @@ public class Level2Managment : MonoBehaviour
         {
             yield break;
         }
+    }
+
+    IEnumerator ChangeColorAlpha(TMP_Text text)
+    {
+        Color ColorImage = text.color;
+
+        for (int k = 1; k < 10; k++)
+        {
+            ColorImage.a = 1 - (k * 0.1f);
+            text.color = ColorImage;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        ColorImage.a = 0;
+
+        yield break;
     }
 }

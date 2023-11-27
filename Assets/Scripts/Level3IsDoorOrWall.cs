@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class Level3IsDoorOrWall : MonoBehaviour
 {
-    public GameObject[] Doors;
+    public List<GameObject> Doors;
     public Level3DoorStartLevel[] level3door;
     public bool[] DoorsBool;
     public NavMeshObstacle NMO;
@@ -44,7 +44,7 @@ public class Level3IsDoorOrWall : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        for(int i = 0; i < Doors.Length; i++)
+        for(int i = 0; i < Doors.Count; i++)
         {
             level3door[i] = Doors[i].GetComponent<Level3DoorStartLevel>();
         }
@@ -64,9 +64,15 @@ public class Level3IsDoorOrWall : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
+        Shuffle(Doors);
+        Shuffle(Doors);
+
+        Doors[0].GetComponent<Level3DoorStartLevel>().IsDoor = true;
+        Doors[1].GetComponent<Level3DoorStartLevel>().IsDoor = true;
+
         int i = 0;
 
-        if (Doors.Length > 3)
+        /*if (Doors.Length == 4)
         {
             i = Random.Range(0, 99);
 
@@ -154,7 +160,9 @@ public class Level3IsDoorOrWall : MonoBehaviour
         else
         {
             Debug.Log("doors Length < 2");
-        }
+        }*/
+
+
 
         yield return null;
     }
@@ -168,5 +176,15 @@ public class Level3IsDoorOrWall : MonoBehaviour
             Debug.Log("Closed");
         }
         yield break;
+    }
+    void Shuffle<T>(List<T> inputList)
+    {
+        for (int i = 0; i < inputList.Count - 1; i++)
+        {
+            T temp = inputList[i];
+            int rand = Random.Range(i, inputList.Count);
+            inputList[i] = inputList[rand];
+            inputList[rand] = temp;
+        }
     }
 }

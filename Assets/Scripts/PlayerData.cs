@@ -15,6 +15,21 @@ public class PlayerData
     public bool mobile;
     public bool PlayerFirstTimePlay = true;
     public bool PlayerFirstTimeNeedShop = false;
+
+    public int[] Bodies = { 0, 1, 0, 0, 0, 0 };
+    public int[] Bodyparts = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] Eyes = { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] Gloves = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] Headparts = { 0, 0, 0, 0 };
+    public int[] Mounth = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] Noise = { 0, 0, 0, 0, 0 };
+    public int[] Combs = { 0 };
+    public int[] Ears = { 0, 0, 0, 0 };
+    public int[] EyesFromHead = { 0, 0, 0, 0 };
+    public int[] Hair = { 0, 0 };
+    public int[] Hat = { 0, 0, 0, 0, 0 };
+    public int[] Horn = { 0, 0, 0, 0 };
+    public int[] Tails = { 0, 0, 0, 0, 0, 0, 0, 0 };
 }
 
 

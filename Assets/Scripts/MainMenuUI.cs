@@ -55,6 +55,7 @@ public class MainMenuUI : MonoBehaviour
         }
 
         PanelShop.SetActive(false);
+        ButtonBuy.SetActive(false);
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);

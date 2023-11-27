@@ -277,12 +277,12 @@ public class PlayerDataUIValue : MonoBehaviour
                 PanelLevelUp.gameObject.SetActive(true);
                 PanelLevelUpBackground.gameObject.SetActive(true);
                 isLevelUp = true;
-                PanelLevelUp.DOScale(new Vector3(1f, 1f, 1f), 2f);
+                PanelLevelUp.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
                 init.PlayerData.PlayerMoney += 500;
                 TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
-                yield return new WaitForSeconds(5f);
-                PanelLevelUp.DOScale(new Vector3(0f, 0f, 0f), 2f);
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1.5f);
+                PanelLevelUp.DOScale(new Vector3(0f, 0f, 0f), 0.5f);
+                yield return new WaitForSeconds(1f);
                 isLevelUp = false;
                 PanelLevelUp.gameObject.SetActive(false);
                 PanelLevelUpBackground.gameObject.SetActive(false); 

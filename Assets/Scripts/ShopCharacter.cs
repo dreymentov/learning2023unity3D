@@ -48,7 +48,6 @@ public class ShopCharacter : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         ButtonBuy.SetActive(false);
-        CCharGet = CheckChar.GetComponent<CheckCharactersScript>();
         MCanvas = MainCanvas.gameObject.GetComponent<PlayerDataUIValue>();
     }
     private void OnDisable()
@@ -61,7 +60,6 @@ public class ShopCharacter : MonoBehaviour
         if( isBuyOrNot == false)
         {
             ButtonBuy.SetActive(true);
-            ButtonBuy.GetComponent<BuyButton>().ThisCharacter = this.gameObject;
         }
         else
         {
