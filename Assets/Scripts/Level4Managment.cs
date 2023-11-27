@@ -229,7 +229,7 @@ public class Level4Managment : MonoBehaviour
         StartCoroutine(StartObst5());
         yield return new WaitForSeconds(2f);
         panelWin.GetComponent<panelWinScript>().panelWinInvoke();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         if (PlayerDataUIValue != null)
         {
             PlayerDataUIValue.PlaceInLevel = 1;

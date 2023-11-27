@@ -3145,7 +3145,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208031992}
-  m_LocalRotation: {x: -1.770697e-11, y: 0.99988174, z: -0.01538161, w: -0.0000000011510417}
+  m_LocalRotation: {x: 1.1330472e-19, y: 0.99988174, z: -0.015381608, w: 3.2331248e-18}
   m_LocalPosition: {x: 14.549998, y: 13.67, z: -288.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23649,15 +23649,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.01538161
+      value: 0.015381608
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000011510417
+      value: -3.2331248e-18
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.770697e-11
+      value: 1.1330472e-19
       objectReference: {fileID: 0}
     - target: {fileID: 104175313530153702, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_RootOrder
@@ -24109,8 +24109,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

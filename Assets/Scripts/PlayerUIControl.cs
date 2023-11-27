@@ -176,16 +176,16 @@ public class PlayerUIControl : MonoBehaviour
 
         FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
 
-        /*if (FirstTime == true)
+        if (FirstTime == true)
         {
             SceneManager.LoadScene("Level2");
         }
         else
         {
             SceneManager.LoadScene(Level);
-        }*/
+        }
 
-        SceneManager.LoadScene("Level4");
+        //SceneManager.LoadScene("Level2");
 
         yield return null;
     }
