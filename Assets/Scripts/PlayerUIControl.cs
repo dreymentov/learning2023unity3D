@@ -203,7 +203,7 @@ public class PlayerUIControl : MonoBehaviour
         {
             Sprite sprite = imagesList1[Random.Range(0, imagesList1.Length)].GetComponent<Image>().sprite;
             imageCenterImageInPanel.GetComponent<Image>().sprite = sprite;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.3f);
             StartCoroutine(ChangeImageLevel());
         }
         else

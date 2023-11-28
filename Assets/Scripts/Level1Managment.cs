@@ -41,6 +41,8 @@ public class Level1Managment : MonoBehaviour
 
     public bool startedStop;
     public bool isStartGame;
+    public bool isCrashingPlace;
+    public bool isFinishedLevel1;
 
     public float SpeedMove;
 
@@ -76,15 +78,24 @@ public class Level1Managment : MonoBehaviour
 
         startedStop = false;
         isStartGame = true;
+        isCrashingPlace = false;
 
-        if(PlayerDataUIValue.init.PlayerData.mobile)
+        if (PlayerDataUIValue != null)
         {
-            panelMobile.gameObject.SetActive(true);
+            if (PlayerDataUIValue.init.PlayerData.mobile)
+            {
+                panelMobile.gameObject.SetActive(true);
+            }
+            else
+            {
+                panelMobile.gameObject.SetActive(false);
+            }
         }
         else
         {
-            panelMobile.gameObject.SetActive(false);
+            Debug.Log("No Have Player Data");
         }
+        
 
         panelLevelText.text = "3";
         panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0f);
@@ -105,8 +116,6 @@ public class Level1Managment : MonoBehaviour
 
             StopAllCoroutines();
             StartCoroutine(StopObs());
-
-            panelWin.GetComponent<panelWinScript>().panelWinInvoke();
         }
     }
 
@@ -117,9 +126,12 @@ public class Level1Managment : MonoBehaviour
         if (cubes.Count == 1)
         {
             StopCoroutine(ShakeCube(number));
+            StartCoroutine(StopObs());
         }
         else if (cyclingLifeCubes[cubNumberCrushing] == 0)
         {
+            isCrashingPlace = false; 
+
             for (int i = 0; i < cubesCheck.Count; i++)
             {
                 if (cubesCheck[i] == cubes[number].gameObject)
@@ -138,6 +150,7 @@ public class Level1Managment : MonoBehaviour
         }
         else if (cyclingLifeCubes[cubNumberCrushing] == 1)
         {
+            isCrashingPlace = true;
             cubes[number].gameObject.GetComponent<Renderer>().material.color = Color.yellow;
             DOTween.Kill(cubTf);
             cubTf.DOMoveY(speedMove, moveCycleLength).SetTarget(cubTf);
@@ -167,16 +180,20 @@ public class Level1Managment : MonoBehaviour
     IEnumerator startGameObs()
     {
         yield return new WaitForSeconds(waitTimer);
+
+        Obstacles[0].GetComponent<Obsctacles>().powerObstacl = powerObs;
+        Obstacles[1].GetComponent<Obsctacles>().powerObstacl = -powerObs;
+
         StartCoroutine(randomPowerValue());
     }
 
     IEnumerator randomPowerValue()
     {
-        var waitTimerObs = Random.Range(minTimerObs, maxTimerObs);
-        powerObs = Random.Range(minPowerObs, maxPowerObs);
-        Obstacles[rowObstacle].GetComponent<Obsctacles>().powerObstacl = powerObs;
-        rowObstacle++;
-        rowObstacle = rowObstacle % 2;
+        var waitTimerObs = 4f; //Random.Range(minTimerObs, maxTimerObs);
+        //powerObs = Random.Range(minPowerObs, maxPowerObs);
+        //Obstacles[rowObstacle].GetComponent<Obsctacles>().powerObstacl = powerObs;
+        Obstacles[0].GetComponent<Obsctacles>().powerObstacl *= 1.1f;
+        Obstacles[1].GetComponent<Obsctacles>().powerObstacl *= 1.1f;
         yield return new WaitForSeconds(waitTimerObs);
         StartCoroutine(randomPowerValue());
     }
@@ -187,6 +204,8 @@ public class Level1Managment : MonoBehaviour
         PlayerDataUIValue.PlaceInLevel = 1;
         Obstacles[0].GetComponent<Obsctacles>().powerObstacl = 0;
         Obstacles[1].GetComponent<Obsctacles>().powerObstacl = 0;
+        panelLevel.GetComponent<panelWinScript>().panelWinInvoke();
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Lobby");
         yield break;
     }
@@ -205,7 +224,7 @@ public class Level1Managment : MonoBehaviour
     IEnumerator StartGameTextAndPanel()
     {
         Color nativeColorText = panelLevelText.color;
-
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
         panelLevelText.text = "3";
         for (int i = 0; i < 10; i++)
         {
@@ -216,7 +235,8 @@ public class Level1Managment : MonoBehaviour
         panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
         yield return new WaitForSeconds(0.3f);
 
-        panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
+        yield return new WaitForSeconds(0.05f);
         panelLevelText.text = "2";
         for (int i = 0; i < 10; i++)
         {
@@ -227,7 +247,8 @@ public class Level1Managment : MonoBehaviour
         panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
         yield return new WaitForSeconds(0.3f);
 
-        panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
+        yield return new WaitForSeconds(0.05f);
         panelLevelText.text = "1";
         for (int i = 0; i < 10; i++)
         {

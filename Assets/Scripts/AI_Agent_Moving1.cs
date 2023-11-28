@@ -31,11 +31,11 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     public void Start()
     {
-        if(level1mg != null)
+        /*if(level1mg != null)
         {
             AI_Agent_Moving1 agentMove1 = this.GetComponent<AI_Agent_Moving1>();
             Destroy(agentMove1);
-        }
+        }*/
         animator = GetComponent<Animator>();
         isChangedFromUntagged = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -47,11 +47,11 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     public void OnAwakeAgent()
     {
-        if (level1mg != null)
+/*        if (level1mg != null)
         {
             AI_Agent_Moving1 agentMove1 = this.GetComponent<AI_Agent_Moving1>();
             Destroy(agentMove1);
-        }
+        }*/
         agent = GetComponent<NavMeshAgent>();
         goal = level1mg.cubes[Random.Range(0, level1mg.cubes.Count)].transform;
         agent.destination = goal.position;
@@ -60,51 +60,72 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if(isStartGame) 
+        if (level1mg.isCrashingPlace == true)
         {
-            if (needJumping)
-            {
-                if (isGrounded)
-                {
-                    StartCoroutine(Jump());
-                }
-            }
+            rb.useGravity = true;
+        }
+        else
+        {
+            agent.enabled = true;
 
-            if (isGrounded && wasJump)
+            if (isStartGame)
             {
-                if (agent.enabled == false)
+                if (needJumping)
                 {
-                    wasJump = false;
-                    agent.enabled = true;
+                    if (isGrounded)
+                    {
+                        StartCoroutine(Jump());
+                    }
+                }
+
+                if (isGrounded && wasJump)
+                {
+                    if (agent.enabled == false)
+                    {
+                        wasJump = false;
+                        agent.enabled = true;
+
+                        Invoke("GetOrChangeGoal", 0f);
+                    }
+                    else
+                    {
+                        wasJump = false;
+                    }
+                }
+
+                if (cubesCountOld != level1mg.cubes.Count)
+                {
+                    cubesCountOld = level1mg.cubes.Count;
 
                     Invoke("GetOrChangeGoal", 0f);
                 }
                 else
                 {
-                    wasJump = false;
+                    changeValue = Random.Range(0, 101);
+                    if (changeValue > 70)
+                    {
+                        Invoke("GetOrChangeGoal", 0f);
+                    }
                 }
             }
-
-            if (cubesCountOld != level1mg.cubes.Count)
-            {
-                cubesCountOld = level1mg.cubes.Count;
-
-                Invoke("GetOrChangeGoal", 0f);
-            }
-            else
-            {
-                changeValue = Random.Range(0, 101);
-                if (changeValue > 70)
-                {
-                    Invoke("GetOrChangeGoal", 0f);
-                }
-            }
-        }
-        
+        }   
     }
     public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+
+        if (other.CompareTag("Obstacle"))
+        {
+            needJumping = true;
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Ground"))
         {
             isGrounded = true;
         }
@@ -134,6 +155,20 @@ public class AI_Agent_Moving1 : MonoBehaviour
         {
             isChangedFromUntagged = true;
             StartCoroutine(VictoryDance());
+        }
+
+        if(level1mg.isFinishedLevel1 == true)
+        {
+            this.gameObject.CompareTag("Untagged");
+        }
+
+        if(agent.enabled == false)
+        {
+            rb.useGravity = true;
+        }
+        else
+        {
+            rb.useGravity = false;
         }
     }
 

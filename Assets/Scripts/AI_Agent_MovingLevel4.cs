@@ -44,6 +44,12 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
             isChangedFromUntagged = true;
             StartCoroutine(VictoryDance());
         }
+
+        if(agent.enabled == false)
+        {
+            rb.useGravity = true;
+        }
+        else rb.useGravity = false;
     }
 
     IEnumerator VictoryDance()
@@ -157,16 +163,16 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
+    /*private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
         {
             WaitedKicked = true;
             agent.enabled = false;
             transform.DORotate(new Vector3(0, 180, 0), 0.2f);
-            /*Vector3 KickPower = Vector3.zero;
+            *//*Vector3 KickPower = Vector3.zero;
             KickPower = -Vector3.back * KickForce;
-            rb.AddForce(KickPower, ForceMode.VelocityChange);*/
+            rb.AddForce(KickPower, ForceMode.VelocityChange);*//*
             Debug.Log(this + " kicked in stay");
         }
     }
@@ -184,5 +190,5 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         yield return new WaitForSeconds(1f);
         WaitedKicked = false;
         yield break;
-    }
+    }*/
 }

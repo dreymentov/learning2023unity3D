@@ -22,6 +22,8 @@ public class DeathLevel : MonoBehaviour
 
     public Level5Managment L5M;
 
+    public int BotsLostForLevel4;
+
     void Start()
     {
         BotsNumber = Random.Range(0, 10);
@@ -106,6 +108,7 @@ public class DeathLevel : MonoBehaviour
 
         }
         int jj = j + 1;
+        BotsLostForLevel4 = j;
         int ii = GOlost;
         TextLost.text = "Оставшиеся игроки: " + jj + "/" + ii;
 

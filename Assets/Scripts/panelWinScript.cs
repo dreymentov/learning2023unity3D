@@ -41,22 +41,22 @@ public class panelWinScript : MonoBehaviour
 
     IEnumerator WinPos()
     {
-        roundL.transform.DOMoveX(roundL.transform.position.x + 1300, 0.4f).SetEase(easeType);
-        roundR.transform.DOMoveX(roundR.transform.position.x - 1300, 0.4f);
-        yield return new WaitForSeconds(0.7f);
-        PingL.transform.DOMoveX(PingL.transform.position.x + 400, 0.5f);
+        roundL.transform.DOMoveX(roundL.transform.position.x + 1300, 0.25f).SetEase(easeType);
+        roundR.transform.DOMoveX(roundR.transform.position.x - 1300, 0.25f);
+        yield return new WaitForSeconds(0.3f);
+        PingL.transform.DOMoveX(PingL.transform.position.x + 400, 0.3f);
         yield return new WaitForSeconds(0.1f);
-        PingL.transform.DOShakeScale(0.3f);
-        PingR.transform.DOMoveX(PingR.transform.position.x - 400, 0.7f);
+        PingL.transform.DOShakeScale(0.2f);
+        PingR.transform.DOMoveX(PingR.transform.position.x - 400, 0.4f);
         yield return new WaitForSeconds(0.1f);
-        PingR.transform.DOShakeScale(0.3f);
-        yield return new WaitForSeconds(0.8f);
-        BlueL.transform.DOMoveX(BlueL.transform.position.x + 400, 0.7f);
+        PingR.transform.DOShakeScale(0.2f);
+        yield return new WaitForSeconds(0.4f);
+        BlueL.transform.DOMoveX(BlueL.transform.position.x + 400, 0.4f);
         yield return new WaitForSeconds(0.1f);
-        BlueL.transform.DOShakeScale(0.3f);
-        BlueR.transform.DOMoveX(BlueR.transform.position.x - 400, 0.5f);
+        BlueL.transform.DOShakeScale(0.2f);
+        BlueR.transform.DOMoveX(BlueR.transform.position.x - 400, 0.3f);
         yield return new WaitForSeconds(0.1f);
-        BlueR.transform.DOShakeScale(0.3f);
+        BlueR.transform.DOShakeScale(0.2f);
         yield return null;
     }
 

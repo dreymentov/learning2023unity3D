@@ -12,7 +12,12 @@ public class Obsctacles : MonoBehaviour
     public bool obstacl6;
     public bool obstacl7;
 
+    public bool isContactToUpPower;
+    public bool hasContact;
+    public bool isNegativeSpeed;
+
     public float powerObstacl;
+    public float nativePowerObstacl;
 
     public Vector3 posObs;
     public Vector3 posPlayer;
@@ -22,7 +27,12 @@ public class Obsctacles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        nativePowerObstacl = powerObstacl;
+
+        if (isContactToUpPower == true)
+        {
+            StartCoroutine(DowngradeSpeedObstacle());
+        }
     }
 
     // Update is called once per frame
@@ -46,7 +56,7 @@ public class Obsctacles : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (obstacl2)
+        /*if (obstacl2)
         {
             if(other.tag == "Player")
             {
@@ -71,6 +81,90 @@ public class Obsctacles : MonoBehaviour
             {
                 other.gameObject.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * powerObstacl);
             }
+        }*/
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if ((collision.gameObject.CompareTag("Bot") || collision.gameObject.CompareTag("Player")) && isContactToUpPower == true)
+        {
+            hasContact = true;
+            Debug.Log("Contact!");
         }
+        else
+        {
+            Debug.Log("Contact another tag!");
+            return;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if ((collision.gameObject.CompareTag("Bot") || collision.gameObject.CompareTag("Player")) && isContactToUpPower == true)
+        {
+            Debug.Log("Contact stay!");
+            hasContact = true;
+        }
+        else
+        {
+            Debug.Log("Contact stay another tag!");
+            return;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if ((collision.gameObject.CompareTag("Bot") || collision.gameObject.CompareTag("Player")) && isContactToUpPower == true)
+        {
+            Debug.Log("Contact end!");
+            hasContact = false; 
+        }
+        else
+        {
+            hasContact = false;
+            Debug.Log("Contact end another tag!");
+            return;
+        }
+    }
+
+    IEnumerator DowngradeSpeedObstacle()
+    {
+        if (hasContact == false)
+        {
+            if(isNegativeSpeed == false)
+            {
+                if (powerObstacl > nativePowerObstacl)
+                {
+                    powerObstacl -= 2f;
+                }
+            }
+            else
+            {
+                if (powerObstacl < nativePowerObstacl)
+                {
+                    powerObstacl += 2f;
+                }
+            }
+            
+        }
+        else
+        {
+            if (isNegativeSpeed == false)
+            {
+                if (powerObstacl < nativePowerObstacl * 10)
+                {
+                    powerObstacl += 1f;
+                }
+            }
+            else
+            {
+                if (powerObstacl > nativePowerObstacl * 10)
+                {
+                    powerObstacl -= 1f;
+                }
+            }
+        }
+        yield return new WaitForSeconds(0.1f);
+        StartCoroutine(DowngradeSpeedObstacle());
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Mathematics;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -146,7 +147,7 @@ public class MainMenuUI : MonoBehaviour
         }
     }
 
-    public void ShopChar()
+    public void ShopBody()
     {
         foreach(var scroll in Scrolls)
         {
@@ -155,7 +156,7 @@ public class MainMenuUI : MonoBehaviour
         Scrolls[0].SetActive(true);
     }
 
-    public void ShopColor()
+    public void ShopBodyParts()
     {
         foreach (var scroll in Scrolls)
         {
@@ -163,7 +164,7 @@ public class MainMenuUI : MonoBehaviour
         }
         Scrolls[1].SetActive(true);
     }
-    public void ShopTop()
+    public void ShopEyes()
     {
         foreach (var scroll in Scrolls)
         {
@@ -171,12 +172,96 @@ public class MainMenuUI : MonoBehaviour
         }
         Scrolls[2].SetActive(true);
     }
-    public void ShopBot()
+    public void ShopGloves()
     {
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
         }
         Scrolls[3].SetActive(true);
+    }
+
+    public void ShopHeadparts()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[4].SetActive(true);
+    }
+
+    public void ShopMounth()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[5].SetActive(true);
+    }
+    public void ShopNoise()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[6].SetActive(true);
+    }
+    public void ShopCombs()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[7].SetActive(true);
+    }
+    
+    public void ShopEars()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[8].SetActive(true);
+    }
+
+    public void ShopEyesFromHead()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[9].SetActive(true);
+    }
+    public void ShopHair()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[10].SetActive(true);
+    }
+    public void ShopHat()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[11].SetActive(true);
+    }
+    public void ShopHorn()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[12].SetActive(true);
+    }
+    public void ShopTails()
+    {
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
+        Scrolls[13].SetActive(true);
     }
 }

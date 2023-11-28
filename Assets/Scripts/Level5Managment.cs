@@ -24,7 +24,7 @@ public class Level5Managment : MonoBehaviour
     public List<GameObject> CubeListLevel5;
 
     public GameObject[] CubeTVColor;
-    public GameObject[] CubeTVText;
+    public TMP_Text[] CubeTVText;
 
     public Color NativeColor;
     public List<Color> ColorList;
@@ -53,6 +53,11 @@ public class Level5Managment : MonoBehaviour
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
 
+
+        foreach (var text in CubeTVText)
+        {
+            text.gameObject.SetActive(false);
+        }
 
         if (PlayerDataUIValue != null)
         {
@@ -85,7 +90,7 @@ public class Level5Managment : MonoBehaviour
     IEnumerator StartGameTextAndPanel()
     {
         Color nativeColorText = panelLevelText.color;
-
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
         panelLevelText.text = "3";
         for (int i = 0; i < 10; i++)
         {
@@ -96,7 +101,8 @@ public class Level5Managment : MonoBehaviour
         panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
         yield return new WaitForSeconds(0.3f);
 
-        panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
+        yield return new WaitForSeconds(0.05f);
         panelLevelText.text = "2";
         for (int i = 0; i < 10; i++)
         {
@@ -107,7 +113,8 @@ public class Level5Managment : MonoBehaviour
         panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
         yield return new WaitForSeconds(0.3f);
 
-        panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
+        yield return new WaitForSeconds(0.05f);
         panelLevelText.text = "1";
         for (int i = 0; i < 10; i++)
         {
@@ -759,21 +766,21 @@ public class Level5Managment : MonoBehaviour
         foreach(var text in CubeTVText)
         {
             text.gameObject.SetActive(true);
-            text.gameObject.GetComponent<TextMesh>().text = "3";
+            text.text = "3";
         }
 
         yield return new WaitForSeconds(_ColorDisableCubes * 0.25f);
 
         foreach (var text in CubeTVText)
         {
-            text.gameObject.GetComponent<TextMesh>().text = "2";
+            text.text = "2";
         }
 
         yield return new WaitForSeconds(_ColorDisableCubes * 0.25f);
 
         foreach (var text in CubeTVText)
         {
-            text.gameObject.GetComponent<TextMesh>().text = "1";
+            text.text = "1";
         }
 
         yield return new WaitForSeconds(_ColorDisableCubes * 0.25f);
@@ -781,7 +788,7 @@ public class Level5Managment : MonoBehaviour
         foreach (var text in CubeTVText)
         {
             text.gameObject.SetActive(false);
-            text.gameObject.GetComponent<TextMesh>().text = "3";
+            text.text = "3";
         }
 
         yield return new WaitForSeconds(_ColorDisableCubes * 0.25f);

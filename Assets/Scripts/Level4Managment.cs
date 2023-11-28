@@ -16,6 +16,7 @@ public class Level4Managment : MonoBehaviour
     public RectTransform panelMobile;
 
     public GameObject playerGO;
+    public GameObject DeathLevel;
 
     public PlayerDataUIValue PlayerDataUIValue;
 
@@ -32,15 +33,17 @@ public class Level4Managment : MonoBehaviour
     public GameObject[] Obstacles5;
 
     public float intervalFinalObstacles;
+    public float ifStayedToUpgradeSpeedAgainObstacles;
 
     public GameObject panelWin;
     public panelWinScript panelWinScripting;
+
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-
+        ifStayedToUpgradeSpeedAgainObstacles = 1f;
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
 
@@ -71,14 +74,22 @@ public class Level4Managment : MonoBehaviour
             obstacle.SetActive(false);
         }
 
-        if (PlayerDataUIValue.init.PlayerData.mobile)
+        if(PlayerDataUIValue != null)
         {
-            panelMobile.gameObject.SetActive(true);
-        }
+            if (PlayerDataUIValue.init.PlayerData.mobile)
+            {
+                panelMobile.gameObject.SetActive(true);
+            }
+            else
+            {
+                panelMobile.gameObject.SetActive(false);
+            }
+        } 
         else
         {
             panelMobile.gameObject.SetActive(false);
         }
+        
 
         panelLevelText.text = "3";
         panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0f);
@@ -97,7 +108,7 @@ public class Level4Managment : MonoBehaviour
     IEnumerator StartGameTextAndPanel()
     {
         Color nativeColorText = panelLevelText.color;
-
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
         panelLevelText.text = "3";
         for (int i = 0; i < 10; i++)
         {
@@ -108,7 +119,8 @@ public class Level4Managment : MonoBehaviour
         panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
         yield return new WaitForSeconds(0.3f);
 
-        panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
+        yield return new WaitForSeconds(0.05f);
         panelLevelText.text = "2";
         for (int i = 0; i < 10; i++)
         {
@@ -119,7 +131,8 @@ public class Level4Managment : MonoBehaviour
         panelLevelText.rectTransform.DORotate(new Vector3(0, 0, 0), 0.1f);
         yield return new WaitForSeconds(0.3f);
 
-        panelLevelText.rectTransform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f);
+        panelLevelText.rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0f);
+        yield return new WaitForSeconds(0.05f);
         panelLevelText.text = "1";
         for (int i = 0; i < 10; i++)
         {
@@ -165,58 +178,66 @@ public class Level4Managment : MonoBehaviour
     IEnumerator StartedGameObstacles()
     {
         Obstacles[0].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[0].transform.DOLocalMoveZ(1.5f, 4f);
+        Obstacles[0].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles[0].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(4f);
         Obstacles[0].gameObject.transform.localPosition = Vector3.zero;
         Obstacles[0].SetActive(false);
 
         Obstacles[1].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[1].transform.DOLocalMoveZ(1.5f, 4f);
+        Obstacles[1].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles[1].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(4f);
         Obstacles[1].gameObject.transform.localPosition = Vector3.zero;
         Obstacles[1].SetActive(false);
 
         Obstacles[2].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[2].transform.DOLocalMoveZ(1.5f, 4f);
+        Obstacles[2].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles[2].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(4f);
         Obstacles[2].gameObject.transform.localPosition = Vector3.zero;
         Obstacles[2].SetActive(false);
 
         Obstacles[3].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[3].transform.DOLocalMoveZ(1.5f, 4f);
+        Obstacles[3].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles[3].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(4f);
         Obstacles[3].gameObject.transform.localPosition = Vector3.zero;
         Obstacles[3].SetActive(false);
 
         Obstacles[4].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[4].transform.DOLocalMoveZ(1.5f, 4f);
+        Obstacles[4].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles[4].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(4f);
         Obstacles[4].gameObject.transform.localPosition = Vector3.zero;
         Obstacles[4].SetActive(false);
 
         Obstacles[5].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[5].transform.DOLocalMoveZ(1.5f, 4f);
+        Obstacles[5].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles[5].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(4f);
         Obstacles[5].gameObject.transform.localPosition = Vector3.zero;
         Obstacles[5].SetActive(false);
 
         Obstacles[6].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Obstacles[6].transform.DOLocalMoveZ(1.5f, 4f);
+        Obstacles[6].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(0.5f);
+        Obstacles[6].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(4f);
         Obstacles[6].gameObject.transform.localPosition = Vector3.zero;
         Obstacles[6].SetActive(false);
 
         FinalObstacle.SetActive(true);
+        FinalObstacle.transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(1f);
-        FinalObstacle.transform.DOLocalMoveZ(0.75f, 10f);
-        yield return new WaitForSeconds(10f);
+        FinalObstacle.transform.DOLocalMoveZ(0.75f, 8f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(4f);
 
         StartCoroutine(StartObst1());
         yield return new WaitForSeconds(intervalFinalObstacles);
@@ -234,14 +255,30 @@ public class Level4Managment : MonoBehaviour
         {
             PlayerDataUIValue.PlaceInLevel = 1;
         }
-        SceneManager.LoadScene("Lobby");
 
-        yield break;
+        if (DeathLevel.GetComponent<DeathLevel>().BotsLostForLevel4 < 2)
+        {
+            if(ifStayedToUpgradeSpeedAgainObstacles > 0.3f)
+            {
+                ifStayedToUpgradeSpeedAgainObstacles -= 0.2f;
+            }
+            else
+            {
+                ifStayedToUpgradeSpeedAgainObstacles = 0.2f;
+            }
+            StartCoroutine(StartedGameObstacles());
+        }
+        else
+        {
+            SceneManager.LoadScene("Lobby");
+        }
+        yield return null;
     }
 
     IEnumerator StartObst1()
     {
         Obstacles1[0].SetActive(true);
+        Obstacles1[0].transform.DOLocalMoveY(12f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         Obstacles1[0].transform.DOLocalMoveZ(1.5f, 4f);
         yield return new WaitForSeconds(4f);
@@ -253,6 +290,7 @@ public class Level4Managment : MonoBehaviour
     IEnumerator StartObst2()
     {
         Obstacles2[0].SetActive(true);
+        Obstacles2[0].transform.DOLocalMoveY(12f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         Obstacles2[0].transform.DOLocalMoveZ(1.5f, 4f);
         yield return new WaitForSeconds(4f);
@@ -264,6 +302,7 @@ public class Level4Managment : MonoBehaviour
     IEnumerator StartObst3()
     {
         Obstacles3[0].SetActive(true);
+        Obstacles3[0].transform.DOLocalMoveY(12f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         Obstacles3[0].transform.DOLocalMoveZ(1.5f, 4f);
         yield return new WaitForSeconds(4f);
@@ -275,6 +314,7 @@ public class Level4Managment : MonoBehaviour
     IEnumerator StartObst4()
     {
         Obstacles4[0].SetActive(true);
+        Obstacles4[0].transform.DOLocalMoveY(12f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         Obstacles4[0].transform.DOLocalMoveZ(1.5f, 4f);
         yield return new WaitForSeconds(4f);
@@ -285,6 +325,7 @@ public class Level4Managment : MonoBehaviour
     IEnumerator StartObst5()
     {
         Obstacles5[0].SetActive(true);
+        Obstacles5[0].transform.DOLocalMoveY(12f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         Obstacles5[0].transform.DOLocalMoveZ(1.5f, 4f);
         yield return new WaitForSeconds(4f);

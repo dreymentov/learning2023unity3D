@@ -30,10 +30,17 @@ public class Level3DoorStartLevel : MonoBehaviour
             }
             else if (IsDoor == false)
             {
-                this.gameObject.AddComponent<NavMeshObstacle>();
-                this.gameObject.GetComponent<NavMeshObstacle>().carving = true;
-                this.gameObject.GetComponent<NavMeshObstacle>().enabled = true;
+                StartCoroutine(BotLookingAtClosedDoor());
             }
         }
+    }
+
+    IEnumerator BotLookingAtClosedDoor()
+    {
+        yield return new WaitForSeconds(1f);
+        this.gameObject.AddComponent<NavMeshObstacle>();
+        this.gameObject.GetComponent<NavMeshObstacle>().carving = true;
+        this.gameObject.GetComponent<NavMeshObstacle>().enabled = true;
+        yield return null;
     }
 }

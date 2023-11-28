@@ -19,7 +19,14 @@ public class BotTextFirstTime : MonoBehaviour
     {
         cam = Camera.main; //оптимизация
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-        FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+        if(PlayerDataUIValue != null )
+        {
+            FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
+        }
+        else
+        {
+            FirstTime = false;
+        }
         text3DBot.gameObject.SetActive(true);
 
         
