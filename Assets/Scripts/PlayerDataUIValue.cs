@@ -165,7 +165,13 @@ public class PlayerDataUIValue : MonoBehaviour
 
     IEnumerator GetReward()
     {
-        if (PlaceInLevel == 5)
+        if (PlaceInLevel > 5 && PlaceInLevel < 11)
+        {
+            MoneyReward = 10;
+            HardMoneyReward = 1;
+            ExpReward = 5;
+        }
+        else if (PlaceInLevel == 5)
         {
             MoneyReward = 25;
             HardMoneyReward = 2;
@@ -282,6 +288,7 @@ public class PlayerDataUIValue : MonoBehaviour
                 TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
                 yield return new WaitForSeconds(1.5f);
                 PanelLevelUp.DOScale(new Vector3(0f, 0f, 0f), 0.5f);
+                TextLevelUp.color = new Color(1f, 1f, 1f, 0f);
                 yield return new WaitForSeconds(1f);
                 isLevelUp = false;
                 PanelLevelUp.gameObject.SetActive(false);

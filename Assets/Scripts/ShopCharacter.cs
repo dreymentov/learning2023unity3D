@@ -7,21 +7,23 @@ using TMPro;
 
 public class ShopCharacter : MonoBehaviour
 {
-    public bool isBuyOrNot = false;
     public GameObject Bought;
     public GameObject Cost;
     public GameObject MainCanvas;
-    public GameObject CheckChar;
     public GameObject ButtonBuy;
-    public CheckCharactersScript CCharGet;
+
     public PlayerDataUIValue MCanvas;
-    public int CostForBuy = 10;
-    public int CharId = 29;
+
+    public int CostForBuy = 999;
+    public int ItemId = 999;
+
+    public bool isBuyOrNot = false;
 
     // Start is called before the first frame update
     void Start()
     {
         MainCanvas = FindObjectOfType<Init>().gameObject;
+        MCanvas = MainCanvas.gameObject.GetComponent<PlayerDataUIValue>();
         Cost.GetComponent<TMP_Text>().text = "" + CostForBuy;
         ButtonBuy.SetActive(false);
 
@@ -42,13 +44,14 @@ public class ShopCharacter : MonoBehaviour
     private void OnEnable()
     {
         MainCanvas = FindObjectOfType<Init>().gameObject;
+        MCanvas = MainCanvas.gameObject.GetComponent<PlayerDataUIValue>();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         ButtonBuy.SetActive(false);
-        MCanvas = MainCanvas.gameObject.GetComponent<PlayerDataUIValue>();
+        
     }
     private void OnDisable()
     {

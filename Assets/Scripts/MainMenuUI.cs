@@ -11,7 +11,9 @@ public class MainMenuUI : MonoBehaviour
     public GameObject CameraTargetStart;
     public GameObject CameraTargetTimeShop;
     public GameObject CmVcam;
+    public GameObject PlayerUILevelExp;
     public GameObject ButtonMenu;
+    public GameObject ButtonMenuFromShop;
     public GameObject ButtonShop;
     public GameObject ButtonStart;
     public GameObject ButtonExit;
@@ -34,27 +36,32 @@ public class MainMenuUI : MonoBehaviour
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        PlayerUILevelExp = GameObject.FindGameObjectWithTag("PlayerUILevelPanel");
         FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
         FirstTimeShop = PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop;
 
         if ((FirstTime == true) && (FirstTimeShop == false))
         {
             ImageTextFirstGame.gameObject.SetActive(true);
+            ButtonExit.gameObject.SetActive(false);
         }
         else
         {
             ImageTextFirstGame.gameObject.SetActive(false);
+            
         }
 
         if ((FirstTime == true) && (FirstTimeShop == true))
         {
             ImageTextFirstGameShop.gameObject.SetActive(true);
+            ButtonExit.gameObject.SetActive(false);
         }
         else
         {
             ImageTextFirstGameShop.gameObject.SetActive(false);
+            ButtonExit.gameObject.SetActive(true);
         }
-
+        ButtonMenuFromShop.SetActive(false);
         PanelShop.SetActive(false);
         ButtonBuy.SetActive(false);
         foreach (var scroll in Scrolls)
@@ -83,7 +90,9 @@ public class MainMenuUI : MonoBehaviour
                 cam.Follow = CameraTargetTimeShop.transform;
                 cam.LookAt = CameraTargetTimeShop.transform;
                 ButtonStart.SetActive(false);
+                PlayerUILevelExp.SetActive(false);
                 ButtonExit.SetActive(false);
+                ButtonMenuFromShop.SetActive(true);
                 PanelShop.SetActive(true);
                 PanelInnShop.SetActive(false);
             }
@@ -105,6 +114,8 @@ public class MainMenuUI : MonoBehaviour
                 cam.LookAt = CameraTargetTimeShop.transform;
                 ButtonStart.SetActive(false);
                 ButtonExit.SetActive(false);
+                ButtonMenuFromShop.SetActive(true);
+                PlayerUILevelExp.SetActive(false);
                 PanelShop.SetActive(true);
                 PanelInnShop.SetActive(false);
             }
@@ -121,8 +132,10 @@ public class MainMenuUI : MonoBehaviour
         cam.Follow = CameraTargetStart.transform;
         cam.LookAt = CameraTargetStart.transform;
         ButtonStart.SetActive(true);
+        PlayerUILevelExp.SetActive(true);
         ButtonExit.SetActive(true);
         ButtonBuy.SetActive(false);
+        ButtonMenuFromShop.SetActive(false);
         PanelShop.SetActive(false);
         PanelInnShop.SetActive(false);
     }
@@ -136,8 +149,10 @@ public class MainMenuUI : MonoBehaviour
             {
                 ButtonStart.SetActive(false);
                 ButtonExit.SetActive(false);
+                PlayerUILevelExp.SetActive(false);
                 PanelShop.SetActive(false);
-                PanelInnShop.SetActive(true);
+                PanelInnShop.SetActive(true); 
+                ButtonMenuFromShop.SetActive(true);
             }
             else
             {
@@ -154,6 +169,7 @@ public class MainMenuUI : MonoBehaviour
             scroll.SetActive(false);
         }
         Scrolls[0].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
 
     public void ShopBodyParts()
@@ -163,6 +179,7 @@ public class MainMenuUI : MonoBehaviour
             scroll.SetActive(false);
         }
         Scrolls[1].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
     public void ShopEyes()
     {
@@ -171,6 +188,7 @@ public class MainMenuUI : MonoBehaviour
             scroll.SetActive(false);
         }
         Scrolls[2].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
     public void ShopGloves()
     {
@@ -179,6 +197,7 @@ public class MainMenuUI : MonoBehaviour
             scroll.SetActive(false);
         }
         Scrolls[3].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
 
     public void ShopHeadparts()
@@ -188,6 +207,7 @@ public class MainMenuUI : MonoBehaviour
             scroll.SetActive(false);
         }
         Scrolls[4].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
 
     public void ShopMounth()
@@ -197,6 +217,7 @@ public class MainMenuUI : MonoBehaviour
             scroll.SetActive(false);
         }
         Scrolls[5].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
     public void ShopNoise()
     {
@@ -205,32 +226,16 @@ public class MainMenuUI : MonoBehaviour
             scroll.SetActive(false);
         }
         Scrolls[6].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
-    public void ShopCombs()
-    {
-        foreach (var scroll in Scrolls)
-        {
-            scroll.SetActive(false);
-        }
-        Scrolls[7].SetActive(true);
-    }
-    
     public void ShopEars()
     {
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
         }
-        Scrolls[8].SetActive(true);
-    }
-
-    public void ShopEyesFromHead()
-    {
-        foreach (var scroll in Scrolls)
-        {
-            scroll.SetActive(false);
-        }
-        Scrolls[9].SetActive(true);
+        Scrolls[7].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
     public void ShopHair()
     {
@@ -238,7 +243,8 @@ public class MainMenuUI : MonoBehaviour
         {
             scroll.SetActive(false);
         }
-        Scrolls[10].SetActive(true);
+        Scrolls[8].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
     public void ShopHat()
     {
@@ -246,7 +252,8 @@ public class MainMenuUI : MonoBehaviour
         {
             scroll.SetActive(false);
         }
-        Scrolls[11].SetActive(true);
+        Scrolls[9].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
     public void ShopHorn()
     {
@@ -254,7 +261,8 @@ public class MainMenuUI : MonoBehaviour
         {
             scroll.SetActive(false);
         }
-        Scrolls[12].SetActive(true);
+        Scrolls[10].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
     public void ShopTails()
     {
@@ -262,6 +270,7 @@ public class MainMenuUI : MonoBehaviour
         {
             scroll.SetActive(false);
         }
-        Scrolls[13].SetActive(true);
+        Scrolls[11].SetActive(true);
+        ButtonBuy.SetActive(false);
     }
 }

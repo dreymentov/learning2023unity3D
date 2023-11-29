@@ -199,8 +199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76561547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3, y: -0.86000013, z: 0}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 8
@@ -425,10 +425,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obst (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 2662380931514680348, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
 --- !u!4 &166373288 stripped
@@ -483,13 +479,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -500,8 +512,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -801,13 +821,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -818,8 +854,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -903,13 +947,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -920,8 +980,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -1053,13 +1121,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -1070,8 +1154,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -1175,8 +1267,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377123616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.86, z: 0}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 0
@@ -1354,13 +1446,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -1371,8 +1479,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -1563,13 +1679,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -1580,8 +1712,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -1997,13 +2137,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -2014,8 +2170,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -2119,8 +2283,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693347430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.86000013, z: 0.3}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 2
@@ -2214,8 +2378,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711834798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.3, y: -0.86000013, z: 0}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 7
@@ -2289,13 +2453,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -2306,8 +2486,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -2391,13 +2579,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -2408,8 +2612,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -2541,10 +2753,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obst (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 2662380931514680348, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
 --- !u!4 &772981984 stripped
@@ -2642,10 +2850,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obst (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2662380931514680348, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
 --- !u!4 &789536827 stripped
@@ -2742,10 +2946,6 @@ PrefabInstance:
     - target: {fileID: 2662380931514680348, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
       propertyPath: m_Name
       value: Obst (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2662380931514680348, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
@@ -3221,10 +3421,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obst (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 2662380931514680348, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
 --- !u!4 &879050599 stripped
@@ -3457,13 +3653,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -3474,8 +3686,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -3635,13 +3855,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -3652,8 +3888,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -4278,13 +4522,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -4295,8 +4555,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -4380,13 +4648,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -4397,8 +4681,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -4501,11 +4793,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.00000000169604
+      value: -1.7454625e-10
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -2.609093e-11
+      value: -2.6851269e-12
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4513,7 +4805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.015381621
+      value: -0.015381618
       objectReference: {fileID: 0}
     - target: {fileID: 104175313530153702, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_RootOrder
@@ -4582,13 +4874,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -4599,8 +4907,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -5053,8 +5369,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355012279}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3, y: -0.86000013, z: 0.3}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 3
@@ -5204,7 +5520,7 @@ MonoBehaviour:
   panelLevelText: {fileID: 896110628}
   panelMobile: {fileID: 1014727530}
   playerGO: {fileID: 182987271}
-  DeathLevel: {fileID: 0}
+  DeathLevel: {fileID: 862372775}
   PlayerDataUIValue: {fileID: 0}
   SpeedMove: 0
   GameTime: 300
@@ -5261,6 +5577,9 @@ MonoBehaviour:
   ifStayedToUpgradeSpeedAgainObstacles: 0
   panelWin: {fileID: 280458888}
   panelWinScripting: {fileID: 280458886}
+  BotsLost: 0
+  maxObstInTheLevel4: 6
+  intObs: 0
 --- !u!4 &1416965847
 Transform:
   m_ObjectHideFlags: 0
@@ -5363,13 +5682,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -5380,8 +5715,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -5517,7 +5860,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478432326}
-  m_LocalRotation: {x: 1.4325146e-11, y: 0.99988174, z: -0.015381507, w: 9.3121255e-10}
+  m_LocalRotation: {x: 4.4526466e-11, y: 0.99988174, z: -0.01538151, w: 0.000000002894462}
   m_LocalPosition: {x: 0, y: 8.67, z: 206.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5532,13 +5875,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -5549,8 +5908,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -5708,8 +6075,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622961916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.86000013, z: -0.3}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 5
@@ -5876,13 +6243,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -5893,8 +6276,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -5983,6 +6374,7 @@ GameObject:
   - component: {fileID: 1671149190}
   - component: {fileID: 1671149189}
   - component: {fileID: 1671149188}
+  - component: {fileID: 1671149192}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -6060,12 +6452,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671149187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 200}
-  m_LocalScale: {x: 30, y: 1, z: 30}
+  m_LocalPosition: {x: 0, y: -0.6, z: 200}
+  m_LocalScale: {x: 30, y: 6, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1671149192
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671149187}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1672177095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2662380929805194972, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
@@ -6147,8 +6555,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747075781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.3, y: -0.86000013, z: 0.3}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 1
@@ -6271,13 +6679,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -6288,8 +6712,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -6442,8 +6874,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840620636}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3, y: -0.86000013, z: -0.3}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 4
@@ -6672,8 +7104,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001674189}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.3, y: -0.86000013, z: -0.3}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 449345818}
   m_RootOrder: 6
@@ -6853,13 +7285,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -6870,8 +7318,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -7094,13 +7550,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901494826, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Speed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494830, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e22c35a45fac28e4eb8a295407e775b7, type: 2}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901494831, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -7111,8 +7583,16 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7725229846584270180, guid: f752bbfd86a04474c8de7cc25ff091ed, type: 2}
+    - target: {fileID: 1301663602713170799, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681695997414982674, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2044626617213145328, guid: 0624169d4c254061a85f06ebe7047e19, type: 3}
       propertyPath: m_fontAsset
@@ -7292,10 +7772,6 @@ PrefabInstance:
     - target: {fileID: 2662380931514680348, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
       propertyPath: m_Name
       value: Obst
-      objectReference: {fileID: 0}
-    - target: {fileID: 2662380931514680348, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85770ef125b820344b34bf2b1aeeb254, type: 3}

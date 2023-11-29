@@ -35,6 +35,10 @@ public class PlayerUIControl : MonoBehaviour
     public bool FirstTime;
     public bool FirstTimeNeedShop;
 
+    [Header("Manual level loading")]
+    [SerializeField] private bool isNeedTheLevelLoad;
+    [SerializeField] private string TheLevelLoad;
+
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -159,7 +163,7 @@ public class PlayerUIControl : MonoBehaviour
         StopCoroutine(ImageMove(MainImagesMover));
 
         DOTween.Kill(MainImagesMover.transform);
-
+        
         if(FirstTime == true)
         {
             Sprite sprite = imagesList1[1].GetComponent<Image>().sprite;
@@ -176,16 +180,21 @@ public class PlayerUIControl : MonoBehaviour
 
         FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
 
-        if (FirstTime == true)
+        if (isNeedTheLevelLoad == false)
         {
-            SceneManager.LoadScene("Level2");
+            if (FirstTime == true)
+            {
+                SceneManager.LoadScene("Level2");
+            }
+            else
+            {
+                SceneManager.LoadScene(Level);
+            }
         }
         else
         {
-            SceneManager.LoadScene(Level);
+            SceneManager.LoadScene(TheLevelLoad);
         }
-
-        //SceneManager.LoadScene("Level2");
 
         yield return null;
     }

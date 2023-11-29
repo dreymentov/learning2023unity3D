@@ -1367,7 +1367,7 @@ MonoBehaviour:
   rb: {fileID: 511288110}
   cameraHolder: {fileID: 1805923571}
   PlayerRotateHolder: {fileID: 8941777065522489248}
-  speed: 9
+  speed: 11
   sensitivity: 0.1
   lookRotation: 0
   maxForce: 12

@@ -73,7 +73,14 @@ public class FinishedLevel : MonoBehaviour
 
         else if (other.gameObject.CompareTag("Player"))
         {
-            gameObjectsInList.Add(other.gameObject);
+            if (gameObjectsInList.Contains(other.gameObject))
+            {
+                return;
+            }
+            else
+            {
+                gameObjectsInList.Add(other.gameObject);
+            }
 
             for (int i = 0; i < gameObjectsInList.Count; i++)
             {

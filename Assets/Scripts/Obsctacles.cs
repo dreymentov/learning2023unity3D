@@ -15,6 +15,7 @@ public class Obsctacles : MonoBehaviour
     public bool isContactToUpPower;
     public bool hasContact;
     public bool isNegativeSpeed;
+    public bool isNeedRotateWithPlayer;
 
     public float powerObstacl;
     public float nativePowerObstacl;
@@ -96,6 +97,15 @@ public class Obsctacles : MonoBehaviour
             Debug.Log("Contact another tag!");
             return;
         }
+
+        if(collision.gameObject.CompareTag("Player") && isNeedRotateWithPlayer == true)
+        {
+            collision.transform.parent = this.gameObject.transform; 
+        }
+        else
+        {
+            return;
+        }
     }
 
     private void OnCollisionStay(Collision collision)
@@ -109,6 +119,18 @@ public class Obsctacles : MonoBehaviour
         {
             Debug.Log("Contact stay another tag!");
             return;
+        }
+
+        if(collision.gameObject.CompareTag("Player") && isNeedRotateWithPlayer == true)
+        {
+            // “”“ ƒŒÀ∆Õ¿ ¡€“‹ —»À¿  Œ“Œ–¿ﬂ “ŒÀ ¿≈“ —À≈¬¿ »À» —œ–¿¬Œ
+            //collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x - (powerObstacl * 0.01f), collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
+            collision.transform.eulerAngles = Vector3.zero;
+;
+            if (collision.transform.localPosition.x < -0.6)
+            {
+                collision.transform.parent = null;
+            }
         }
     }
 
@@ -125,6 +147,15 @@ public class Obsctacles : MonoBehaviour
             Debug.Log("Contact end another tag!");
             return;
         }
+
+        if (collision.gameObject.CompareTag("Player") && isNeedRotateWithPlayer == true)
+        {
+            collision.transform.parent = null;
+        }
+        else
+        {
+            return;
+        }
     }
 
     IEnumerator DowngradeSpeedObstacle()
@@ -135,14 +166,14 @@ public class Obsctacles : MonoBehaviour
             {
                 if (powerObstacl > nativePowerObstacl)
                 {
-                    powerObstacl -= 2f;
+                    powerObstacl *= 0.8f;
                 }
             }
             else
             {
                 if (powerObstacl < nativePowerObstacl)
                 {
-                    powerObstacl += 2f;
+                    powerObstacl *= 0.8f;
                 }
             }
             
@@ -151,16 +182,16 @@ public class Obsctacles : MonoBehaviour
         {
             if (isNegativeSpeed == false)
             {
-                if (powerObstacl < nativePowerObstacl * 10)
+                if (powerObstacl < nativePowerObstacl * 2)
                 {
-                    powerObstacl += 1f;
+                    powerObstacl *= 1.1f;
                 }
             }
             else
             {
-                if (powerObstacl > nativePowerObstacl * 10)
+                if (powerObstacl > nativePowerObstacl * 2)
                 {
-                    powerObstacl -= 1f;
+                    powerObstacl *= 1.1f;
                 }
             }
         }

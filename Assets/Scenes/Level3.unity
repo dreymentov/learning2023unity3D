@@ -1462,7 +1462,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -1659,7 +1659,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -2143,7 +2143,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -2279,7 +2279,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208031992}
-  m_LocalRotation: {x: -2.8773673e-11, y: 0.99988174, z: -0.015381611, w: -0.0000000018704327}
+  m_LocalRotation: {x: 1.1330472e-19, y: 0.99988174, z: -0.015381608, w: 3.2331248e-18}
   m_LocalPosition: {x: 14.549998, y: 13.67, z: -288.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2992,7 +2992,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -3317,7 +3317,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -4035,7 +4035,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -4617,7 +4617,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -4942,7 +4942,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -5580,7 +5580,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -6035,7 +6035,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -8500,7 +8500,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -9107,7 +9107,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -10029,7 +10029,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -11366,7 +11366,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204470373}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11528,7 +11528,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -12662,7 +12662,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -12967,7 +12967,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -13647,7 +13647,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -14310,7 +14310,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -16839,7 +16839,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -17745,7 +17745,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.375
-  m_Speed: 5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 0
   m_AngularSpeed: 15
@@ -18297,6 +18297,7 @@ MonoBehaviour:
   BotsNumber: 0
   L5M: {fileID: 0}
   BotsLostForLevel4: 0
+  forLevel3: 1
 --- !u!65 &1958129376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18779,31 +18780,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.549998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -582.80005
+      value: -10.000006
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000002396766
+      value: 0.99988174
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 3.6870493e-11
+      value: 0.015381608
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.99988174
+      value: -3.2331248e-18
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.015381616
+      value: 1.1330472e-19
       objectReference: {fileID: 0}
     - target: {fileID: 104175313530153702, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_RootOrder

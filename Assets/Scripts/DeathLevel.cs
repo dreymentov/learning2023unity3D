@@ -24,6 +24,8 @@ public class DeathLevel : MonoBehaviour
 
     public int BotsLostForLevel4;
 
+    public bool forLevel3;
+
     void Start()
     {
         BotsNumber = Random.Range(0, 10);
@@ -77,12 +79,11 @@ public class DeathLevel : MonoBehaviour
 
     public void WinTheLevel()
     {
-        panelWinInDeathlevel.GetComponent<panelWinScript>().panelWinInvoke();
-
         if (PlayerDataUIValue != null)
         {
             PlayerDataUIValue.PlaceInLevel = 1;
         }
+        panelWinInDeathlevel.GetComponent<panelWinScript>().panelWinInvoke();
     }
 
     IEnumerator CheckGO()
@@ -99,8 +100,11 @@ public class DeathLevel : MonoBehaviour
                 j++;
             }
         }
+        BotsLostForLevel4 = j;
+        Debug.Log(BotsLostForLevel4);
         if (j == 0)
         {
+            Debug.Log("CheckGO win");
             WinTheLevel();
         }
         else
@@ -108,9 +112,15 @@ public class DeathLevel : MonoBehaviour
 
         }
         int jj = j + 1;
-        BotsLostForLevel4 = j;
         int ii = GOlost;
-        TextLost.text = "Оставшиеся игроки: " + jj + "/" + ii;
+        if(forLevel3)
+        {
+
+        }
+        else
+        {
+            TextLost.text = "Оставшиеся игроки: " + jj + "/" + ii;
+        }
 
         yield return null;
     }

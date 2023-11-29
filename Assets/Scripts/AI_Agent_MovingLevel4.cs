@@ -49,7 +49,6 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         {
             rb.useGravity = true;
         }
-        else rb.useGravity = false;
     }
 
     IEnumerator VictoryDance()
@@ -86,7 +85,7 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         {
             IsGrounded = true;
 
-            if((Jumped == true) && (WaitedKicked == false))
+            if(Jumped == true)
             {
                 Jumped = false;
                 agent.enabled = true;
@@ -126,6 +125,11 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         {
             jumpForces = Vector3.up * JumpForce;
         }
+        else 
+        {
+            ;
+        }
+        
         int i = Random.Range(0, 100);
 
         if(i > 30)
@@ -151,28 +155,28 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
         {
             WaitedKicked = true;
             agent.enabled = false;
-            transform.DORotate(new Vector3(0, 180, 0), 0.2f);
-            /*Vector3 KickPower = Vector3.zero;
+           /* transform.DORotate(new Vector3(0, 180, 0), 0.2f);
+            Vector3 KickPower = Vector3.zero;
             KickPower = -Vector3.back * KickForce;
             rb.AddForce(KickPower, ForceMode.VelocityChange);*/
             Debug.Log(this + " kicked");
         }
     }
 
-    /*private void OnCollisionStay(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
         {
             WaitedKicked = true;
             agent.enabled = false;
-            transform.DORotate(new Vector3(0, 180, 0), 0.2f);
-            *//*Vector3 KickPower = Vector3.zero;
+            /*transform.DORotate(new Vector3(0, 180, 0), 0.2f);
+            Vector3 KickPower = Vector3.zero;
             KickPower = -Vector3.back * KickForce;
-            rb.AddForce(KickPower, ForceMode.VelocityChange);*//*
+            rb.AddForce(KickPower, ForceMode.VelocityChange);*/
             Debug.Log(this + " kicked in stay");
         }
     }
@@ -181,7 +185,7 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
         {
-            StartCoroutine(EnableAgentAfterKick());
+            //StartCoroutine(EnableAgentAfterKick());
         }
     }
 
@@ -190,5 +194,5 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         yield return new WaitForSeconds(1f);
         WaitedKicked = false;
         yield break;
-    }*/
+    }
 }
