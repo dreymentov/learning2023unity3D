@@ -98,6 +98,9 @@ public class PlayerDataUIValue : MonoBehaviour
             PanelShowSummary.gameObject.SetActive(false);
             ButtonStart.gameObject.SetActive(false);
             ButtonMainMenu.gameObject.SetActive(false);
+
+            TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
+            TextValueHardMoney.text = "" + init.PlayerData.PlayerHardMoney;
         }
 
         if (SceneManager.GetActiveScene().name == "Level1")

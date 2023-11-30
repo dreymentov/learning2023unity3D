@@ -19,11 +19,14 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
     public bool Jumped;
     public bool WaitedKicked;
 
+    public bool isTriggerObs;
+
+    public int idGoal = 0;
+
 
     public void StartAgent()
     {
         agent = GetComponent<NavMeshAgent>();
-
         agent.destination = goals[Random.Range(0,goals.Length)].position;
         StartCoroutine(RandomGoal());
     }
@@ -45,10 +48,16 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
             StartCoroutine(VictoryDance());
         }
 
-        if(agent.enabled == false)
+        /*if(agent.enabled == false)
         {
-            rb.useGravity = true;
-        }
+            this.transform.LookAt(new Vector3(goals[idGoal].transform.position.x, 0, goals[idGoal].transform.position.z));
+
+            Vector3 currentVelocity = rb.velocity;
+            Vector3 targetVelocity = new Vector3(10, 0, 0);
+            Vector3 velocityChange = (targetVelocity - currentVelocity);
+            targetVelocity = transform.TransformDirection(targetVelocity);
+            rb.AddForce(velocityChange, ForceMode.VelocityChange);
+        }*/
     }
 
     IEnumerator VictoryDance()
@@ -64,8 +73,9 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     IEnumerator RandomGoal()
     {
-        yield return new WaitForSeconds(Random.Range(0, 5));
-        if(agent.enabled == true)
+        yield return new WaitForSeconds(Random.Range(0.1f, 1f));
+        idGoal = Random.Range(0, goals.Length);
+        if (agent.enabled == true)
         {
             agent.destination = goals[Random.Range(0, goals.Length)].position;
         }
@@ -75,38 +85,45 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Jump"))
+        if (other.gameObject.CompareTag("DisableAgent"))
         {
-            agent.enabled = false;
-            StartCoroutine(JumpAgent());
+            isTriggerObs = true;
         }
 
-        if(other.gameObject.CompareTag("Ground"))
+        if (isTriggerObs == false)
         {
-            IsGrounded = true;
-
-            if(Jumped == true)
+            if (other.gameObject.CompareTag("Jump"))
             {
-                Jumped = false;
-                agent.enabled = true;
-                agent.destination = goals[Random.Range(0, goals.Length)].position;
+                StartCoroutine(JumpAgent());
+            }
+
+            if (other.gameObject.CompareTag("Ground"))
+            {
+                IsGrounded = true;
+
+                if (Jumped == true)
+                {
+                    Jumped = false;
+                }
             }
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("DisableAgent"))
         {
-            IsGrounded = true;
-
-            if ((Jumped == true) && (WaitedKicked == false))
-            {
-                Jumped = false;
-                agent.enabled = true;
-                agent.destination = goals[Random.Range(0, goals.Length)].position;
-            }
+            isTriggerObs = true;
         }
+        if (other.gameObject.CompareTag("Ground"))
+         {
+             IsGrounded = true;
+
+             if ((Jumped == true) && (WaitedKicked == false))
+             {
+                 Jumped = false;
+             }
+         }
     }
 
     private void OnTriggerExit(Collider other)
@@ -114,6 +131,11 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             IsGrounded = false;
+        }
+
+        if(other.gameObject.CompareTag("DisableAgent"))
+        {
+            isTriggerObs = false;
         }
     }
 
@@ -155,44 +177,22 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
+        if (collision.gameObject.CompareTag("Jump"))
         {
-            WaitedKicked = true;
-            agent.enabled = false;
-           /* transform.DORotate(new Vector3(0, 180, 0), 0.2f);
-            Vector3 KickPower = Vector3.zero;
-            KickPower = -Vector3.back * KickForce;
-            rb.AddForce(KickPower, ForceMode.VelocityChange);*/
-            Debug.Log(this + " kicked");
+            StartCoroutine(JumpAgent());
         }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
+    if (collision.gameObject.CompareTag("Jump"))
         {
-            WaitedKicked = true;
-            agent.enabled = false;
-            /*transform.DORotate(new Vector3(0, 180, 0), 0.2f);
-            Vector3 KickPower = Vector3.zero;
-            KickPower = -Vector3.back * KickForce;
-            rb.AddForce(KickPower, ForceMode.VelocityChange);*/
-            Debug.Log(this + " kicked in stay");
+            StartCoroutine(JumpAgent());
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
-        {
-            //StartCoroutine(EnableAgentAfterKick());
-        }
-    }
 
-    IEnumerator EnableAgentAfterKick()
-    {
-        yield return new WaitForSeconds(1f);
-        WaitedKicked = false;
-        yield break;
     }
 }

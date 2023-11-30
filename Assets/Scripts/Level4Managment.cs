@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.Rendering.UI;
+using UnityEditor;
 
 public class Level4Managment : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class Level4Managment : MonoBehaviour
     public int maxObstInTheLevel4;
     public int intObs; // for enable obst in obsts
 
+    public List<GameObject> Bots;
 
     // Start is called before the first frame update
     void Start()
@@ -215,74 +217,102 @@ public class Level4Managment : MonoBehaviour
         intObs = Random.Range(0, Obstacles.Length);
         StartCoroutine(InvokeObst());
         yield return new WaitForSeconds(4.5f * ifStayedToUpgradeSpeedAgainObstacles);*/
-        Time.timeScale = 0.1f;
-        intObs = Random.Range(0, Obstacles.Length);
-        Obstacles[intObs].transform.localPosition = Vector3.zero;
-        Obstacles[intObs].SetActive(true);
-        Obstacles[intObs].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
-        Obstacles[intObs].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
-        Obstacles[intObs].transform.localPosition = Vector3.zero;
-        Obstacles[intObs].SetActive(false);
+        EnableOrDisableAgent(true);
 
         intObs = Random.Range(0, Obstacles.Length);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(true);
         Obstacles[intObs].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles[intObs].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(false);
 
+        EnableOrDisableAgent(true);
         intObs = Random.Range(0, Obstacles.Length);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(true);
         Obstacles[intObs].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles[intObs].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(false);
 
+        EnableOrDisableAgent(true);
         intObs = Random.Range(0, Obstacles.Length);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(true);
         Obstacles[intObs].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles[intObs].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(false);
 
+        EnableOrDisableAgent(true);
         intObs = Random.Range(0, Obstacles.Length);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(true);
         Obstacles[intObs].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles[intObs].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(false);
 
+        EnableOrDisableAgent(true);
         intObs = Random.Range(0, Obstacles.Length);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(true);
         Obstacles[intObs].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles[intObs].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        Obstacles[intObs].transform.localPosition = Vector3.zero;
+        Obstacles[intObs].SetActive(false);
+
+        EnableOrDisableAgent(true);
+        intObs = Random.Range(0, Obstacles.Length);
+        Obstacles[intObs].transform.localPosition = Vector3.zero;
+        Obstacles[intObs].SetActive(true);
+        Obstacles[intObs].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
+        Obstacles[intObs].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles[intObs].transform.localPosition = Vector3.zero;
         Obstacles[intObs].SetActive(false);
 
         if (FinalObstacle.active == false)
         {
+            EnableOrDisableAgent(true);
             FinalObstacle.SetActive(true);
             FinalObstacle.transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
             yield return new WaitForSeconds(1f);
+
             FinalObstacle.transform.DOLocalMoveZ(0.75f, 8f * ifStayedToUpgradeSpeedAgainObstacles);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+            EnableOrDisableAgent(false);
+            yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         }
 
         StartCoroutine(StartObst1());
@@ -324,11 +354,15 @@ public class Level4Managment : MonoBehaviour
 
     IEnumerator StartObst1()
     {
+        EnableOrDisableAgent(true);
         Obstacles1[0].SetActive(true);
         Obstacles1[0].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles1[0].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles1[0].gameObject.transform.localPosition = Vector3.zero;
         Obstacles1[0].SetActive(false);
         yield break;
@@ -336,11 +370,15 @@ public class Level4Managment : MonoBehaviour
 
     IEnumerator StartObst2()
     {
+        EnableOrDisableAgent(true);
         Obstacles2[0].SetActive(true);
         Obstacles2[0].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles2[0].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles2[0].gameObject.transform.localPosition = Vector3.zero;
         Obstacles2[0].SetActive(false);
         yield break;
@@ -348,11 +386,15 @@ public class Level4Managment : MonoBehaviour
 
     IEnumerator StartObst3()
     {
+        EnableOrDisableAgent(true);
         Obstacles3[0].SetActive(true);
         Obstacles3[0].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles3[0].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles3[0].gameObject.transform.localPosition = Vector3.zero;
         Obstacles3[0].SetActive(false);
         yield break;
@@ -360,22 +402,31 @@ public class Level4Managment : MonoBehaviour
 
     IEnumerator StartObst4()
     {
+        EnableOrDisableAgent(true);
         Obstacles4[0].SetActive(true);
         Obstacles4[0].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
         Obstacles4[0].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles4[0].gameObject.transform.localPosition = Vector3.zero;
         Obstacles4[0].SetActive(false);
         yield break;
     }
     IEnumerator StartObst5()
     {
+        EnableOrDisableAgent(true);
         Obstacles5[0].SetActive(true);
         Obstacles5[0].transform.DOLocalMoveY(12f, 0.5f * ifStayedToUpgradeSpeedAgainObstacles);
         yield return new WaitForSeconds(0.5f * ifStayedToUpgradeSpeedAgainObstacles);
+
+        
         Obstacles5[0].transform.DOLocalMoveZ(1.5f, 4f * ifStayedToUpgradeSpeedAgainObstacles);
-        yield return new WaitForSeconds(4f * ifStayedToUpgradeSpeedAgainObstacles);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
+        EnableOrDisableAgent(false);
+        yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
         Obstacles5[0].gameObject.transform.localPosition = Vector3.zero;
         Obstacles5[0].SetActive(false);
         yield break;
@@ -408,4 +459,22 @@ public class Level4Managment : MonoBehaviour
         Obstacles[intObs].SetActive(false);
         yield break;
     }*/
+
+    public void EnableOrDisableAgent(bool isEnOrDs)
+    {
+        foreach(GameObject Bot in Bots)
+        {
+            if(Bot != null) 
+            {
+                if (Bot.GetComponent<NavMeshAgent>() != null)
+                {
+                    Bot.GetComponent<NavMeshAgent>().enabled = isEnOrDs;
+                    if(Bot.GetComponent<NavMeshAgent>().enabled == true)
+                    {
+                        Bot.GetComponent<NavMeshAgent>().destination = Bot.GetComponent<AI_Agent_MovingLevel4>().goals[Random.Range(0, Bot.GetComponent<AI_Agent_MovingLevel4>().goals.Length)].position;
+                    }
+                }
+            }
+        }
+    }
 }

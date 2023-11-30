@@ -29,7 +29,6 @@ public class InnAppShop : MonoBehaviour
     public void BuyRareCard2()
     {
         init.PlayerData.Bodyparts[9] = 1;
-        init.PlayerData.PlayerHardMoney += 1000;
         CheckMoneyTextUI();
     }
 

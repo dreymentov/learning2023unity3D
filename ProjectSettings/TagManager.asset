@@ -12,6 +12,7 @@ TagManager:
   - IsNotGround
   - Jump
   - PlayerUILevelPanel
+  - DisableAgent
   layers:
   - Default
   - TransparentFX

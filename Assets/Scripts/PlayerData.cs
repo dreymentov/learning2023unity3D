@@ -30,6 +30,21 @@ public class PlayerData
     public int[] Hat = { 0, 0, 0, 0, 0 };
     public int[] Horn = { 0, 0, 0, 0 };
     public int[] Tails = { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+    public int[] CharacterBodies = { 0, 1, 0, 0, 0, 0 };
+    public int[] CharacterBodyparts = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] CharacterEyes = { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] CharacterGloves = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] CharacterHeadparts = { 0, 0, 0, 0 };
+    public int[] CharacterMounth = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] CharacterNoise = { 0, 0, 0, 0, 0 };
+    public int[] CharacterCombs = { 0 };
+    public int[] CharacterEars = { 0, 0, 0, 0 };
+    public int[] CharacterEyesFromHead = { 0, 0, 0, 0 };
+    public int[] CharacterHair = { 0, 0 };
+    public int[] CharacterHat = { 0, 0, 0, 0, 0 };
+    public int[] CharacterHorn = { 0, 0, 0, 0 };
+    public int[] CharacterTails = { 0, 0, 0, 0, 0, 0, 0, 0 };
 }
 
 
