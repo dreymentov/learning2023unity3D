@@ -5,17 +5,20 @@ public class AI_Agent_Moving2 : MonoBehaviour
 {
     // Положение точки назначения
     public Transform[] goals;
+
     public float agentTimerWait = 4;
     public bool IsFinished = false;
+    public NavMeshAgent agent;
 
     public void StartAgent()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goals[Random.Range(0, goals.Length - 1)].position;
+        agent.destination = goals[Random.Range(0, goals.Length)].position;
+        StartCoroutine(GetGoalForAgent());
     }
 
     public void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         IsFinished = false;
         Invoke("StartAgent", agentTimerWait);
     }
@@ -27,5 +30,13 @@ public class AI_Agent_Moving2 : MonoBehaviour
             IsFinished = true;
 
         }
+    }
+
+    IEnumerator GetGoalForAgent()
+    {
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        yield return new WaitForSeconds(Random.Range(1,4));
+        agent.destination = goals[Random.Range(0, goals.Length)].position;
+        StartCoroutine(GetGoalForAgent());
     }
 }

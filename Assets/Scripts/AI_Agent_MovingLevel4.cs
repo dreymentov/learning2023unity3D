@@ -13,15 +13,11 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
     public NavMeshAgent agent;
 
     public float JumpForce;
-    public float KickForce;
 
     public bool IsGrounded;
     public bool Jumped;
-    public bool WaitedKicked;
 
     public bool isTriggerObs;
-
-    public int idGoal = 0;
 
 
     public void StartAgent()
@@ -36,7 +32,6 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         isChangedFromUntagged = false;
-        WaitedKicked = false;
         Invoke("StartAgent", agentTimerWait);
     }
 
@@ -74,7 +69,6 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
     IEnumerator RandomGoal()
     {
         yield return new WaitForSeconds(Random.Range(0.1f, 1f));
-        idGoal = Random.Range(0, goals.Length);
         if (agent.enabled == true)
         {
             agent.destination = goals[Random.Range(0, goals.Length)].position;
@@ -85,27 +79,24 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("DisableAgent"))
+        /*if (other.gameObject.CompareTag("DisableAgent"))
         {
             isTriggerObs = true;
+        }*/
+
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            IsGrounded = true;
+
+            if (Jumped == true)
+            {
+                Jumped = false;
+            }
         }
 
-        if (isTriggerObs == false)
+        if (other.gameObject.CompareTag("Jump"))
         {
-            if (other.gameObject.CompareTag("Jump"))
-            {
-                StartCoroutine(JumpAgent());
-            }
-
-            if (other.gameObject.CompareTag("Ground"))
-            {
-                IsGrounded = true;
-
-                if (Jumped == true)
-                {
-                    Jumped = false;
-                }
-            }
+            StartCoroutine(JumpAgent());
         }
     }
 
@@ -115,15 +106,28 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         {
             isTriggerObs = true;
         }
+
         if (other.gameObject.CompareTag("Ground"))
-         {
+        {
              IsGrounded = true;
 
-             if ((Jumped == true) && (WaitedKicked == false))
+             if (Jumped == true)
              {
                  Jumped = false;
              }
-         }
+            else
+            {
+                if(isTriggerObs == false)
+                {
+                    agent.updatePosition = true;
+                }
+            }
+        }
+
+        if (other.gameObject.CompareTag("Jump"))
+        {
+            StartCoroutine(JumpAgent());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -133,14 +137,15 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
             IsGrounded = false;
         }
 
-        if(other.gameObject.CompareTag("DisableAgent"))
+        /*if(other.gameObject.CompareTag("DisableAgent"))
         {
             isTriggerObs = false;
-        }
+        }*/
     }
 
     IEnumerator JumpAgent()
     {
+        agent.updatePosition = false;
         Vector3 jumpForces = Vector3.zero;
 
         if (IsGrounded)
@@ -168,7 +173,7 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
             yield return new WaitForSeconds(0.8f);
             rb.AddForce(jumpForces, ForceMode.VelocityChange);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
 
         Jumped = true;
 
@@ -181,18 +186,34 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         {
             StartCoroutine(JumpAgent());
         }
+
+        if (collision.gameObject.CompareTag(""))
+        {
+            isTriggerObs = true;
+            agent.updatePosition = false;
+        }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-    if (collision.gameObject.CompareTag("Jump"))
+        if (collision.gameObject.CompareTag("Jump"))
         {
             StartCoroutine(JumpAgent());
+        }
+
+        if (collision.gameObject.CompareTag("DisableAgent"))
+        {
+            isTriggerObs = true;
+            agent.updatePosition = false;
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-
+        if (collision.gameObject.CompareTag("DisableAgent"))
+        {
+            isTriggerObs = false;
+            agent.updatePosition = true;
+        }
     }
 }

@@ -83,8 +83,6 @@ public class Level2Managment : MonoBehaviour
         panelLevel.gameObject.SetActive(true);
         panelLevelStarted.gameObject.SetActive(false);
 
-
-
         StartCoroutine(StartGameTextAndPanel());
     }
 

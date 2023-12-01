@@ -16,12 +16,14 @@ public class panelWinScript : MonoBehaviour
 
     public bool isInvoked;
 
+    public PlayerDataUIValue playerDataUIValue;
 
     [SerializeField] private Ease easeType;
 
     void Start()
     {
         isInvoked = false;
+        playerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         StartCoroutine(StartPos());
     }
 
@@ -59,6 +61,11 @@ public class panelWinScript : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         BlueR.transform.DOShakeScale(0.2f);
         yield return new WaitForSeconds(0.4f);
+
+        if (playerDataUIValue != null)
+        {
+            playerDataUIValue.PlaceInLevel = 1;
+        }
         SceneManager.LoadScene("Lobby");
         yield return null;
     }

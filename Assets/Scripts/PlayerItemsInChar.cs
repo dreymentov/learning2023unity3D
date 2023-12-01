@@ -60,7 +60,7 @@ public class PlayerItemsInChar : MonoBehaviour
     {
         for (int i = 0; i < Bodies.Length; i++)
         {
-            if (CMainInit.PlayerData.CharacterBodies[i] > 0)
+            if (CMainInit.PlayerData.CharacterBodies[i] > 0) 
             {
                 Bodies[i].SetActive(true);
             }

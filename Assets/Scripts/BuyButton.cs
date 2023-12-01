@@ -28,6 +28,8 @@ public class BuyButton : MonoBehaviour
 
     public int idBuy;
     public int idCost;
+    public int idCostHard;
+    public bool idIsHardMoney;
     public bool isBought;
     public TMP_Text textBuy;
     public void Start()
@@ -42,11 +44,20 @@ public class BuyButton : MonoBehaviour
         {
             if (isBodies)
             {
-                if (CMainInit.PlayerData.Bodies[idBuy] == 0 && CMainInit.PlayerData.PlayerMoney >= idCost)
+                if (CMainInit.PlayerData.Bodies[idBuy] == 0)
                 {
-                    CMainInit.PlayerData.PlayerMoney -= idCost;
-                    CMainInit.PlayerData.Bodies[idBuy] = 1;
-                    this.gameObject.SetActive(false);
+                    if(idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                    {
+                        CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
+                        CMainInit.PlayerData.Bodies[idBuy] = 1;
+                        this.gameObject.SetActive(false);
+                    }
+                    else if(idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                    {
+                        CMainInit.PlayerData.PlayerMoney -= idCost;
+                        CMainInit.PlayerData.Bodies[idBuy] = 1;
+                        this.gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
@@ -55,11 +66,20 @@ public class BuyButton : MonoBehaviour
             }
             else if (isBodyparts)
             {
-                if (CMainInit.PlayerData.Bodyparts[idBuy] == 0 && CMainInit.PlayerData.PlayerMoney >= idCost)
+                if (CMainInit.PlayerData.Bodyparts[idBuy] == 0)
                 {
-                    CMainInit.PlayerData.PlayerMoney -= idCost;
-                    CMainInit.PlayerData.Bodyparts[idBuy] = 1;
-                    this.gameObject.SetActive(false);
+                    if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                    {
+                        CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
+                        CMainInit.PlayerData.Bodyparts[idBuy] = 1;
+                        this.gameObject.SetActive(false);
+                    }
+                    else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                    {
+                        CMainInit.PlayerData.PlayerMoney -= idCost;
+                        CMainInit.PlayerData.Bodyparts[idBuy] = 1;
+                        this.gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
@@ -70,85 +90,195 @@ public class BuyButton : MonoBehaviour
             {
                 if (CMainInit.PlayerData.Eyes[idBuy] == 0)
                 {
-                    CMainInit.PlayerData.Eyes[idBuy] = 1;
+                    if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                    {
+                        CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
+                        CMainInit.PlayerData.Eyes[idBuy] = 1;
+                        this.gameObject.SetActive(false);
+                    }
+                    else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                    {
+                        CMainInit.PlayerData.PlayerMoney -= idCost;
+                        CMainInit.PlayerData.Eyes[idBuy] = 1;
+                        this.gameObject.SetActive(false);
+                    }
+                }
+                else
+                {
+                    Debug.Log("You have it or haven't money");
                 }
             }
             else if (isGloves)
             {
                 if (CMainInit.PlayerData.Gloves[idBuy] == 0)
                 {
-                    CMainInit.PlayerData.Gloves[idBuy] = 1;
+                    if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                    {
+                        CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
+                        CMainInit.PlayerData.Gloves[idBuy] = 1;
+                        this.gameObject.SetActive(false);
+                    }
+                    else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                    {
+                        CMainInit.PlayerData.PlayerMoney -= idCost;
+                        CMainInit.PlayerData.Gloves[idBuy] = 1;
+                        this.gameObject.SetActive(false);
+                    }
+                }
+                else
+                {
+                    Debug.Log("You have it or haven't money");
                 }
             }
             else if (isHeadparts)
             {
-                if (CMainInit.PlayerData.Headparts[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Headparts[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Headparts[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isMounth)
             {
-                if (CMainInit.PlayerData.Mounth[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Mounth[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Mounth[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isNoise)
             {
-                if (CMainInit.PlayerData.Noise[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Noise[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Noise[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isCombs)
             {
-                if (CMainInit.PlayerData.Combs[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Combs[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Combs[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isEars)
             {
-                if (CMainInit.PlayerData.Ears[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Ears[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Ears[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isEyesFromHead)
             {
-                if (CMainInit.PlayerData.EyesFromHead[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.EyesFromHead[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.EyesFromHead[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isHair)
             {
-                if (CMainInit.PlayerData.Hair[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Hair[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Hair[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isHat)
             {
-                if (CMainInit.PlayerData.Hat[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Hat[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Hat[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isHorn)
             {
-                if (CMainInit.PlayerData.Horn[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Horn[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Horn[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
             }
             else if (isTails)
             {
-                if (CMainInit.PlayerData.Tails[idBuy] == 0)
+                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
+                    CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Tails[idBuy] = 1;
+                    this.gameObject.SetActive(false);
                 }
+                else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
+                {
+                    CMainInit.PlayerData.PlayerMoney -= idCost;
+                    CMainInit.PlayerData.Tails[idBuy] = 1;
+                    this.gameObject.SetActive(false);
+                } 
             }
             else
             {

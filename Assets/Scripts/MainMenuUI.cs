@@ -16,10 +16,10 @@ public class MainMenuUI : MonoBehaviour
     public GameObject ButtonMenuFromShop;
     public GameObject ButtonShop;
     public GameObject ButtonStart;
-    public GameObject ButtonExit;
     public GameObject ButtonBuy;
     public GameObject PanelShop;
     public GameObject[] Scrolls;
+    public GameObject panelSetting;
 
     public GameObject ImageTextFirstGame;
     public GameObject ImageTextFirstGameShop;
@@ -32,6 +32,8 @@ public class MainMenuUI : MonoBehaviour
     public GameObject PanelInnShop;
     public GameObject ButtonInnShop;
 
+    public List<ShopCharacter> ShopChars;
+
 
     public void Start()
     {
@@ -43,7 +45,6 @@ public class MainMenuUI : MonoBehaviour
         if ((FirstTime == true) && (FirstTimeShop == false))
         {
             ImageTextFirstGame.gameObject.SetActive(true);
-            ButtonExit.gameObject.SetActive(false);
         }
         else
         {
@@ -54,12 +55,10 @@ public class MainMenuUI : MonoBehaviour
         if ((FirstTime == true) && (FirstTimeShop == true))
         {
             ImageTextFirstGameShop.gameObject.SetActive(true);
-            ButtonExit.gameObject.SetActive(false);
         }
         else
         {
             ImageTextFirstGameShop.gameObject.SetActive(false);
-            ButtonExit.gameObject.SetActive(true);
         }
         ButtonMenuFromShop.SetActive(false);
         PanelShop.SetActive(false);
@@ -91,10 +90,11 @@ public class MainMenuUI : MonoBehaviour
                 cam.LookAt = CameraTargetTimeShop.transform;
                 ButtonStart.SetActive(false);
                 PlayerUILevelExp.SetActive(false);
-                ButtonExit.SetActive(false);
                 ButtonMenuFromShop.SetActive(true);
                 PanelShop.SetActive(true);
                 PanelInnShop.SetActive(false);
+
+                Scrolls[0].SetActive(true);
             }
             else
             {
@@ -113,11 +113,12 @@ public class MainMenuUI : MonoBehaviour
                 cam.Follow = CameraTargetTimeShop.transform;
                 cam.LookAt = CameraTargetTimeShop.transform;
                 ButtonStart.SetActive(false);
-                ButtonExit.SetActive(false);
                 ButtonMenuFromShop.SetActive(true);
                 PlayerUILevelExp.SetActive(false);
                 PanelShop.SetActive(true);
                 PanelInnShop.SetActive(false);
+
+                Scrolls[0].SetActive(true);
             }
             else
             {
@@ -133,11 +134,15 @@ public class MainMenuUI : MonoBehaviour
         cam.LookAt = CameraTargetStart.transform;
         ButtonStart.SetActive(true);
         PlayerUILevelExp.SetActive(true);
-        ButtonExit.SetActive(true);
         ButtonBuy.SetActive(false);
         ButtonMenuFromShop.SetActive(false);
         PanelShop.SetActive(false);
         PanelInnShop.SetActive(false);
+        panelSetting.SetActive(false);
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
     }
 
     public void GoToInnShop()
@@ -148,7 +153,6 @@ public class MainMenuUI : MonoBehaviour
             if(PanelInnShop.gameObject.active == false)
             {
                 ButtonStart.SetActive(false);
-                ButtonExit.SetActive(false);
                 PlayerUILevelExp.SetActive(false);
                 PanelShop.SetActive(false);
                 PanelInnShop.SetActive(true); 
@@ -164,7 +168,8 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShopBody()
     {
-        foreach(var scroll in Scrolls)
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
         }
@@ -174,6 +179,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShopBodyParts()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -183,6 +189,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopEyes()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -192,6 +199,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopGloves()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -202,6 +210,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShopHeadparts()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -212,6 +221,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShopMounth()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -221,6 +231,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopNoise()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -230,6 +241,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopEars()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -239,6 +251,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopHair()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -248,6 +261,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopHat()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -257,6 +271,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopHorn()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -266,11 +281,33 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopTails()
     {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
         }
         Scrolls[11].SetActive(true);
         ButtonBuy.SetActive(false);
+    }
+
+    public void GoToSetting()
+    {
+        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        if (FirstTime == false)
+        {
+            if (panelSetting.gameObject.active == false)
+            {
+                ButtonStart.SetActive(false);
+                PlayerUILevelExp.SetActive(false);
+                ButtonMenuFromShop.SetActive(true);
+                PanelShop.SetActive(false);
+                PanelInnShop.SetActive(false);
+                panelSetting.SetActive(true);
+            }
+            else
+            {
+                ExitToMainMenu();
+            }
+        }
     }
 }

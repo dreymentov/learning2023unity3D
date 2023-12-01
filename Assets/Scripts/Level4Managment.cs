@@ -326,6 +326,8 @@ public class Level4Managment : MonoBehaviour
         StartCoroutine(StartObst5());
         yield return new WaitForSeconds(2f * ifStayedToUpgradeSpeedAgainObstacles);
 
+
+
         if (BotsLost > 1)
         {
             Debug.Log("SPEED UP LEVEL");
@@ -462,7 +464,7 @@ public class Level4Managment : MonoBehaviour
 
     public void EnableOrDisableAgent(bool isEnOrDs)
     {
-        foreach(GameObject Bot in Bots)
+        /*foreach(GameObject Bot in Bots)
         {
             if(Bot != null) 
             {
@@ -475,6 +477,6 @@ public class Level4Managment : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
     }
 }
