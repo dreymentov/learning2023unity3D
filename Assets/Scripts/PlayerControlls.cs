@@ -28,6 +28,8 @@ public class PlayerControlls : MonoBehaviour
 
     public FixedJoystick Joystick;
 
+    public AudioSource audioSource;
+
     //public Vector3 velocityChange;
 
     public void OnMove(InputAction.CallbackContext context)
@@ -43,6 +45,7 @@ public class PlayerControlls : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         Jump();
+        audioSource.Play();
     }
 
     // Start is called before the first frame update

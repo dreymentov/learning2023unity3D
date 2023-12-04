@@ -32,13 +32,16 @@ public class Level3Managment : MonoBehaviour
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
 
-        if (PlayerDataUIValue.init.PlayerData.mobile)
+        if(PlayerDataUIValue != null)
         {
-            panelMobile.gameObject.SetActive(true);
-        }
-        else
-        {
-            panelMobile.gameObject.SetActive(false);
+            if (PlayerDataUIValue.init.PlayerData.mobile)
+            {
+                panelMobile.gameObject.SetActive(true);
+            }
+            else
+            {
+                panelMobile.gameObject.SetActive(false);
+            }
         }
 
         panelLevelText.text = "3";

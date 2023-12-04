@@ -216,7 +216,7 @@ public class Level1Managment : MonoBehaviour
         {
             if (cubesCheck[i] == null)
             {
-                cubesObst[i].GetComponent<NavMeshObstacle>().enabled = true;
+                //cubesObst[i].GetComponent<NavMeshObstacle>().enabled = true;
             }
         }
     }

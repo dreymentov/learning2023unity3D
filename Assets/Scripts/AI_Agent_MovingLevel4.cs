@@ -11,6 +11,7 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
     public Animator animator;
     public Rigidbody rb;
     public NavMeshAgent agent;
+    public Level4Managment level4;
 
     public float JumpForce;
 
@@ -22,13 +23,13 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     public void StartAgent()
     {
-        agent = GetComponent<NavMeshAgent>();
         agent.destination = goals[Random.Range(0,goals.Length)].position;
         StartCoroutine(RandomGoal());
     }
 
     public void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         isChangedFromUntagged = false;
@@ -53,6 +54,12 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
             targetVelocity = transform.TransformDirection(targetVelocity);
             rb.AddForce(velocityChange, ForceMode.VelocityChange);
         }*/
+
+        if(isTriggerObs)
+        {
+            agent.updatePosition = false;
+            agent.isStopped = true;
+        }
     }
 
     IEnumerator VictoryDance()
@@ -68,32 +75,14 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     IEnumerator RandomGoal()
     {
-        yield return new WaitForSeconds(Random.Range(0.1f, 1f));
-        if (agent.enabled == true)
-        {
-            agent.destination = goals[Random.Range(0, goals.Length)].position;
-        }
+        yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
+        agent.destination = goals[Random.Range(0, goals.Length)].position;
         StartCoroutine(RandomGoal());
-        yield return null;
+        yield break;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.gameObject.CompareTag("DisableAgent"))
-        {
-            isTriggerObs = true;
-        }*/
-
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            IsGrounded = true;
-
-            if (Jumped == true)
-            {
-                Jumped = false;
-            }
-        }
-
         if (other.gameObject.CompareTag("Jump"))
         {
             StartCoroutine(JumpAgent());
@@ -102,27 +91,10 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("DisableAgent"))
+        /*if (other.gameObject.CompareTag("DisableAgent"))
         {
             isTriggerObs = true;
-        }
-
-        if (other.gameObject.CompareTag("Ground"))
-        {
-             IsGrounded = true;
-
-             if (Jumped == true)
-             {
-                 Jumped = false;
-             }
-            else
-            {
-                if(isTriggerObs == false)
-                {
-                    agent.updatePosition = true;
-                }
-            }
-        }
+        }*/
 
         if (other.gameObject.CompareTag("Jump"))
         {
@@ -132,21 +104,16 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            IsGrounded = false;
-        }
 
-        /*if(other.gameObject.CompareTag("DisableAgent"))
-        {
-            isTriggerObs = false;
-        }*/
     }
 
     IEnumerator JumpAgent()
     {
         agent.updatePosition = false;
+        agent.isStopped = true;
         Vector3 jumpForces = Vector3.zero;
+
+        float speedObs = 1 / level4.ifStayedToUpgradeSpeedAgainObstacles;
 
         if (IsGrounded)
         {
@@ -162,16 +129,19 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         if(i > 30)
         {
             rb.AddForce(jumpForces, ForceMode.VelocityChange);
+            rb.AddRelativeForce(new Vector3(0, 0, speedObs * 0.025f), ForceMode.VelocityChange);
         }
         else if((i > 15) && (i <= 30))
         {
             yield return new WaitForSeconds(0.2f);
             rb.AddForce(jumpForces, ForceMode.VelocityChange);
+            rb.AddRelativeForce(new Vector3(0, 0, speedObs * 0.05f), ForceMode.VelocityChange);
         }
         else
         {
             yield return new WaitForSeconds(0.8f);
             rb.AddForce(jumpForces, ForceMode.VelocityChange);
+            rb.AddRelativeForce(new Vector3(0, 0, speedObs * 0.1f), ForceMode.VelocityChange);
         }
         yield return new WaitForSeconds(0.2f);
 
@@ -185,12 +155,16 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         if (collision.gameObject.CompareTag("Jump"))
         {
             StartCoroutine(JumpAgent());
+            agent.updateRotation = false;
+            transform.LookAt(collision.transform);
+            agent.updateRotation = true;
         }
 
-        if (collision.gameObject.CompareTag(""))
+        if (collision.gameObject.CompareTag("DisableAgent"))
         {
             isTriggerObs = true;
             agent.updatePosition = false;
+            agent.isStopped = true;
         }
     }
 
@@ -199,12 +173,16 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         if (collision.gameObject.CompareTag("Jump"))
         {
             StartCoroutine(JumpAgent());
+            agent.updateRotation = false;
+            transform.LookAt(collision.transform);
+            agent.updateRotation = true;
         }
 
         if (collision.gameObject.CompareTag("DisableAgent"))
         {
             isTriggerObs = true;
             agent.updatePosition = false;
+            agent.isStopped = true;
         }
     }
 
@@ -214,6 +192,31 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
         {
             isTriggerObs = false;
             agent.updatePosition = true;
+            agent.isStopped = false;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (IsGrounded == false)
+        {
+            agent.updatePosition = false;
+            agent.updateUpAxis = false;
+            agent.isStopped = true;
+            rb.AddForce(Vector3.down * 9.81f * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        }
+        else
+        {
+            if (isTriggerObs == false)
+            {
+                agent.updatePosition = true;
+                agent.updateUpAxis = true;
+                agent.isStopped = false;
+            }
+        }
+    }
+    public void SetGrounded(bool state)
+    {
+        IsGrounded = state;
     }
 }

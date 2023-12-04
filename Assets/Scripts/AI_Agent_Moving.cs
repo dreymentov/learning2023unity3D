@@ -9,11 +9,12 @@ public class AI_Agent_Moving : MonoBehaviour
     public bool isChangedFromUntagged = false;
     public Animator animator;
     public Rigidbody rb;
+    public NavMeshAgent agent;
 
 
     public void StartAgent()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
 
         agent.destination = goal.position;
     }
@@ -32,6 +33,36 @@ public class AI_Agent_Moving : MonoBehaviour
         {
             isChangedFromUntagged = true;
             StartCoroutine(VictoryDance());
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            agent.updatePosition = false;
+            agent.updateUpAxis = false;
+            agent.isStopped = true;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            agent.updatePosition = false;
+            agent.updateUpAxis = false;
+            agent.isStopped = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            agent.updatePosition = true;
+            agent.updateUpAxis = true;
+            agent.isStopped = false;
         }
     }
 

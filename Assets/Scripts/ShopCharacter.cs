@@ -1070,17 +1070,17 @@ public class ShopCharacter : MonoBehaviour
 
             int j = 0;
 
-            for (int i = 0; i < Bodies.Length - 1; i++)
+            for (int i = 0; i < PDShop.CharacterBodies.Length; i++)
             {
-                if (Bodies[i] == 1)
+                if (PDShop.CharacterBodies[i] == 1)
                 {
                     j++;
                 }
             }
 
-            if (j > 0)
+            if (j == 0)
             {
-                for (int i = 0; i < Bodies.Length - 1; i++)
+                for (int i = 0; i < Bodies.Length; i++)
                 {
                     if (Bodies[i] == 1)
                     {
@@ -1089,6 +1089,7 @@ public class ShopCharacter : MonoBehaviour
                     }
                 }
             }
+
         }
         else if (isBodyparts == true)
         {
@@ -1114,17 +1115,17 @@ public class ShopCharacter : MonoBehaviour
 
             int j = 0;
 
-            for (int i = 0; i < Eyes.Length - 1; i++)
+            for (int i = 0; i < PDShop.CharacterEyes.Length; i++)
             {
-                if (Eyes[i] == 1)
+                if (PDShop.CharacterEyes[i] == 1)
                 {
                     j++;
                 }
             }
 
-            if (j > 0)
+            if (j == 0)
             {
-                for (int i = 0; i < Eyes.Length - 1; i++)
+                for (int i = 0; i < Eyes.Length; i++)
                 {
                     if (Eyes[i] == 1)
                     {
@@ -1169,17 +1170,17 @@ public class ShopCharacter : MonoBehaviour
 
             int j = 0;
 
-            for (int i = 0; i < Mounth.Length - 1; i++)
+            for (int i = 0; i < PDShop.CharacterMounth.Length; i++)
             {
-                if (Mounth[i] == 1)
+                if (PDShop.CharacterMounth[i] == 1)
                 {
                     j++;
                 }
             }
 
-            if (j > 0)
+            if (j == 0)
             {
-                for (int i = 0; i < Mounth.Length - 1; i++)
+                for (int i = 0; i < Mounth.Length; i++)
                 {
                     if (Mounth[i] == 1)
                     {
@@ -1298,21 +1299,14 @@ public class ShopCharacter : MonoBehaviour
 
         if (isBodies == true)
         {
-            for (int i = 0; i < Bodies.Length - 1; i++)
+            for (int i = 0; i < Bodies.Length; i++)
             {
-                if (Bodies[i] == 1)
-                {
-
-                }
-                else
-                {
-                    PDShop.CharacterBodies[i] = 0;
-                }
+                PDShop.CharacterBodies[i] = 0;
             }
         }
         else if (isBodyparts == true)
         {
-            for (int i = 0; i < Bodyparts.Length - 1; i++)
+            for (int i = 0; i < Bodyparts.Length; i++)
             {
                 if (Bodyparts[i] == 1)
                 {
@@ -1326,7 +1320,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isEyes == true)
         {
-            for (int i = 0; i < Eyes.Length - 1; i++)
+            for (int i = 0; i < Eyes.Length; i++)
             {
                 if (Eyes[i] == 1)
                 {
@@ -1340,7 +1334,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isGloves == true)
         {
-            for (int i = 0; i < Gloves.Length - 1; i++)
+            for (int i = 0; i < Gloves.Length; i++)
             {
                 if (Gloves[i] == 1)
                 {
@@ -1354,7 +1348,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isHeadparts == true)
         {
-            for (int i = 0; i < Headparts.Length - 1; i++)
+            for (int i = 0; i < Headparts.Length; i++)
             {
                 if (Headparts[i] == 1)
                 {
@@ -1368,7 +1362,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isMounth == true)
         {
-            for (int i = 0; i < Mounth.Length - 1; i++)
+            for (int i = 0; i < Mounth.Length; i++)
             {
                 if (Mounth[i] == 1)
                 {
@@ -1382,7 +1376,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isNoise == true)
         {
-            for (int i = 0; i < Noise.Length - 1; i++)
+            for (int i = 0; i < Noise.Length; i++)
             {
                 if (Noise[i] == 1)
                 {
@@ -1396,7 +1390,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isCombs == true)
         {
-            for (int i = 0; i < Combs.Length - 1; i++)
+            for (int i = 0; i < Combs.Length; i++)
             {
                 if (Combs[i] == 1)
                 {
@@ -1410,7 +1404,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isEars == true)
         {
-            for (int i = 0; i < Ears.Length - 1; i++)
+            for (int i = 0; i < Ears.Length; i++)
             {
                 if (Ears[i] == 1)
                 {
@@ -1424,7 +1418,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isEyesFromHead == true)
         {
-            for (int i = 0; i < EyesFromHead.Length - 1; i++)
+            for (int i = 0; i < EyesFromHead.Length; i++)
             {
                 if (EyesFromHead[i] == 1)
                 {
@@ -1438,7 +1432,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isHair == true)
         {
-            for (int i = 0; i < Hair.Length - 1; i++)
+            for (int i = 0; i < Hair.Length; i++)
             {
                 if (Hair[i] == 1)
                 {
@@ -1452,7 +1446,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isHat == true)
         {
-            for (int i = 0; i < Hat.Length - 1; i++)
+            for (int i = 0; i < Hat.Length; i++)
             {
                 if (Hat[i] == 1)
                 {
@@ -1466,7 +1460,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isHorn == true)
         {
-            for (int i = 0; i < Horn.Length - 1; i++)
+            for (int i = 0; i < Horn.Length; i++)
             {
                 if (Horn[i] == 1)
                 {
@@ -1480,7 +1474,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else if (isTails == true)
         {
-            for (int i = 0; i < Tails.Length - 1; i++)
+            for (int i = 0; i < Tails.Length; i++)
             {
                 if (Tails[i] == 1)
                 {

@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 23565413}
   - component: {fileID: 23565412}
   - component: {fileID: 23565411}
+  - component: {fileID: 23565414}
   m_Layer: 5
   m_Name: TutorButton
   m_TagString: Untagged
@@ -550,6 +551,18 @@ MonoBehaviour:
           m_StringArgument: StartFirstGame()
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 23565414}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &23565412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,6 +601,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23565409}
   m_CullTransparentMesh: 1
+--- !u!82 &23565414
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23565409}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b9f1818b7a26d3f4a93fa7ddbbe8be6a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &26300098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -715,6 +824,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &26300101
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1329,6 +1439,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &84674930
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1558,6 +1669,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &124342749
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2139,6 +2251,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &144838538
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3139,6 +3252,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &350713115
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4657,6 +4771,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &523436914
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4851,6 +4966,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &526792879
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5028,6 +5144,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!1 &579932724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2756518332426609106, guid: 8a232d54b437eef45904caca5cde33bd, type: 3}
@@ -7316,6 +7433,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &823909940
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8712,6 +8830,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1016840953
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10227,6 +10346,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1155563166
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10421,6 +10541,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1166537173
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11948,6 +12069,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1249930624
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12182,6 +12304,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1271599114
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13123,6 +13246,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1350906940
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13527,6 +13651,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1359756941
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15568,6 +15693,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1763386323
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16517,6 +16643,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &1804450803
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18054,7 +18181,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902193716}
-  m_LocalRotation: {x: 0.015381528, y: -0.0000000031993799, z: 4.9217172e-11, w: 0.99988174}
+  m_LocalRotation: {x: 0.015381514, y: 0.0000000010480247, z: -1.6122114e-11, w: 0.99988174}
   m_LocalPosition: {x: 10.53, y: 13.57, z: -188.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19168,15 +19295,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.015381528
+      value: 0.015381514
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000031993799
+      value: 0.0000000010480247
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.9217172e-11
+      value: -1.6122114e-11
       objectReference: {fileID: 0}
     - target: {fileID: 1805923571, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_IsActive
@@ -19269,6 +19396,14 @@ PrefabInstance:
     - target: {fileID: 8764865677450861251, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9088245410885056118, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
+      propertyPath: power
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 9088245410885056118, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
+      propertyPath: radius
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
@@ -20024,6 +20159,7 @@ MonoBehaviour:
   isChangedFromUntagged: 0
   animator: {fileID: 0}
   rb: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &2145077344
 NavMeshAgent:
   m_ObjectHideFlags: 0

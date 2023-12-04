@@ -62,34 +62,51 @@ public class AI_Agent_Moving1 : MonoBehaviour
     {
         if (level1mg.isCrashingPlace == true)
         {
-            rb.useGravity = true;
+            agent.updatePosition = false;
+            agent.updateUpAxis = false;
+            agent.isStopped = true;
         }
         else
         {
-            agent.enabled = true;
-
             if (isStartGame)
             {
-                if (needJumping)
+                if(isGrounded == false)
                 {
-                    if (isGrounded)
-                    {
-                        StartCoroutine(Jump());
-                    }
+                    agent.updatePosition = false;
+                    agent.updateUpAxis = false;
+                    agent.isStopped = true;
                 }
-
-                if (isGrounded && wasJump)
+                else
                 {
-                    if (agent.enabled == false)
+                    if (needJumping)
                     {
-                        wasJump = false;
-                        agent.enabled = true;
-
-                        Invoke("GetOrChangeGoal", 0f);
+                        if (isGrounded)
+                        {
+                            StartCoroutine(Jump());
+                        }
                     }
-                    else
+
+                    if (isGrounded && wasJump)
                     {
-                        wasJump = false;
+                        if (agent.updatePosition == false)
+                        {
+                            wasJump = false;
+                            agent.updatePosition = true;
+                            agent.updateUpAxis = true;
+                            Invoke("GetOrChangeGoal", 0f);
+                        }
+                        else
+                        {
+                            wasJump = false;
+                        }
+                    }
+                    else if (isGrounded)
+                    {
+                        if (agent.updatePosition == false)
+                        {
+                            agent.updatePosition = true;
+                            agent.updateUpAxis = true;
+                        }
                     }
                 }
 
@@ -108,7 +125,7 @@ public class AI_Agent_Moving1 : MonoBehaviour
                     }
                 }
             }
-        }   
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -120,6 +137,13 @@ public class AI_Agent_Moving1 : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             needJumping = true;
+        }
+
+        if (other.CompareTag("Player"))
+        {
+            agent.updatePosition = false;
+            agent.updateUpAxis = false;
+            agent.isStopped = true;
         }
     }
 
@@ -134,19 +158,27 @@ public class AI_Agent_Moving1 : MonoBehaviour
         {
             needJumping = true;
         }
+
+        if (other.CompareTag("Player"))
+        {
+            agent.updatePosition = false;
+            agent.updateUpAxis = false;
+            agent.isStopped = true;
+        }
     }
 
     public void OnTriggerExit(Collider other)
     {
+        if (other.CompareTag("Obstacle"))
+        {
+            needJumping = false;
+        }
+
         if (other.CompareTag("Ground"))
         {
             isGrounded = false;
         }
 
-        if (other.CompareTag("Obstacle"))
-        {
-            needJumping = false;
-        }
     }
 
     public void Update()
@@ -162,14 +194,6 @@ public class AI_Agent_Moving1 : MonoBehaviour
             this.gameObject.CompareTag("Untagged");
         }
 
-        if(agent.enabled == false)
-        {
-            rb.useGravity = true;
-        }
-        else
-        {
-            rb.useGravity = false;
-        }
     }
 
     IEnumerator Jump()
@@ -192,10 +216,9 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     IEnumerator Jumped()
     {
-        if (agent.enabled == true)
-        {
-            agent.enabled = false;
-        }
+        agent.updatePosition = false;
+        agent.updateUpAxis = false;
+        agent.isStopped = true;
         rb.isKinematic = false;
         rb.useGravity = true;
         rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
@@ -207,10 +230,9 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     IEnumerator JumpedTooLate()
     {
-        if (agent.enabled == true)
-        {
-            agent.enabled = false;
-        }
+        agent.updatePosition = false;
+        agent.updateUpAxis = false;
+        agent.isStopped = true;
         yield return new WaitForSeconds(1.5f);
 
         rb.isKinematic = false;
@@ -224,19 +246,19 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     IEnumerator NoJumped()
     {
-        if (agent.enabled == true)
-        {
-            agent.enabled = false;
-        }
+        agent.updatePosition = false;
         yield return new WaitForSeconds(1.5f);
 
         rb.isKinematic = false;
         rb.useGravity = true;
 
         yield return new WaitForSeconds(1f);
-        if (agent.enabled == false)
+
+        if (level1mg.isCrashingPlace == false)
         {
-            agent.enabled = true;
+            agent.isStopped = false;
+            agent.updatePosition = true;
+            agent.updateUpAxis = true;
         }
     }
 
@@ -244,12 +266,7 @@ public class AI_Agent_Moving1 : MonoBehaviour
     {
         goal = level1mg.cubes[Random.Range(0, level1mg.cubes.Count)].transform;
 
-        if (agent.enabled == true)
-        {
-            agent.destination = goal.position;
-        }
-        else
-            return;
+        agent.destination = goal.position;
     }
 
     IEnumerator VictoryDance()
@@ -258,8 +275,14 @@ public class AI_Agent_Moving1 : MonoBehaviour
         //animator.SetFloat("VictoryDance", (int)Random.Range(0, 3));
         yield return new WaitForSeconds(2f);
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.enabled = false;
+        agent.updatePosition = false;
+        agent.isStopped = true;
         rb.constraints = RigidbodyConstraints.FreezeAll;
         yield return null;
+    }
+
+    public void SetGrounded(bool state)
+    {
+        isGrounded = state;
     }
 }

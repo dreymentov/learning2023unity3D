@@ -139,6 +139,10 @@ public class MainMenuUI : MonoBehaviour
         PanelShop.SetActive(false);
         PanelInnShop.SetActive(false);
         panelSetting.SetActive(false);
+        foreach (var scroll in Scrolls)
+        {
+            scroll.SetActive(false);
+        }
         foreach (var ShopChar in ShopChars)
         {
             ShopChar.CheckHasItorNotForTakeoff();
@@ -168,7 +172,11 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShopBody()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -179,7 +187,11 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShopBodyParts()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -189,7 +201,11 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopEyes()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -199,7 +215,11 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopGloves()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -210,7 +230,11 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShopHeadparts()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -221,7 +245,11 @@ public class MainMenuUI : MonoBehaviour
 
     public void ShopMounth()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -231,7 +259,11 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopNoise()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -241,7 +273,11 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopEars()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -251,7 +287,11 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopHair()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -261,7 +301,11 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopHat()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -271,7 +315,11 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopHorn()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -281,7 +329,11 @@ public class MainMenuUI : MonoBehaviour
     }
     public void ShopTails()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -292,7 +344,11 @@ public class MainMenuUI : MonoBehaviour
 
     public void GoToSetting()
     {
-        ShopChars[0].CheckHasItorNotForTakeoffForLook();
+        foreach (var ShopChar in ShopChars)
+        {
+            ShopChar.CheckHasItorNotForTakeoff();
+        }
+        //ShopChars[0].CheckHasItorNotForTakeoffForLook();
         if (FirstTime == false)
         {
             if (panelSetting.gameObject.active == false)

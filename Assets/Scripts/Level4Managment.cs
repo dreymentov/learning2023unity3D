@@ -51,7 +51,6 @@ public class Level4Managment : MonoBehaviour
     {
         BotsLost = 100;
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-        ifStayedToUpgradeSpeedAgainObstacles = 1f;
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
 
@@ -328,10 +327,10 @@ public class Level4Managment : MonoBehaviour
 
 
 
-        if (BotsLost > 1)
+        if (BotsLost != 0)
         {
             Debug.Log("SPEED UP LEVEL");
-            ifStayedToUpgradeSpeedAgainObstacles *= 0.5f;
+            ifStayedToUpgradeSpeedAgainObstacles *= 0.8f;
             StartCoroutine(StartedGameObstacles());
         }
         else

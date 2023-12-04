@@ -31,6 +31,36 @@ public class AI_Agent_Moving2 : MonoBehaviour
 
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            agent.updatePosition = false;
+            agent.updateUpAxis = false;
+            agent.isStopped = true;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            agent.updatePosition = false;
+            agent.updateUpAxis = false;
+            agent.isStopped = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            agent.updatePosition = true;
+            agent.updateUpAxis = true;
+            agent.isStopped = false;
+        }
+    }
+
 
     IEnumerator GetGoalForAgent()
     {

@@ -244,7 +244,7 @@ public class PlayerDataUIValue : MonoBehaviour
             l += Random.Range(0, MoneyReward / 100);
             TextExpPanelReward.text = ""+j;
             TextMoneyPanelReward.text = ""+l;
-            yield return new WaitForSeconds(0.075f);
+            yield return new WaitForSeconds(0.15f);
         }
         for (int i = 0; i < 10; i++)
         {
@@ -252,7 +252,7 @@ public class PlayerDataUIValue : MonoBehaviour
             l += Random.Range(MoneyReward / 100, MoneyReward / 10);
             TextExpPanelReward.text = "" + j;
             TextMoneyPanelReward.text = "" + l;
-            yield return new WaitForSeconds(0.075f);
+            yield return new WaitForSeconds(0.15f);
         }
 
         TextExpPanelReward.text = "" + ExpReward;
