@@ -20,6 +20,8 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
 
     public bool isTriggerObs;
 
+    public float timeUpdating;
+    public Vector3 oldPos;
 
     public void StartAgent()
     {
@@ -61,7 +63,7 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
             agent.isStopped = true;
         }
 
-        if ((rb.velocity.x < 0.2f && rb.velocity.x > -0.2f) || (rb.velocity.y < 0.2f && rb.velocity.y > -0.2f))
+        if (transform.position == oldPos)
         {
             animator.SetBool("Started", false);
         }
@@ -219,6 +221,13 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
                 agent.updateUpAxis = true;
                 agent.isStopped = false;
             }
+        }
+
+        timeUpdating += Time.fixedDeltaTime;
+        if (timeUpdating > 0.2f)
+        {
+            timeUpdating = 0;
+            oldPos = transform.position;
         }
     }
     public void SetGrounded(bool state)

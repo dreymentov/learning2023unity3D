@@ -11,6 +11,9 @@ public class AI_Agent_Moving2 : MonoBehaviour
     public NavMeshAgent agent;
     public Animator animator;
     public Rigidbody rb;
+
+    public float timeUpdating;
+    public Vector3 oldPos;
     public void StartAgent()
     {
         agent.destination = goals[Random.Range(0, goals.Length)].position;
@@ -33,7 +36,7 @@ public class AI_Agent_Moving2 : MonoBehaviour
 
         }
 
-        if ((rb.velocity.x < 0.2f && rb.velocity.x > -0.2f) || (rb.velocity.y < 0.2f && rb.velocity.y > -0.2f))
+        if (transform.position == oldPos)
         {
             animator.SetBool("Started", false);
         }
@@ -76,5 +79,15 @@ public class AI_Agent_Moving2 : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(1,4));
         agent.destination = goals[Random.Range(0, goals.Length)].position;
         StartCoroutine(GetGoalForAgent());
+    }
+
+    public void FixedUpdate()
+    {
+        timeUpdating += Time.fixedDeltaTime;
+        if (timeUpdating > 0.2f)
+        {
+            timeUpdating = 0;
+            oldPos = transform.position;
+        }
     }
 }

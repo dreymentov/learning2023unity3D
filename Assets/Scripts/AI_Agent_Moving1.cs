@@ -29,6 +29,9 @@ public class AI_Agent_Moving1 : MonoBehaviour
     public bool isChangedFromUntagged = false;
     public Animator animator;
 
+    public float timeUpdating;
+    public Vector3 oldPos;
+
     public void Start()
     {
         /*if(level1mg != null)
@@ -126,6 +129,13 @@ public class AI_Agent_Moving1 : MonoBehaviour
                 }
             }
         }
+
+        timeUpdating += Time.fixedDeltaTime;
+        if (timeUpdating > 0.2f)
+        {
+            timeUpdating = 0;
+            oldPos = transform.position;
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -178,7 +188,7 @@ public class AI_Agent_Moving1 : MonoBehaviour
             this.gameObject.CompareTag("Untagged");
         }
 
-        if ((rb.velocity.x < 0.2f && rb.velocity.x > -0.2f) || (rb.velocity.y < 0.2f && rb.velocity.y > -0.2f))
+        if (transform.position == oldPos)
         {
             animator.SetBool("Started", false);
         }

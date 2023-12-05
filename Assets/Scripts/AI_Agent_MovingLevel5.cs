@@ -19,6 +19,9 @@ public class AI_Agent_MovingLevel5 : MonoBehaviour
     public bool Jumped;
     public bool WaitedKicked;
 
+    public float timeUpdating;
+    public Vector3 oldPos;
+
 
     public void StartAgent()
     {
@@ -42,12 +45,23 @@ public class AI_Agent_MovingLevel5 : MonoBehaviour
             StartCoroutine(VictoryDance());
         }
 
-        if ((rb.velocity.x < 0.2f && rb.velocity.x > -0.2f) || (rb.velocity.y < 0.2f && rb.velocity.y > -0.2f))
+        
+
+        if (transform.position == oldPos)
         {
             animator.SetBool("Started", false);
         }
         else animator.SetBool("Started", true);
+    }
 
+    public void FixedUpdate()
+    {
+        timeUpdating += Time.fixedDeltaTime;
+        if(timeUpdating > 0.2f)
+        {
+            timeUpdating = 0;
+            oldPos = transform.position;
+        }
     }
 
     IEnumerator VictoryDance()
