@@ -10,7 +10,7 @@ public class AI_Agent_Moving2 : MonoBehaviour
     public bool IsFinished = false;
     public NavMeshAgent agent;
     public Animator animator;
-
+    public Rigidbody rb;
     public void StartAgent()
     {
         agent.destination = goals[Random.Range(0, goals.Length)].position;
@@ -20,6 +20,7 @@ public class AI_Agent_Moving2 : MonoBehaviour
     public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        rb = this.gameObject.GetComponent<Rigidbody>();
         IsFinished = false;
         Invoke("StartAgent", agentTimerWait);
     }
