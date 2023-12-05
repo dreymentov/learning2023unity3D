@@ -825,6 +825,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &26300101
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1440,6 +1442,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &84674930
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1670,6 +1674,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &124342749
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2252,6 +2258,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &144838538
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2862,7 +2870,7 @@ RectTransform:
   m_GameObject: {fileID: 171476128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1351120270}
   m_RootOrder: 1
@@ -3253,6 +3261,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &350713115
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4772,6 +4782,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &523436914
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4967,6 +4979,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &526792879
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5145,6 +5159,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!1 &579932724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2756518332426609106, guid: 8a232d54b437eef45904caca5cde33bd, type: 3}
@@ -7434,6 +7450,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &823909940
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8831,6 +8849,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1016840953
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8931,7 +8951,7 @@ RectTransform:
   m_GameObject: {fileID: 1055800189}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1000936021}
   m_RootOrder: 1
@@ -10347,6 +10367,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1155563166
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10542,6 +10564,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1166537173
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12070,6 +12094,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1249930624
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12305,6 +12331,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1271599114
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13247,6 +13275,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1350906940
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13652,6 +13682,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1359756941
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15694,6 +15726,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1763386323
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16644,6 +16678,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1804450803
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18181,7 +18217,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902193716}
-  m_LocalRotation: {x: 0.015381528, y: -0.0000000031993799, z: 4.9217172e-11, w: 0.99988174}
+  m_LocalRotation: {x: 0.01538152, y: 0.0000000033876852, z: -5.211391e-11, w: 0.99988174}
   m_LocalPosition: {x: 10.53, y: 13.57, z: -188.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19295,15 +19331,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.015381528
+      value: 0.01538152
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000031993799
+      value: 0.0000000033876852
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.9217172e-11
+      value: -5.211391e-11
       objectReference: {fileID: 0}
     - target: {fileID: 1805923571, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_IsActive
@@ -20160,6 +20196,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   rb: {fileID: 0}
   agent: {fileID: 0}
+  timeUpdating: 0
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!195 &2145077344
 NavMeshAgent:
   m_ObjectHideFlags: 0

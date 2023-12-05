@@ -1,130 +1,328 @@
 fileFormatVersion: 2
 guid: b0b75ad3a96b0ec45ae1014524495113
-timeCreated: 1546442623
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Capsule
-    100004: Capsule.001
-    100006: Capsule.002
-    100008: Capsule.003
-    100010: Capsule.004
-    100012: Cube
-    100014: Cube.001
-    100016: Hat
-    100018: Hat_end
-    100020: Head
-    100022: Hip
-    100024: HipRotation
-    100026: HipRotation_end
-    100028: Plane
-    100030: Plane.001
-    100032: Rig
-    100034: Root
-    100036: Root.001
-    100038: Root.001_end
-    100040: Root.002
-    100042: Root.002_end
-    100044: Root.003
-    100046: Root.003_end
-    100048: Spine_1
-    100050: Spine_2
-    100052: SpineRotationBone
-    100054: SpineRotationBone.001
-    100056: SpineRotationBone.001_end
-    100058: SpineRotationBone_end
-    100060: StretchControl
-    100062: StretchControl_end
-    400000: //RootNode
-    400002: Capsule
-    400004: Capsule.001
-    400006: Capsule.002
-    400008: Capsule.003
-    400010: Capsule.004
-    400012: Cube
-    400014: Cube.001
-    400016: Hat
-    400018: Hat_end
-    400020: Head
-    400022: Hip
-    400024: HipRotation
-    400026: HipRotation_end
-    400028: Plane
-    400030: Plane.001
-    400032: Rig
-    400034: Root
-    400036: Root.001
-    400038: Root.001_end
-    400040: Root.002
-    400042: Root.002_end
-    400044: Root.003
-    400046: Root.003_end
-    400048: Spine_1
-    400050: Spine_2
-    400052: SpineRotationBone
-    400054: SpineRotationBone.001
-    400056: SpineRotationBone.001_end
-    400058: SpineRotationBone_end
-    400060: StretchControl
-    400062: StretchControl_end
-    2300000: Capsule.001
-    2300002: Capsule.002
-    2300004: Capsule.003
-    2300006: Cube
-    2300008: Cube.001
-    2300010: Plane
-    2300012: Plane.001
-    3300000: Capsule.001
-    3300002: Capsule.002
-    3300004: Capsule.003
-    3300006: Cube
-    3300008: Cube.001
-    3300010: Plane
-    3300012: Plane.001
-    4300000: Capsule.003
-    4300002: Capsule.004
-    4300004: Capsule
-    4300006: Plane.001
-    4300008: Capsule.002
-    4300010: Capsule.001
-    4300012: Cube
-    4300014: Plane
-    4300016: Cube.001
-    7400000: Rig|RigAction
-    7400002: Rig|RigAction.001
-    7400004: Rig|Walk
-    7400006: Capsule.004|RigAction
-    7400008: Capsule.004|Walk
-    7400010: Land
-    9500000: //RootNode
-    13700000: Capsule
-    13700002: Capsule.004
+  serializedVersion: 20300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Capsule
+  - first:
+      1: 100004
+    second: Capsule.001
+  - first:
+      1: 100006
+    second: Capsule.002
+  - first:
+      1: 100008
+    second: Capsule.003
+  - first:
+      1: 100010
+    second: Capsule.004
+  - first:
+      1: 100012
+    second: Cube
+  - first:
+      1: 100014
+    second: Cube.001
+  - first:
+      1: 100016
+    second: Hat
+  - first:
+      1: 100018
+    second: Hat_end
+  - first:
+      1: 100020
+    second: Head
+  - first:
+      1: 100022
+    second: Hip
+  - first:
+      1: 100024
+    second: HipRotation
+  - first:
+      1: 100026
+    second: HipRotation_end
+  - first:
+      1: 100028
+    second: Plane
+  - first:
+      1: 100030
+    second: Plane.001
+  - first:
+      1: 100032
+    second: Rig
+  - first:
+      1: 100034
+    second: Root
+  - first:
+      1: 100036
+    second: Root.001
+  - first:
+      1: 100038
+    second: Root.001_end
+  - first:
+      1: 100040
+    second: Root.002
+  - first:
+      1: 100042
+    second: Root.002_end
+  - first:
+      1: 100044
+    second: Root.003
+  - first:
+      1: 100046
+    second: Root.003_end
+  - first:
+      1: 100048
+    second: Spine_1
+  - first:
+      1: 100050
+    second: Spine_2
+  - first:
+      1: 100052
+    second: SpineRotationBone
+  - first:
+      1: 100054
+    second: SpineRotationBone.001
+  - first:
+      1: 100056
+    second: SpineRotationBone.001_end
+  - first:
+      1: 100058
+    second: SpineRotationBone_end
+  - first:
+      1: 100060
+    second: StretchControl
+  - first:
+      1: 100062
+    second: StretchControl_end
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Capsule
+  - first:
+      4: 400004
+    second: Capsule.001
+  - first:
+      4: 400006
+    second: Capsule.002
+  - first:
+      4: 400008
+    second: Capsule.003
+  - first:
+      4: 400010
+    second: Capsule.004
+  - first:
+      4: 400012
+    second: Cube
+  - first:
+      4: 400014
+    second: Cube.001
+  - first:
+      4: 400016
+    second: Hat
+  - first:
+      4: 400018
+    second: Hat_end
+  - first:
+      4: 400020
+    second: Head
+  - first:
+      4: 400022
+    second: Hip
+  - first:
+      4: 400024
+    second: HipRotation
+  - first:
+      4: 400026
+    second: HipRotation_end
+  - first:
+      4: 400028
+    second: Plane
+  - first:
+      4: 400030
+    second: Plane.001
+  - first:
+      4: 400032
+    second: Rig
+  - first:
+      4: 400034
+    second: Root
+  - first:
+      4: 400036
+    second: Root.001
+  - first:
+      4: 400038
+    second: Root.001_end
+  - first:
+      4: 400040
+    second: Root.002
+  - first:
+      4: 400042
+    second: Root.002_end
+  - first:
+      4: 400044
+    second: Root.003
+  - first:
+      4: 400046
+    second: Root.003_end
+  - first:
+      4: 400048
+    second: Spine_1
+  - first:
+      4: 400050
+    second: Spine_2
+  - first:
+      4: 400052
+    second: SpineRotationBone
+  - first:
+      4: 400054
+    second: SpineRotationBone.001
+  - first:
+      4: 400056
+    second: SpineRotationBone.001_end
+  - first:
+      4: 400058
+    second: SpineRotationBone_end
+  - first:
+      4: 400060
+    second: StretchControl
+  - first:
+      4: 400062
+    second: StretchControl_end
+  - first:
+      23: 2300000
+    second: Capsule.001
+  - first:
+      23: 2300002
+    second: Capsule.002
+  - first:
+      23: 2300004
+    second: Capsule.003
+  - first:
+      23: 2300006
+    second: Cube
+  - first:
+      23: 2300008
+    second: Cube.001
+  - first:
+      23: 2300010
+    second: Plane
+  - first:
+      23: 2300012
+    second: Plane.001
+  - first:
+      33: 3300000
+    second: Capsule.001
+  - first:
+      33: 3300002
+    second: Capsule.002
+  - first:
+      33: 3300004
+    second: Capsule.003
+  - first:
+      33: 3300006
+    second: Cube
+  - first:
+      33: 3300008
+    second: Cube.001
+  - first:
+      33: 3300010
+    second: Plane
+  - first:
+      33: 3300012
+    second: Plane.001
+  - first:
+      43: 4300000
+    second: Capsule.003
+  - first:
+      43: 4300002
+    second: Capsule.004
+  - first:
+      43: 4300004
+    second: Capsule
+  - first:
+      43: 4300006
+    second: Plane.001
+  - first:
+      43: 4300008
+    second: Capsule.002
+  - first:
+      43: 4300010
+    second: Capsule.001
+  - first:
+      43: 4300012
+    second: Cube
+  - first:
+      43: 4300014
+    second: Plane
+  - first:
+      43: 4300016
+    second: Cube.001
+  - first:
+      74: 7400000
+    second: Rig|RigAction
+  - first:
+      74: 7400002
+    second: Rig|RigAction.001
+  - first:
+      74: 7400004
+    second: Rig|Walk
+  - first:
+      74: 7400006
+    second: Capsule.004|RigAction
+  - first:
+      74: 7400008
+    second: Capsule.004|Walk
+  - first:
+      74: 7400010
+    second: Land
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Capsule
+  - first:
+      137: 13700002
+    second: Capsule.004
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Land
       takeName: Scene
+      internalID: 0
       firstFrame: 4
       lastFrame: 12
       wrapMode: 0
@@ -172,28 +370,47 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -203,14 +420,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
