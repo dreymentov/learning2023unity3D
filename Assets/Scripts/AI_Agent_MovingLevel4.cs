@@ -60,6 +60,12 @@ public class AI_Agent_MovingLevel4 : MonoBehaviour
             agent.updatePosition = false;
             agent.isStopped = true;
         }
+
+        if ((rb.velocity.x < 0.2f && rb.velocity.x > -0.2f) || (rb.velocity.y < 0.2f && rb.velocity.y > -0.2f))
+        {
+            animator.SetBool("Started", false);
+        }
+        else animator.SetBool("Started", true);
     }
 
     IEnumerator VictoryDance()

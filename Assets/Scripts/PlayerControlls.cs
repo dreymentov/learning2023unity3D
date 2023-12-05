@@ -45,7 +45,6 @@ public class PlayerControlls : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         Jump();
-        audioSource.Play();
     }
 
     // Start is called before the first frame update
@@ -189,6 +188,8 @@ public class PlayerControlls : MonoBehaviour
     }
     public void Jump()
     {
+        audioSource.Play();
+
         Vector3 jumpForces = Vector3.zero;
 
         if (grounded)
@@ -204,25 +205,19 @@ public class PlayerControlls : MonoBehaviour
         grounded = state;
     }
 
-    /*private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
+        if (collision.gameObject.CompareTag("Jump"))
         {
-            Vector3 KickPower = Vector3.zero;
-            KickPower = Vector3.back * powerKick;
-            rb.AddForce(KickPower, ForceMode.VelocityChange);
-            Debug.Log(this + " kicked in stay");
+            SetGrounded(true);
         }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Jump"))
+        if (collision.gameObject.CompareTag("Jump"))
         {
-            Vector3 KickPower = Vector3.zero;
-            KickPower = -Vector3.back * powerKick;
-            rb.AddForce(KickPower, ForceMode.VelocityChange);
-            Debug.Log(this + " kicked in stay");
+            SetGrounded(true);
         }
-    }*/
+    }
 }

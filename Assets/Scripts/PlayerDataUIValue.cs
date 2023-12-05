@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerDataUIValue : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class PlayerDataUIValue : MonoBehaviour
     public Sprite[] RewardsSprite;
 
     public bool isLevelUp = false;
+    public bool isCanPressButton;
 
     private int j = 0;
     private int l = 0;
@@ -92,7 +94,7 @@ public class PlayerDataUIValue : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Menu")
         {
             Cursor.lockState = CursorLockMode.None;
-
+            isCanPressButton = true;
             PanelMain.gameObject.SetActive(true);
             PanelShowReward.gameObject.SetActive(false);
             PanelShowSummary.gameObject.SetActive(false);
@@ -138,6 +140,8 @@ public class PlayerDataUIValue : MonoBehaviour
 
     public IEnumerator InvokeStartThisObject()
     {
+        isCanPressButton = false;
+
         PanelMain.gameObject.SetActive(true);
 
         TextExpPanelReward.text = "0";
@@ -168,6 +172,8 @@ public class PlayerDataUIValue : MonoBehaviour
 
     IEnumerator GetReward()
     {
+        init.PlayerData.GameFinished++;
+
         if (PlaceInLevel > 5 && PlaceInLevel < 11)
         {
             MoneyReward = 10;
@@ -272,6 +278,11 @@ public class PlayerDataUIValue : MonoBehaviour
 
             if (Slider.value == Slider.maxValue)
             {
+                if(init.PlayerData.PlayerFirstTimePlay == false)
+                {
+                    // Geekplay.Instance.ShowInterstitialAd();
+                }
+
                 Slider.value = 0;
                 TextValueExp.text = "" + Slider.value + "/ 100";
                 Color tluColor = TextLevelUp.color;
@@ -301,6 +312,9 @@ public class PlayerDataUIValue : MonoBehaviour
             init.PlayerData.PlayerExperience = (int)Slider.value;
         }
         PlaceInLevel = 999;
+        isCanPressButton = true;
+        //Geekplay.Instance.Save();
+        //Geekplay.Instance.Leaderboard(string leaderboardName, int value)
         yield break;
     }
 }

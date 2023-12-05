@@ -106,6 +106,8 @@ public class Level1Managment : MonoBehaviour
         StartCoroutine(StartGameTextAndPanel());
         StartCoroutine(startGame());
         StartCoroutine(startGameObs());
+
+        //Geekplay.Instance.GameReady();
     }
 
     private void FixedUpdate()

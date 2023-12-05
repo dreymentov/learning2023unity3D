@@ -18181,7 +18181,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902193716}
-  m_LocalRotation: {x: 0.015381514, y: 0.0000000010480247, z: -1.6122114e-11, w: 0.99988174}
+  m_LocalRotation: {x: 0.015381528, y: -0.0000000031993799, z: 4.9217172e-11, w: 0.99988174}
   m_LocalPosition: {x: 10.53, y: 13.57, z: -188.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19295,15 +19295,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.015381514
+      value: 0.015381528
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000010480247
+      value: -0.0000000031993799
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.6122114e-11
+      value: 4.9217172e-11
       objectReference: {fileID: 0}
     - target: {fileID: 1805923571, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_IsActive
@@ -19937,7 +19937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.88235295}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

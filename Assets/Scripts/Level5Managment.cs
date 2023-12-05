@@ -79,6 +79,8 @@ public class Level5Managment : MonoBehaviour
         NativeColor = CubeListLevel5[0].gameObject.GetComponent<Renderer>().material.color;
 
         StartCoroutine(StartGameTextAndPanel());
+
+        //Geekplay.Instance.GameReady();
     }
 
     // Update is called once per frame

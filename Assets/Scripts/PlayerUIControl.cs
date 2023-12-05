@@ -27,6 +27,7 @@ public class PlayerUIControl : MonoBehaviour
     public bool isActivacted;
     public bool isPressed = false;
     public bool isStop = false;
+    public bool isCanPress;
 
     public PlayerData playerData;
     public PlayerDataUIValue PlayerDataUIValue;
@@ -61,41 +62,56 @@ public class PlayerUIControl : MonoBehaviour
     {
         FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
         FirstTimeNeedShop = PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop;
+        isCanPress = PlayerDataUIValue.isCanPressButton;
 
-        if ((FirstTime == true) && (FirstTimeNeedShop == true))
+        if (isCanPress == true)
         {
-            return;
-        }
-        else
-        {
-            isPressed = true;
-
-            panel.gameObject.SetActive(true);
-
-            isActivacted = false;
-
-            /*foreach (var image in imagesList)
+            if ((FirstTime == true) && (FirstTimeNeedShop == true))
             {
-                image.color = Random.ColorHSV();
+                return;
             }
-            foreach (var image in imagesList1)
+            else
             {
-                image.color = Random.ColorHSV();
-            }*/
+                isPressed = true;
 
-            StartCoroutine(ImageMoveStart(MainImagesMover));
-            StartCoroutine(ChangeImageLevel());
-            StartCoroutine(WaitAwakeGame());
+                panel.gameObject.SetActive(true);
+
+                isActivacted = false;
+
+                /*foreach (var image in imagesList)
+                {
+                    image.color = Random.ColorHSV();
+                }
+                foreach (var image in imagesList1)
+                {
+                    image.color = Random.ColorHSV();
+                }*/
+
+                StartCoroutine(ImageMoveStart(MainImagesMover));
+                StartCoroutine(ChangeImageLevel());
+                StartCoroutine(WaitAwakeGame());
+            }
         }
+        else return;
     }
 
     public void StartMainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        isCanPress = PlayerDataUIValue.isCanPressButton;
+
+        if (isCanPress == true)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        else return;
     }
 
     void Update()
     {
+        if(PlayerDataUIValue == null)
+        {
+            PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        }
         if(MainImagesMover.localPosition.x >= 2000)
         {
             StopCoroutine(ImageMoveStart(MainImagesMover));

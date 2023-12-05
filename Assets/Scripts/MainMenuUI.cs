@@ -21,6 +21,8 @@ public class MainMenuUI : MonoBehaviour
     public GameObject[] Scrolls;
     public GameObject panelSetting;
 
+    public Init init;
+
     public GameObject ImageTextFirstGame;
     public GameObject ImageTextFirstGameShop;
 
@@ -37,6 +39,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void Start()
     {
+        init = FindObjectOfType<Init>();
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         PlayerUILevelExp = GameObject.FindGameObjectWithTag("PlayerUILevelPanel");
         FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
@@ -122,6 +125,17 @@ public class MainMenuUI : MonoBehaviour
             }
             else
             {
+                if (init != null)
+                {
+                    if (init.PlayerData.PlayerFirstTimePlay == false)
+                    {
+                        // Geekplay.Instance.ShowInterstitialAd();
+                    }
+                }
+                else 
+                {
+                    init = FindObjectOfType<Init>();
+                }
                 ExitToMainMenu();
             }
         }
@@ -136,7 +150,18 @@ public class MainMenuUI : MonoBehaviour
         PlayerUILevelExp.SetActive(true);
         ButtonBuy.SetActive(false);
         ButtonMenuFromShop.SetActive(false);
-        PanelShop.SetActive(false);
+        if (PanelShop.gameObject.active == true) 
+        {
+            PanelShop.SetActive(false);
+
+            if (init != null)
+            {
+                if (init.PlayerData.PlayerFirstTimePlay == false)
+                {
+                    // Geekplay.Instance.ShowInterstitialAd();
+                }
+            }
+        }
         PanelInnShop.SetActive(false);
         panelSetting.SetActive(false);
         foreach (var scroll in Scrolls)

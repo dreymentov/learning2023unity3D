@@ -24,12 +24,16 @@ public class InnAppShop : MonoBehaviour
     {
         init.PlayerData.PlayerHardMoney += 1000;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyRareCard2()
     {
         init.PlayerData.Bodyparts[9] = 1;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyRareCard3()
@@ -38,6 +42,8 @@ public class InnAppShop : MonoBehaviour
         init.PlayerData.Tails[6] = 1;
         init.PlayerData.PlayerMoney += 1000;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyUncommonCard1()
@@ -49,12 +55,16 @@ public class InnAppShop : MonoBehaviour
         init.PlayerData.Eyes[5] = 1;
         init.PlayerData.Ears[0] = 1;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyCommonCard1()
     {
         init.PlayerData.PlayerHardMoney += 100;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyCommonCard2()
@@ -63,12 +73,16 @@ public class InnAppShop : MonoBehaviour
         init.PlayerData.Bodyparts[4] = 1;
         init.PlayerData.Bodyparts[5] = 1;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyCommonCard3()
     {
         init.PlayerData.PlayerHardMoney += 100;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyEpicCard1()
@@ -82,6 +96,8 @@ public class InnAppShop : MonoBehaviour
         init.PlayerData.PlayerMoney += 20000;
         init.PlayerData.PlayerHardMoney += 20000;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyLegendatyCard1()
@@ -103,23 +119,31 @@ public class InnAppShop : MonoBehaviour
 
         init.PlayerData.PlayerHardMoney += 30000;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyMoney1()
     {
         init.PlayerData.PlayerMoney += 50000;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void BuyHardMoney1()
     {
         init.PlayerData.PlayerHardMoney += 50000;
         CheckMoneyTextUI();
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 
     public void CheckMoneyTextUI() 
     {
         playerDataUIValue.TextValueHardMoney.text = "" + init.PlayerData.PlayerHardMoney;
         playerDataUIValue.TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
+        //Geekplay.Instance.RealBuyItem(string idOrTag)
+        //Geekplay.Instance.Save();
     }
 }

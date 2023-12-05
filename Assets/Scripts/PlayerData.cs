@@ -15,6 +15,7 @@ public class PlayerData
     public bool mobile;
     public bool PlayerFirstTimePlay = true;
     public bool PlayerFirstTimeNeedShop = false;
+    public int GameFinished = 0;
 
     public int[] Bodies = { 0, 1, 0, 0, 0, 0 };
     public int[] Bodyparts = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

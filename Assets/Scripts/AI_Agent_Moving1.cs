@@ -80,17 +80,16 @@ public class AI_Agent_Moving1 : MonoBehaviour
                 {
                     if (needJumping)
                     {
-                        if (isGrounded)
-                        {
-                            StartCoroutine(Jump());
-                        }
+                        StartCoroutine(Jump());
                     }
 
                     if (isGrounded && wasJump)
                     {
-                        if (agent.updatePosition == false)
+                        if (agent.isStopped == true)
                         {
                             wasJump = false;
+                            agent.isStopped = false;
+                            agent.nextPosition = transform.position;
                             agent.updatePosition = true;
                             agent.updateUpAxis = true;
                             Invoke("GetOrChangeGoal", 0f);
@@ -100,14 +99,15 @@ public class AI_Agent_Moving1 : MonoBehaviour
                             wasJump = false;
                         }
                     }
-                    else if (isGrounded)
+                    /*else if (isGrounded)
                     {
                         if (agent.updatePosition == false)
                         {
+                            agent.isStopped = false;
                             agent.updatePosition = true;
                             agent.updateUpAxis = true;
                         }
-                    }
+                    }*/
                 }
 
                 if (cubesCountOld != level1mg.cubes.Count)
@@ -129,11 +129,6 @@ public class AI_Agent_Moving1 : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-
         if (other.CompareTag("Obstacle"))
         {
             needJumping = true;
@@ -149,11 +144,6 @@ public class AI_Agent_Moving1 : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-
         if (other.CompareTag("Obstacle"))
         {
             needJumping = true;
@@ -173,12 +163,6 @@ public class AI_Agent_Moving1 : MonoBehaviour
         {
             needJumping = false;
         }
-
-        if (other.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-
     }
 
     public void Update()
@@ -194,6 +178,11 @@ public class AI_Agent_Moving1 : MonoBehaviour
             this.gameObject.CompareTag("Untagged");
         }
 
+        if ((rb.velocity.x < 0.2f && rb.velocity.x > -0.2f) || (rb.velocity.y < 0.2f && rb.velocity.y > -0.2f))
+        {
+            animator.SetBool("Started", false);
+        }
+        else animator.SetBool("Started", true);
     }
 
     IEnumerator Jump()
@@ -221,8 +210,8 @@ public class AI_Agent_Moving1 : MonoBehaviour
         agent.isStopped = true;
         rb.isKinematic = false;
         rb.useGravity = true;
-        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-        rb.AddForce(Vector3.forward * jumpPowerForward);
+        rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+        //rb.AddForce(Vector3.forward * jumpPowerForward);
 
         yield return new WaitForSeconds(1f);
         wasJump = true;
@@ -233,20 +222,21 @@ public class AI_Agent_Moving1 : MonoBehaviour
         agent.updatePosition = false;
         agent.updateUpAxis = false;
         agent.isStopped = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
 
         rb.isKinematic = false;
         rb.useGravity = true;
         rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-        rb.AddForce(Vector3.forward * jumpPowerForward);
+        //rb.AddForce(Vector3.forward * jumpPowerForward);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
         wasJump = true;
     }
 
     IEnumerator NoJumped()
     {
         agent.updatePosition = false;
+        agent.isStopped = true;
         yield return new WaitForSeconds(1.5f);
 
         rb.isKinematic = false;
@@ -257,9 +247,11 @@ public class AI_Agent_Moving1 : MonoBehaviour
         if (level1mg.isCrashingPlace == false)
         {
             agent.isStopped = false;
+            agent.nextPosition = transform.position;
             agent.updatePosition = true;
             agent.updateUpAxis = true;
         }
+        wasJump = true;
     }
 
     public void GetOrChangeGoal()

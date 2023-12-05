@@ -1,0 +1,937 @@
+fileFormatVersion: 2
+guid: e831ebad6cd812e4c86e487b1aaa8747
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4710421331381617239
+    second: fall guys-2_0
+  - first:
+      213: 6370289259322282968
+    second: fall guys-2_1
+  - first:
+      213: -1047990549437339267
+    second: fall guys-2_2
+  - first:
+      213: -8240555264478407376
+    second: fall guys-2_3
+  - first:
+      213: -4077473532312112501
+    second: fall guys-2_4
+  - first:
+      213: -2228003784778505125
+    second: fall guys-2_5
+  - first:
+      213: 4035133279890746133
+    second: fall guys-2_6
+  - first:
+      213: -709410812402780488
+    second: fall guys-2_7
+  - first:
+      213: 7636999989440370670
+    second: fall guys-2_8
+  - first:
+      213: 2679027617977933560
+    second: fall guys-2_9
+  - first:
+      213: 5950430526965340020
+    second: fall guys-2_10
+  - first:
+      213: -1984035806528365727
+    second: fall guys-2_11
+  - first:
+      213: -1056578243149868095
+    second: fall guys-2_12
+  - first:
+      213: 8622150328684129841
+    second: fall guys-2_13
+  - first:
+      213: -2796314379191764952
+    second: fall guys-2_14
+  - first:
+      213: -7539046076622119859
+    second: fall guys-2_15
+  - first:
+      213: -7034891684803399005
+    second: fall guys-2_16
+  - first:
+      213: -1936168863573861722
+    second: fall guys-2_17
+  - first:
+      213: 6917948562197945558
+    second: fall guys-2_18
+  - first:
+      213: 1276840790836625840
+    second: fall guys-2_19
+  - first:
+      213: 5949589661431079324
+    second: fall guys-2_20
+  - first:
+      213: -1978448950858765555
+    second: fall guys-2_21
+  - first:
+      213: 6261452198048850913
+    second: fall guys-2_22
+  - first:
+      213: 3226019913595942126
+    second: fall guys-2_23
+  - first:
+      213: 3849762076352417807
+    second: fall guys-2_24
+  - first:
+      213: 8769421142801587138
+    second: fall guys-2_25
+  - first:
+      213: -7005644476822903461
+    second: fall guys-2_26
+  - first:
+      213: 1739322001290067260
+    second: fall guys-2_27
+  - first:
+      213: -2955262309653146913
+    second: fall guys-2_28
+  - first:
+      213: 630365439819006599
+    second: fall guys-2_29
+  - first:
+      213: 721464578153355816
+    second: fall guys-2_30
+  - first:
+      213: 3392799568091510953
+    second: fall guys-2_31
+  - first:
+      213: -7181397086163473883
+    second: fall guys-2_32
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fall guys-2_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 868
+        width: 733
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad739881c831aeb0800000000000000
+      internalID: -4710421331381617239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_1
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 960
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d314628450d76850800000000000000
+      internalID: 6370289259322282968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_2
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 869
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7922d4d52ac471f0800000000000000
+      internalID: -1047990549437339267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_3
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 885
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0351ac4b5aaa3ad80800000000000000
+      internalID: -8240555264478407376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 733
+        width: 323
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82ba7dfc67e967c0800000000000000
+      internalID: -4077473532312112501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_5
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 764
+        width: 174
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b542d0abc5a8411e0800000000000000
+      internalID: -2228003784778505125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_6
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 763
+        width: 131
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51bae39c65caff730800000000000000
+      internalID: 4035133279890746133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_7
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 752
+        width: 85
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b639eeef9aa726f0800000000000000
+      internalID: -709410812402780488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 640
+        width: 385
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7514027031cf960800000000000000
+      internalID: 7636999989440370670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_9
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 651
+        width: 262
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe1909ac61dd2520800000000000000
+      internalID: 2679027617977933560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_10
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 654
+        width: 254
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477d86c990d249250800000000000000
+      internalID: 5950430526965340020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_11
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 515
+        width: 253
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16b983222f94774e0800000000000000
+      internalID: -1984035806528365727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_12
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 542
+        width: 94
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c355a39fa74651f0800000000000000
+      internalID: -1056578243149868095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_13
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 547
+        width: 82
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e2c35ba0808a770800000000000000
+      internalID: 8622150328684129841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_14
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 548
+        width: 83
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82835fb33ee7139d0800000000000000
+      internalID: -2796314379191764952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_15
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 547
+        width: 82
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4cd2a1798def5790800000000000000
+      internalID: -7539046076622119859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_16
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 557
+        width: 62
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2b1fdf84b0f5e90800000000000000
+      internalID: -7034891684803399005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_17
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 422
+        width: 76
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa12854da85125e0800000000000000
+      internalID: -1936168863573861722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_18
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 421
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc9b30809d710060800000000000000
+      internalID: 6917948562197945558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_19
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 418
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1cb8c2fef38b110800000000000000
+      internalID: 1276840790836625840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_20
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 419
+        width: 68
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91afe85640319250800000000000000
+      internalID: 5949589661431079324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_21
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 415
+        width: 53
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ba1d559232b84e0800000000000000
+      internalID: -1978448950858765555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_22
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 419
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e36aca799525e650800000000000000
+      internalID: 6261452198048850913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_23
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 420
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4f83ce40025cc20800000000000000
+      internalID: 3226019913595942126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_24
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 417
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0091c6263a1d6530800000000000000
+      internalID: 3849762076352417807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_25
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 465
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb1d76211e33b970800000000000000
+      internalID: 8769421142801587138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_26
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 453
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b552b404773f6ce90800000000000000
+      internalID: -7005644476822903461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_27
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 444
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d7ae41520532810800000000000000
+      internalID: 1739322001290067260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_28
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 18
+        width: 624
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd21607469cccf6d0800000000000000
+      internalID: -2955262309653146913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_29
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 245
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782481717028fb800800000000000000
+      internalID: 630365439819006599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_30
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 246
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a9bda1638230a00800000000000000
+      internalID: 721464578153355816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_31
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 61
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8713a3b35a51f20800000000000000
+      internalID: 3392799568091510953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall guys-2_32
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 62
+        width: 116
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a6338166d865c90800000000000000
+      internalID: -7181397086163473883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2be1ac140b041f34eb1db79f1e0c8302
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

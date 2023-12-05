@@ -48,7 +48,7 @@ public class GroundCheckBot : MonoBehaviour
             }
             else 
             {
-                Debug.LogError("No AI level 5+ component");
+                //Debug.LogError("No AI level 5+ component");
             }
         }
     }

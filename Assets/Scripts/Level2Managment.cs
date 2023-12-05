@@ -84,6 +84,7 @@ public class Level2Managment : MonoBehaviour
         panelLevelStarted.gameObject.SetActive(false);
 
         StartCoroutine(StartGameTextAndPanel());
+        //Geekplay.Instance.GameReady();
     }
 
     // Update is called once per frame

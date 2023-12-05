@@ -13,6 +13,7 @@ public class ShopCharacter : MonoBehaviour
     public GameObject MainCanvas;
     public GameObject ButtonBuy;
     public GameObject Equip;
+    public GameObject CostAD;
 
     public PlayerDataUIValue MCanvas;
     public PlayerData PDShop;
@@ -25,6 +26,7 @@ public class ShopCharacter : MonoBehaviour
     public bool isBuyOrNot;
     public bool isEquip;
     public bool isBuyByHardMoney;
+    public bool isAD;
 
     [Header("Items Id Shop from Player Data w Init")]
 
@@ -57,6 +59,7 @@ public class ShopCharacter : MonoBehaviour
     public bool isHat;
     public bool isHorn;
     public bool isTails;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -138,64 +141,71 @@ public class ShopCharacter : MonoBehaviour
             {
                 Cost.gameObject.SetActive(false);
                 CostHard.gameObject.SetActive(true);
+                CostAD.gameObject.SetActive(false);
+                ButtonBuy.SetActive(true);
+            }
+            else if (isAD == true)
+            {
+                Cost.gameObject.SetActive(false);
+                CostHard.gameObject.SetActive(false);
+                CostAD.gameObject.SetActive(true);
+                ButtonBuy.SetActive(true);
             }
             else
             {
                 Cost.gameObject.SetActive(true);
                 CostHard.gameObject.SetActive(false);
-            }
-            Bought.gameObject.SetActive(false);
-
-            if (ButtonBuy.gameObject.active == false)
-            {
-
+                CostAD.gameObject.SetActive(false);
                 ButtonBuy.SetActive(true);
             }
-            else
-            {
 
-            }
+            Bought.gameObject.SetActive(false);
+
             // IF NEED BUY ONE ITEM, NO SKIN + PARTS, ONLY ONE ITEM BUY
-            ButtonBuy.GetComponent<BuyButton>().isBodies = isBodies;
-            ButtonBuy.GetComponent<BuyButton>().isBodyparts = isBodyparts;
-            ButtonBuy.GetComponent<BuyButton>().isEyes = isEyes;
-            ButtonBuy.GetComponent<BuyButton>().isGloves = isGloves;
-            ButtonBuy.GetComponent<BuyButton>().isHeadparts = isHeadparts;
-            ButtonBuy.GetComponent<BuyButton>().isMounth = isMounth;
-            ButtonBuy.GetComponent<BuyButton>().isNoise = isNoise;
-            ButtonBuy.GetComponent<BuyButton>().isCombs = isCombs;
-            ButtonBuy.GetComponent<BuyButton>().isEars = isEars;
-            ButtonBuy.GetComponent<BuyButton>().isEyesFromHead = isEyesFromHead;
-            ButtonBuy.GetComponent<BuyButton>().isHair = isHair;
-            ButtonBuy.GetComponent<BuyButton>().isHat = isHat;
-            ButtonBuy.GetComponent<BuyButton>().isHorn = isHorn;
-            ButtonBuy.GetComponent<BuyButton>().isTails = isTails;
-            ButtonBuy.GetComponent<BuyButton>().idBuy = ItemId;
-            ButtonBuy.GetComponent<BuyButton>().idCost = CostForBuy;
-            ButtonBuy.GetComponent<BuyButton>().idCostHard = CostHardForBuy;
-            ButtonBuy.GetComponent<BuyButton>().idIsHardMoney = isBuyByHardMoney;
-            ButtonBuy.GetComponent<BuyButton>().isBought = false;
+            BuyButton b = ButtonBuy.GetComponent<BuyButton>();
 
+            b.isBodies = isBodies;
+            b.isBodyparts = isBodyparts;
+            b.isEyes = isEyes;
+            b.isGloves = isGloves;
+            b.isHeadparts = isHeadparts;
+            b.isMounth = isMounth;
+            b.isNoise = isNoise;
+            b.isCombs = isCombs;
+            b.isEars = isEars;
+            b.isEyesFromHead = isEyesFromHead;
+            b.isHair = isHair;
+            b.isHat = isHat;
+            b.isHorn = isHorn;
+            b.isTails = isTails;
+            b.idBuy = ItemId;
+            b.idCost = CostForBuy;
+            b.idCostHard = CostHardForBuy;
+            b.idIsAD = isAD;
+            b.idIsHardMoney = isBuyByHardMoney;
+            b.isBought = false;
         }
         else
         {
-            ButtonBuy.GetComponent<BuyButton>().isBodies = isBodies;
-            ButtonBuy.GetComponent<BuyButton>().isBodyparts = isBodyparts;
-            ButtonBuy.GetComponent<BuyButton>().isEyes = isEyes;
-            ButtonBuy.GetComponent<BuyButton>().isGloves = isGloves;
-            ButtonBuy.GetComponent<BuyButton>().isHeadparts = isHeadparts;
-            ButtonBuy.GetComponent<BuyButton>().isMounth = isMounth;
-            ButtonBuy.GetComponent<BuyButton>().isNoise = isNoise;
-            ButtonBuy.GetComponent<BuyButton>().isCombs = isCombs;
-            ButtonBuy.GetComponent<BuyButton>().isEars = isEars;
-            ButtonBuy.GetComponent<BuyButton>().isEyesFromHead = isEyesFromHead;
-            ButtonBuy.GetComponent<BuyButton>().isHair = isHair;
-            ButtonBuy.GetComponent<BuyButton>().isHat = isHat;
-            ButtonBuy.GetComponent<BuyButton>().isHorn = isHorn;
-            ButtonBuy.GetComponent<BuyButton>().isTails = isTails;
+            BuyButton b = ButtonBuy.GetComponent<BuyButton>();
+            b.isBodies = isBodies;
+            b.isBodyparts = isBodyparts;
+            b.isEyes = isEyes;
+            b.isGloves = isGloves;
+            b.isHeadparts = isHeadparts;
+            b.isMounth = isMounth;
+            b.isNoise = isNoise;
+            b.isCombs = isCombs;
+            b.isEars = isEars;
+            b.isEyesFromHead = isEyesFromHead;
+            b.isHair = isHair;
+            b.isHat = isHat;
+            b.isHorn = isHorn;
+            b.isTails = isTails;
+            b.idIsAD = isAD;
+            b.isBought = true;
+            b.idBuy = ItemId;
             ButtonBuy.SetActive(true);
-            ButtonBuy.GetComponent<BuyButton>().isBought = true;
-            ButtonBuy.GetComponent<BuyButton>().idBuy = ItemId;
         }
     }
 
@@ -686,11 +696,19 @@ public class ShopCharacter : MonoBehaviour
             {
                 Cost.gameObject.SetActive(false);
                 CostHard.gameObject.SetActive(true);
+                CostAD.gameObject.SetActive(false);
+            }
+            else if(isAD == true)
+            {
+                Cost.gameObject.SetActive(false);
+                CostHard.gameObject.SetActive(false);
+                CostAD.gameObject.SetActive(true);
             }
             else
             {
                 Cost.gameObject.SetActive(true);
                 CostHard.gameObject.SetActive(false);
+                CostAD.gameObject.SetActive(false);
             }
         }
         else
@@ -707,6 +725,7 @@ public class ShopCharacter : MonoBehaviour
             }
             Cost.SetActive(false);
             CostHard.SetActive(false);
+            CostAD.SetActive(false);
         }
     }
 
@@ -1016,11 +1035,19 @@ public class ShopCharacter : MonoBehaviour
             {
                 Cost.gameObject.SetActive(false);
                 CostHard.gameObject.SetActive(true);
+                CostAD.gameObject.SetActive(false);
+            }
+            else if (isAD == true)
+            {
+                Cost.gameObject.SetActive(false);
+                CostHard.gameObject.SetActive(false);
+                CostAD.gameObject.SetActive(true);
             }
             else
             {
                 Cost.gameObject.SetActive(true);
                 CostHard.gameObject.SetActive(false);
+                CostAD.gameObject.SetActive(false);
             }
         }
         else
@@ -1037,6 +1064,7 @@ public class ShopCharacter : MonoBehaviour
             }
             Cost.SetActive(false);
             CostHard.SetActive(false);
+            CostAD.SetActive(false);
         }
     }
 
@@ -1318,7 +1346,7 @@ public class ShopCharacter : MonoBehaviour
                 }
             }
         }
-        else if (isEyes == true)
+        else if (isEyes == true || isEyesFromHead == true)
         {
             for (int i = 0; i < Eyes.Length; i++)
             {
@@ -1329,6 +1357,18 @@ public class ShopCharacter : MonoBehaviour
                 else
                 {
                     PDShop.CharacterEyes[i] = 0;
+                }
+            }
+
+            for (int i = 0; i < EyesFromHead.Length; i++)
+            {
+                if (EyesFromHead[i] == 1)
+                {
+
+                }
+                else
+                {
+                    PDShop.CharacterEyesFromHead[i] = 0;
                 }
             }
         }
@@ -1388,7 +1428,7 @@ public class ShopCharacter : MonoBehaviour
                 }
             }
         }
-        else if (isCombs == true)
+        else if (isCombs == true || isHair == true)
         {
             for (int i = 0; i < Combs.Length; i++)
             {
@@ -1399,6 +1439,18 @@ public class ShopCharacter : MonoBehaviour
                 else
                 {
                     PDShop.CharacterCombs[i] = 0;
+                }
+            }
+
+            for (int i = 0; i < Hair.Length; i++)
+            {
+                if (Hair[i] == 1)
+                {
+
+                }
+                else
+                {
+                    PDShop.CharacterHair[i] = 0;
                 }
             }
         }
@@ -1416,7 +1468,7 @@ public class ShopCharacter : MonoBehaviour
                 }
             }
         }
-        else if (isEyesFromHead == true)
+        else if (isEyesFromHead == true || isEyes == true)
         {
             for (int i = 0; i < EyesFromHead.Length; i++)
             {
@@ -1429,8 +1481,20 @@ public class ShopCharacter : MonoBehaviour
                     PDShop.CharacterEyesFromHead[i] = 0;
                 }
             }
+
+            for (int i = 0; i < Eyes.Length; i++)
+            {
+                if (Eyes[i] == 1)
+                {
+
+                }
+                else
+                {
+                    PDShop.CharacterEyes[i] = 0;
+                }
+            }
         }
-        else if (isHair == true)
+        else if (isHair == true || isCombs == true)
         {
             for (int i = 0; i < Hair.Length; i++)
             {
@@ -1441,6 +1505,18 @@ public class ShopCharacter : MonoBehaviour
                 else
                 {
                     PDShop.CharacterHair[i] = 0;
+                }
+            }
+
+            for (int i = 0; i < Combs.Length; i++)
+            {
+                if (Combs[i] == 1)
+                {
+
+                }
+                else
+                {
+                    PDShop.CharacterCombs[i] = 0;
                 }
             }
         }

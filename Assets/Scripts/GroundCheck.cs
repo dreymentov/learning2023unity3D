@@ -13,7 +13,7 @@ public class GroundCheck : MonoBehaviour
             return;
         }
 
-        if(other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Obstacle"))
+        if(other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Jump"))
         {
             playerControlls.SetGrounded(true);
         }
@@ -36,7 +36,7 @@ public class GroundCheck : MonoBehaviour
             return;
         }
 
-        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Obstacle"))
+        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Jump"))
         {
             playerControlls.SetGrounded(true);
         }

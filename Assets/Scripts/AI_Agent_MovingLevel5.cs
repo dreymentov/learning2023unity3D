@@ -41,6 +41,13 @@ public class AI_Agent_MovingLevel5 : MonoBehaviour
             isChangedFromUntagged = true;
             StartCoroutine(VictoryDance());
         }
+
+        if ((rb.velocity.x < 0.2f && rb.velocity.x > -0.2f) || (rb.velocity.y < 0.2f && rb.velocity.y > -0.2f))
+        {
+            animator.SetBool("Started", false);
+        }
+        else animator.SetBool("Started", true);
+
     }
 
     IEnumerator VictoryDance()
