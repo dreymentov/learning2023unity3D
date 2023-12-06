@@ -22,7 +22,11 @@ public class CheckCharactersScript : MonoBehaviour
     {
         var InvokerMethod = MainCanvas.gameObject.GetComponent<PlayerDataUIValue>();
         InvokerMethod.isLevelUp = false;
-        InvokerMethod.StartCoroutine(InvokerMethod.InvokeStartThisObject());
+        if (SceneManager.GetActiveScene().name == "Lobby")
+        {
+            InvokerMethod.StartCoroutine(InvokerMethod.InvokeStartThisObject());
+        }
+        else return;
     }
     private void OnDisable()
     {

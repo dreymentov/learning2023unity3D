@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 namespace CMF
 {
@@ -72,6 +73,11 @@ namespace CMF
 				}
 				animator.SetBool("IsMoving", isMoving);
 			}
+
+			if(playerControll.isMainMenuOrLobby == true)
+			{
+                animator.SetBool("IsMainOrLobby", true);
+            }
 
 
 			animator.SetBool("IsGrounded", playerControll.grounded);

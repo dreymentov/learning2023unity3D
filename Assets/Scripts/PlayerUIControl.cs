@@ -62,48 +62,37 @@ public class PlayerUIControl : MonoBehaviour
     {
         FirstTime = PlayerDataUIValue.init.PlayerData.PlayerFirstTimePlay;
         FirstTimeNeedShop = PlayerDataUIValue.init.PlayerData.PlayerFirstTimeNeedShop;
-        isCanPress = PlayerDataUIValue.isCanPressButton;
 
-        if (isCanPress == true)
+        if ((FirstTime == true) && (FirstTimeNeedShop == true))
         {
-            if ((FirstTime == true) && (FirstTimeNeedShop == true))
-            {
-                return;
-            }
-            else
-            {
-                isPressed = true;
-
-                panel.gameObject.SetActive(true);
-
-                isActivacted = false;
-
-                /*foreach (var image in imagesList)
-                {
-                    image.color = Random.ColorHSV();
-                }
-                foreach (var image in imagesList1)
-                {
-                    image.color = Random.ColorHSV();
-                }*/
-
-                StartCoroutine(ImageMoveStart(MainImagesMover));
-                StartCoroutine(ChangeImageLevel());
-                StartCoroutine(WaitAwakeGame());
-            }
+            return;
         }
-        else return;
+        else
+        {
+            isPressed = true;
+
+            panel.gameObject.SetActive(true);
+
+            isActivacted = false;
+
+            /*foreach (var image in imagesList)
+            {
+                image.color = Random.ColorHSV();
+            }
+            foreach (var image in imagesList1)
+            {
+                image.color = Random.ColorHSV();
+            }*/
+
+            StartCoroutine(ImageMoveStart(MainImagesMover));
+            StartCoroutine(ChangeImageLevel());
+            StartCoroutine(WaitAwakeGame());
+        }
     }
 
     public void StartMainMenu()
     {
-        isCanPress = PlayerDataUIValue.isCanPressButton;
-
-        if (isCanPress == true)
-        {
             SceneManager.LoadScene("Menu");
-        }
-        else return;
     }
 
     void Update()

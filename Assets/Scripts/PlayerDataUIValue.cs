@@ -46,10 +46,14 @@ public class PlayerDataUIValue : MonoBehaviour
     [SerializeField] private int HardMoneyReward = 0;
     [SerializeField] private int ExpReward = 0;
 
+    public int speedUIreward;
+
     private void Update()
     {
         if (SceneManager.GetActiveScene().name == "Lobby")
         {
+            speedUIreward = 1;
+
             Cursor.lockState = CursorLockMode.None;
 
             PanelMain.gameObject.SetActive(true);
@@ -93,8 +97,9 @@ public class PlayerDataUIValue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Menu")
         {
+            speedUIreward = 0;
+
             Cursor.lockState = CursorLockMode.None;
-            isCanPressButton = true;
             PanelMain.gameObject.SetActive(true);
             PanelShowReward.gameObject.SetActive(false);
             PanelShowSummary.gameObject.SetActive(false);
@@ -107,27 +112,32 @@ public class PlayerDataUIValue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level1")
         {
+            speedUIreward = 0;
             //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
 
         if (SceneManager.GetActiveScene().name == "Level2")
         {
+            speedUIreward = 0;
             //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
         if (SceneManager.GetActiveScene().name == "Level3")
         {
+            speedUIreward = 0;
             //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
         if (SceneManager.GetActiveScene().name == "Level4")
         {
+            speedUIreward = 0;
             //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
         if (SceneManager.GetActiveScene().name == "Level5")
         {
+            speedUIreward = 0;
             //Cursor.lockState = CursorLockMode.Locked;
             PanelMain.gameObject.SetActive(false);
         }
@@ -140,8 +150,6 @@ public class PlayerDataUIValue : MonoBehaviour
 
     public IEnumerator InvokeStartThisObject()
     {
-        isCanPressButton = false;
-
         PanelMain.gameObject.SetActive(true);
 
         TextExpPanelReward.text = "0";
@@ -153,8 +161,8 @@ public class PlayerDataUIValue : MonoBehaviour
             ColorImage.a = 0f;
             RewardsImageInPanelShowReward[i].color = ColorImage;
             RewardsImageInPanelShowReward[i+3].color = ColorImage;
-            RewardsPanelInPanelShowReward[i].DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.01f);
-            RewardsPanelInPanelShowReward[i+3].DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.01f);
+            RewardsPanelInPanelShowReward[i].DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.01f * speedUIreward);
+            RewardsPanelInPanelShowReward[i+3].DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.01f * speedUIreward);
         }
 
         TextLevelUp.color = new Color(1f, 1f, 1f, 0f);
@@ -228,8 +236,8 @@ public class PlayerDataUIValue : MonoBehaviour
             RewardsImageInPanelShowReward[i].color = Color.white; //Random.ColorHSV();
             RewardsImageInPanelShowReward[i+3].color = Color.white; //Random.ColorHSV();
             RewardsImageInPanelShowReward[i + 3].sprite = RewardsSprite[Random.Range(0, RewardsSprite.Length)];
-            RewardsPanelInPanelShowReward[i].DOScale(new Vector3(0.7f, 0.7f, 0.7f), 1.5f);
-            RewardsPanelInPanelShowReward[i + 3].DOScale(new Vector3(0.52f, 0.5f, 0.5f), 1.5f);
+            RewardsPanelInPanelShowReward[i].DOScale(new Vector3(0.7f, 0.7f, 0.7f), 1.5f * speedUIreward);
+            RewardsPanelInPanelShowReward[i + 3].DOScale(new Vector3(0.52f, 0.5f, 0.5f), 1.5f * speedUIreward);
 
             for (int k = 0; k < 10; k++)
             {
@@ -239,9 +247,9 @@ public class PlayerDataUIValue : MonoBehaviour
                 ColorImage1.a = k * 0.1f;
                 RewardsImageInPanelShowReward[i].color = ColorImage;
                 RewardsImageInPanelShowReward[i+3].color = ColorImage1;
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.05f * speedUIreward);
             }
-            yield return new WaitForSeconds(1.0f);
+            //yield return new WaitForSeconds(1.0f);
         }
         
         for (int i = 0; i < 10; i++)
@@ -250,7 +258,7 @@ public class PlayerDataUIValue : MonoBehaviour
             l += Random.Range(0, MoneyReward / 100);
             TextExpPanelReward.text = ""+j;
             TextMoneyPanelReward.text = ""+l;
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.10f * speedUIreward);
         }
         for (int i = 0; i < 10; i++)
         {
@@ -258,7 +266,7 @@ public class PlayerDataUIValue : MonoBehaviour
             l += Random.Range(MoneyReward / 100, MoneyReward / 10);
             TextExpPanelReward.text = "" + j;
             TextMoneyPanelReward.text = "" + l;
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.10f * speedUIreward);
         }
 
         TextExpPanelReward.text = "" + ExpReward;
@@ -274,7 +282,7 @@ public class PlayerDataUIValue : MonoBehaviour
             Slider.value = init.PlayerData.PlayerExperience;
             Slider.value++;
             TextValueExp.text = "" + Slider.value + "/ 100";
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.02f * speedUIreward);
 
             if (Slider.value == Slider.maxValue)
             {
@@ -290,20 +298,20 @@ public class PlayerDataUIValue : MonoBehaviour
                 {
                     tluColor.a = 0.1f * k;
                     TextLevelUp.color = tluColor;
-                    yield return new WaitForSeconds(0.05f);
+                    yield return new WaitForSeconds(0.05f * speedUIreward);
                 }
                 init.PlayerData.PlayerLevel++;
                 TextValueLevel.text = "" + init.PlayerData.PlayerLevel;
                 PanelLevelUp.gameObject.SetActive(true);
                 PanelLevelUpBackground.gameObject.SetActive(true);
                 isLevelUp = true;
-                PanelLevelUp.DOScale(new Vector3(1f, 1f, 1f), 0.5f);
+                PanelLevelUp.DOScale(new Vector3(1f, 1f, 1f), 0.5f * speedUIreward);
                 init.PlayerData.PlayerMoney += 500;
                 TextValueMoney.text = "" + init.PlayerData.PlayerMoney;
-                yield return new WaitForSeconds(1.5f);
-                PanelLevelUp.DOScale(new Vector3(0f, 0f, 0f), 0.5f);
+                yield return new WaitForSeconds(1.5f * speedUIreward);
+                PanelLevelUp.DOScale(new Vector3(0f, 0f, 0f), 0.5f * speedUIreward);
                 TextLevelUp.color = new Color(1f, 1f, 1f, 0f);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(1f * speedUIreward);
                 isLevelUp = false;
                 PanelLevelUp.gameObject.SetActive(false);
                 PanelLevelUpBackground.gameObject.SetActive(false); 
@@ -312,7 +320,6 @@ public class PlayerDataUIValue : MonoBehaviour
             init.PlayerData.PlayerExperience = (int)Slider.value;
         }
         PlaceInLevel = 999;
-        isCanPressButton = true;
         //Geekplay.Instance.Save();
         //Geekplay.Instance.Leaderboard(string leaderboardName, int value)
         yield break;
